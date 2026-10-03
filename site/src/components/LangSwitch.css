@@ -1,0 +1,96 @@
+.lang {
+  position: relative;
+}
+
+.lang__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 2.375rem;
+  padding-inline: 0.625rem;
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  transition: background-color var(--dur-hover) ease, transform var(--dur-press) var(--ease-out);
+}
+
+.lang__trigger:active {
+  transform: scale(0.97);
+}
+
+.lang__chevron {
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+.lang[data-open="true"] .lang__chevron {
+  transform: rotate(180deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lang__trigger:hover {
+    background: rgb(14 25 41 / 0.05);
+  }
+}
+
+/* Popover scales from its trigger (top right), not from the centre. */
+.lang__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 40;
+  min-width: 13rem;
+  padding: 0.375rem;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-overlay);
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.96) translateY(-4px);
+  visibility: hidden;
+  transition:
+    opacity 150ms ease,
+    transform 150ms var(--ease-out),
+    visibility 0s linear 150ms;
+}
+
+.lang[data-open="true"] .lang__menu {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition:
+    opacity 180ms ease,
+    transform 200ms var(--ease-out),
+    visibility 0s;
+}
+
+.lang__item {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  font-size: var(--small-size);
+  color: var(--navy);
+}
+
+.lang__item[aria-checked="true"] {
+  background: var(--mist);
+}
+
+.lang__item:disabled {
+  cursor: not-allowed;
+  color: rgb(14 25 41 / 0.42);
+}
+
+.lang__code {
+  color: rgb(14 25 41 / 0.62);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lang__item:not(:disabled):hover {
+    background: var(--mist);
+  }
+}

@@ -1,0 +1,208 @@
+.scan {
+  padding: var(--space-6);
+}
+
+@media (max-width: 560px) {
+  .scan {
+    padding: var(--space-5);
+  }
+}
+
+.scan__progress {
+  display: grid;
+  grid-template-columns: repeat(3, 2rem);
+  gap: var(--space-1);
+  padding: 0;
+  margin-bottom: var(--space-5);
+  list-style: none;
+}
+
+.scan__progress span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line);
+  transition: background-color var(--dur-ui) ease;
+}
+
+.scan__progress [data-state="done"] span {
+  background: var(--navy);
+}
+
+.scan__progress [data-state="current"] span {
+  background: var(--blue);
+}
+
+/* Each step enters with a short fade; a touch of blur hides the swap between states. */
+.scan__step {
+  display: grid;
+  gap: var(--space-5);
+  animation: scan-step-in 240ms var(--ease-out) both;
+}
+
+@keyframes scan-step-in {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(6px);
+  }
+}
+
+.scan__step--center {
+  justify-items: center;
+  text-align: center;
+  padding-block: var(--space-4);
+}
+
+.scan__step--center .scan__pkg {
+  width: 100%;
+}
+
+.scan__head {
+  display: grid;
+  gap: var(--space-3);
+  padding-right: var(--space-7);
+}
+
+.scan__head h2,
+.scan__step h2 {
+  outline: none;
+}
+
+.scan__pkg {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.scan__notice {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-left: 2px solid var(--navy);
+  background: var(--mist);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.scan__notice > svg {
+  margin-top: 2px;
+}
+
+.scan__notice .t-label {
+  margin-bottom: var(--space-1);
+}
+
+.scan__consents {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.scan__error {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--danger-tint);
+  color: var(--danger);
+}
+
+.scan__pay {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.scan__pay-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+@media (max-width: 420px) {
+  .scan__pay-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.scan__secure {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.scan__stack {
+  display: grid;
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.scan__confirmed {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 500;
+}
+
+.scan__confirmed svg {
+  color: var(--blue);
+}
+
+.scan__howto {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  list-style: none;
+  background: var(--mist);
+  border-radius: var(--radius-sm);
+}
+
+.scan__howto li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: var(--space-2);
+}
+
+.scan__howto .t-label {
+  padding-top: 2px;
+  color: rgb(14 25 41 / 0.62);
+}
+
+.scan__form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.scan__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .scan__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scan__done-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--navy);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes scan-step-in {
+    from {
+      opacity: 0;
+    }
+  }
+}

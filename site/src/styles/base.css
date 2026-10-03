@@ -1,0 +1,263 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + var(--space-4));
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--surface-page);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  letter-spacing: var(--track-body);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--ice);
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Type scale */
+
+.t-h1,
+.t-h2,
+.t-h3,
+.t-h4,
+.t-sub {
+  font-optical-sizing: auto;
+}
+
+.t-h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+  letter-spacing: var(--track-display);
+  font-weight: 400;
+}
+
+.t-h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+  letter-spacing: var(--track-display);
+  font-weight: 400;
+}
+
+.t-h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  letter-spacing: var(--track-display);
+  font-weight: 500;
+}
+
+.t-h4 {
+  font-size: var(--h4-size);
+  line-height: var(--h4-line);
+  letter-spacing: var(--track-bold);
+  font-weight: 700;
+}
+
+.t-sub {
+  font-size: var(--sub-size);
+  line-height: var(--sub-line);
+  letter-spacing: var(--track-display);
+  font-weight: 400;
+}
+
+.t-body {
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+}
+
+.t-small {
+  font-size: var(--small-size);
+  line-height: var(--small-line);
+  letter-spacing: 0;
+}
+
+.t-label {
+  font-size: var(--label-size);
+  line-height: var(--label-line);
+  letter-spacing: var(--track-label);
+  font-weight: 500;
+}
+
+.t-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.muted {
+  color: var(--ink-2);
+}
+
+.faint {
+  color: var(--ink-3);
+}
+
+/* Layout */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--space-5);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.inverse {
+  background: var(--surface-inverse);
+  color: var(--paper);
+  --ink: var(--paper);
+  --ink-2: var(--paper-2);
+  --ink-3: var(--paper-3);
+  --line: var(--line-on-navy);
+  --line-strong: rgb(255 255 255 / 0.28);
+  --focus-ring: 0 0 0 2px var(--navy), 0 0 0 4px var(--blue);
+}
+
+.inverse ::selection {
+  background: var(--blue);
+  color: var(--navy);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* Scroll reveal: elements opt in with [data-reveal]; the hook sets data-visible once. */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out),
+    transform var(--dur-reveal) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+[data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    transform: none;
+    transition: opacity 200ms ease;
+    transition-delay: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

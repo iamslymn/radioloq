@@ -1,0 +1,105 @@
+/*
+ * Radioloq design tokens.
+ * Source: Brand/Colour System.pdf, Brand/Content Section_ Type Hierarchy.pdf
+ */
+
+:root {
+  /* Brand palette */
+  --navy: #0e1929;
+  --blue: #5180ff;
+  --spectrum: #a3c3fe;
+  --ice: #d3e2ff;
+  --mist: #f3f8fe;
+  --white: #ffffff;
+  --mist-text: #dfe2e2; /* Clinical Mist HEX from the brand book: text on navy buttons */
+
+  /* Text on light surfaces. --ink-3 is the lightest value that still passes 4.5:1 on mist. */
+  --ink: var(--navy);
+  --ink-2: rgb(14 25 41 / 0.74);
+  --ink-3: rgb(14 25 41 / 0.62);
+
+  /* Text on navy surfaces */
+  --paper: var(--white);
+  --paper-2: rgb(255 255 255 / 0.74);
+  --paper-3: rgb(255 255 255 / 0.6);
+
+  /* Lines */
+  --line: rgb(14 25 41 / 0.12);
+  --line-strong: rgb(14 25 41 / 0.24);
+  --line-on-navy: rgb(255 255 255 / 0.14);
+
+  /* Surfaces */
+  --surface-page: var(--mist);
+  --surface-raised: var(--white);
+  --surface-tint: var(--ice);
+  --surface-inverse: var(--navy);
+
+  /* Feedback (kept inside the blue family; error is the only off-palette hue) */
+  --danger: #b4232f;
+  --danger-tint: #fbeef0;
+
+  /* Typography */
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --h1-size: clamp(2.5rem, 1.6rem + 3.4vw, 3.5rem);   /* 40 -> 56 */
+  --h1-line: 1.143;                                   /* 64 / 56 */
+  --h2-size: clamp(2rem, 1.6rem + 1.4vw, 2.5rem);     /* 32 -> 40 */
+  --h2-line: 1.2;                                     /* 48 / 40 */
+  --h3-size: clamp(1.75rem, 1.5rem + 0.9vw, 2.25rem); /* 28 -> 36 */
+  --h3-line: 1.167;                                   /* 42 / 36 */
+  --h4-size: 1.75rem;                                 /* 28 */
+  --h4-line: 1.286;                                   /* 36 / 28 */
+  --sub-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); /* 20 -> 24 */
+  --sub-line: 1.333;                                  /* 32 / 24 */
+  --body-size: 1.0625rem;                             /* 17 */
+  --body-line: 1.647;                                 /* 28 / 17 */
+  --small-size: 0.875rem;                             /* 14 */
+  --small-line: 1.571;                                /* 22 / 14 */
+  --label-size: 0.8125rem;                            /* 13 */
+  --label-line: 1.385;                                /* 18 / 13 */
+
+  --track-display: -0.04em;
+  --track-bold: -0.02em;
+  --track-body: -0.011em;
+  --track-label: 0.01em;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+  /* Layout */
+  --container: 76rem;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
+  --header-h: 4.75rem;
+
+  /* Shape */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-raised: 0 1px 2px rgb(14 25 41 / 0.04), 0 8px 24px -12px rgb(14 25 41 / 0.12);
+  --shadow-overlay: 0 1px 2px rgb(14 25 41 / 0.06), 0 24px 64px -16px rgb(14 25 41 / 0.28);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-press: 140ms;
+  --dur-hover: 160ms;
+  --dur-ui: 220ms;
+  --dur-overlay: 260ms;
+  --dur-reveal: 560ms;
+  --stagger: 40ms;
+
+  --focus-ring: 0 0 0 2px var(--mist), 0 0 0 4px var(--blue);
+}

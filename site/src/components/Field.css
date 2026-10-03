@@ -1,0 +1,136 @@
+.field {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.field__label {
+  color: rgb(14 25 41 / 0.74);
+}
+
+.field__control {
+  width: 100%;
+  height: 3rem;
+  padding: 0 0.875rem;
+  /* 16px minimum stops iOS from zooming into the field */
+  font-size: 1rem;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;
+}
+
+.field__control::placeholder {
+  color: rgb(14 25 41 / 0.45);
+}
+
+.field__control:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(81 128 255 / 0.22);
+}
+
+.field__control:disabled {
+  background: var(--mist);
+  color: rgb(14 25 41 / 0.62);
+}
+
+.field__control--area {
+  height: auto;
+  min-height: 6rem;
+  padding-block: 0.75rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.field__control--select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%230E1929' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+}
+
+.field[data-invalid] .field__control {
+  border-color: var(--danger);
+  background: var(--danger-tint);
+}
+
+/* Checkbox */
+
+.checkbox {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.125rem 1fr;
+  gap: var(--space-3);
+  align-items: start;
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--mist);
+  cursor: pointer;
+  transition: border-color var(--dur-hover) ease, background-color var(--dur-hover) ease;
+}
+
+.checkbox[data-checked] {
+  border-color: rgb(81 128 255 / 0.5);
+  background: rgb(211 226 255 / 0.45);
+}
+
+.checkbox[data-invalid]:not([data-checked]) {
+  border-color: var(--danger);
+  background: var(--danger-tint);
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.checkbox__box {
+  display: grid;
+  place-items: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 2px;
+  border: 1.5px solid rgb(14 25 41 / 0.4);
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--navy);
+  transition: background-color var(--dur-hover) ease, border-color var(--dur-hover) ease;
+}
+
+.checkbox__box svg {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 120ms ease, transform 180ms var(--ease-out);
+}
+
+.checkbox[data-checked] .checkbox__box {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.checkbox[data-checked] .checkbox__box svg {
+  opacity: 1;
+  transform: none;
+}
+
+.checkbox__input:focus-visible + .checkbox__box {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.checkbox__text {
+  color: rgb(14 25 41 / 0.8);
+}
+
+.checkbox__text a {
+  color: var(--navy);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
+  text-underline-offset: 0.2em;
+}
