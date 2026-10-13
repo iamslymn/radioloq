@@ -26,13 +26,26 @@
 
 .accordion__index {
   color: var(--ink-3);
+  transition: color var(--dur-hover) ease;
+}
+
+.accordion__q {
+  transition: transform var(--dur-ui) var(--ease-out);
 }
 
 .accordion__icon {
   display: inline-flex;
   align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
   color: var(--ink-2);
-  transition: transform var(--dur-ui) var(--ease-out), color var(--dur-hover) ease;
+  transition:
+    transform var(--dur-ui) var(--ease-out),
+    color var(--dur-hover) ease,
+    background-color var(--dur-hover) ease;
 }
 
 .accordion__item[data-open="true"] .accordion__icon {
@@ -41,8 +54,21 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .accordion__trigger:hover .accordion__index {
+    color: var(--blue);
+  }
+
+  .accordion__trigger:hover .accordion__q {
+    transform: translateX(4px);
+  }
+
   .accordion__trigger:hover .accordion__icon {
     color: var(--ink);
+    background: var(--ice);
+  }
+
+  .accordion__item[data-open="false"] .accordion__trigger:hover .accordion__icon {
+    transform: rotate(90deg);
   }
 }
 

@@ -202,10 +202,10 @@ const az = {
     label: 'Əlaqə',
     title: 'Qərar verməzdən əvvəl sualınız var?',
     rows: [
-      { type: 'E-mail', label: 'info@radioloq.com', cta: 'E-mail göndər', href: links.email, external: false },
-      { type: 'Video görüş', label: 'Ödənişsiz tanışlıq', cta: '15 dəq. rezervasiya', href: links.calendly, external: true },
-      { type: 'LinkedIn', label: 'Ədalət Gəncəli', cta: 'Profili gör', href: links.linkedin, external: true },
-      { type: 'Instagram', label: '@adalat.radiologie', cta: 'İzlə', href: links.instagram, external: true },
+      { icon: 'mail', type: 'E-mail', label: 'info@radioloq.com', cta: 'E-mail göndər', href: links.email, external: false },
+      { icon: 'video', type: 'Video görüş', label: 'Ödənişsiz tanışlıq', cta: '15 dəq. rezervasiya', href: links.calendly, external: true },
+      { icon: 'linkedin', type: 'LinkedIn', label: 'Ədalət Gəncəli', cta: 'Profili gör', href: links.linkedin, external: true },
+      { icon: 'instagram', type: 'Instagram', label: '@adalat.radiologie', cta: 'İzlə', href: links.instagram, external: true },
     ],
   },
   doctors: {

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Accordion } from '../components/Accordion'
 import { Mark } from '../components/Logo'
 import { Button, TextLink } from '../components/Button'
-import { ArrowRight, ArrowUpRight } from '../components/Icon'
+import { ArrowRight, ArrowUpRight, Instagram, LinkedIn, Mail, Video } from '../components/Icon'
 import { PriceTable } from '../components/PriceTable'
 import { SectionHeader, SectionLabel } from '../components/Section'
 import type { Content, PackageKey } from '../content/az'
@@ -142,6 +142,13 @@ export function Faq({ c }: P) {
   )
 }
 
+const contactIcons: Record<string, typeof Mail> = {
+  mail: Mail,
+  video: Video,
+  linkedin: LinkedIn,
+  instagram: Instagram,
+}
+
 export function Contact({ c }: P) {
   const ref = useReveal<HTMLUListElement>()
   return (
@@ -150,13 +157,16 @@ export function Contact({ c }: P) {
         <SectionHeader index="05" label={c.contact.label} title={c.contact.title} id="contact-title" />
         <div className="grid">
           <ul className="contact" ref={ref}>
-            {c.contact.rows.map((r, i) => (
+            {c.contact.rows.map((r, i) => {
+              const RowIcon = contactIcons[r.icon]
+              return (
               <li key={r.type} data-reveal style={stagger(i)}>
                 <a
                   className="contact__row"
                   href={r.href}
                   {...(r.external ? { target: '_blank', rel: 'noreferrer' } : {})}
                 >
+                  <span className="contact__icon">{RowIcon && <RowIcon size={18} />}</span>
                   <span className="contact__type t-label faint">{r.type}</span>
                   <span className="contact__label">{r.label}</span>
                   <span className="contact__cta t-small">
@@ -165,7 +175,8 @@ export function Contact({ c }: P) {
                   </span>
                 </a>
               </li>
-            ))}
+              )
+            })}
           </ul>
         </div>
       </div>

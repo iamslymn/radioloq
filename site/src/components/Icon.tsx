@@ -70,6 +70,35 @@ export const ChevronDown = (p: Props) => (
   </Base>
 )
 
+export const Mail = (p: Props) => (
+  <Base {...p}>
+    <rect x="2" y="3.5" width="12" height="9" rx="1.5" />
+    <path d="M2.5 4.5L8 8.5l5.5-4" />
+  </Base>
+)
+
+export const Video = (p: Props) => (
+  <Base {...p}>
+    <rect x="1.75" y="4" width="8.5" height="8" rx="1.5" />
+    <path d="M10.25 7l4-2.25v6.5l-4-2.25" />
+  </Base>
+)
+
+export const LinkedIn = (p: Props) => (
+  <Base {...p}>
+    <rect x="2" y="2" width="12" height="12" rx="2" />
+    <path d="M5.25 7v4M5.25 5h.01M8 11V7M8 8.75c0-1 .75-1.75 1.75-1.75S11 7.75 11 8.75V11" />
+  </Base>
+)
+
+export const Instagram = (p: Props) => (
+  <Base {...p}>
+    <rect x="2" y="2" width="12" height="12" rx="3.5" />
+    <circle cx="8" cy="8" r="2.75" />
+    <path d="M11.5 4.5h.01" />
+  </Base>
+)
+
 export const Notice = (p: Props) => (
   <Base {...p}>
     <circle cx="8" cy="8" r="6" />

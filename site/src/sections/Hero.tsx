@@ -40,7 +40,7 @@ export function Hero({ c }: { c: Content }) {
             </p>
           </div>
 
-          <figure className="hero__panel" data-reveal style={stagger(3)}>
+          <figure className="hero__panel" data-reveal style={stagger(3)} hidden>
             <figcaption className="hero__panel-head t-label">
               <span>Befund</span>
               <span className="faint">{h.panel.example}</span>
