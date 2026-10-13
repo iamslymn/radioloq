@@ -3,8 +3,10 @@ import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/inter/opsz.css'
 import './styles/tokens.css'
 import './styles/base.css'
-import App from './App'
+import { PasswordGate } from './components/PasswordGate'
 
+// oxlint-disable-next-line react/only-export-components
+const App = lazy(() => import('./App'))
 // oxlint-disable-next-line react/only-export-components
 const DesignSystem = lazy(() => import('./pages/DesignSystem'))
 
@@ -12,12 +14,8 @@ const isDesignSystem = window.location.pathname.replace(/\/$/, '') === '/design-
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {isDesignSystem ? (
-      <Suspense fallback={null}>
-        <DesignSystem />
-      </Suspense>
-    ) : (
-      <App />
-    )}
+    <PasswordGate>
+      <Suspense fallback={null}>{isDesignSystem ? <DesignSystem /> : <App />}</Suspense>
+    </PasswordGate>
   </StrictMode>,
 )
