@@ -19,7 +19,7 @@ export function Process({ c }: P) {
         <SectionHeader index="01" label={c.process.label} title={c.process.title} lead={c.process.sub} id="how-title" />
         <ol className="steps" ref={ref}>
           {c.process.steps.map((s, i) => (
-            <li className="steps__item" key={s.title} data-reveal style={stagger(i)}>
+            <li className="steps__item" key={i} data-reveal style={stagger(i)}>
               <span className="steps__index t-label t-num">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="steps__title">{s.title}</h3>
               <p className="steps__desc muted">{s.desc}</p>
@@ -159,7 +159,7 @@ export function Contact({ c }: P) {
             {c.contact.rows.map((r, i) => {
               const RowIcon = contactIcons[r.icon]
               return (
-              <li key={r.type} data-reveal style={stagger(i)}>
+              <li key={r.icon} data-reveal style={stagger(i)}>
                 <a
                   className="contact__row"
                   href={r.href}

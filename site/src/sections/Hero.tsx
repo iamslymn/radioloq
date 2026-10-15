@@ -68,7 +68,7 @@ export function Hero({ c }: { c: Content }) {
 
         <dl className="stats">
           {c.stats.map((s, i) => (
-            <div className="stats__item" key={s.label} data-reveal style={stagger(4 + i)}>
+            <div className="stats__item" key={i} data-reveal style={stagger(4 + i)}>
               <dt className="t-small muted">{s.label}</dt>
               <dd className="stats__value t-num">{s.value}</dd>
             </div>
