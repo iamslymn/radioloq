@@ -4,8 +4,7 @@ import { Checkbox, Select, TextArea, TextField } from '../components/Field'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Lock, Notice } from '../components/Icon'
 import { Modal } from '../components/Modal'
 import { MarkSpinner } from '../components/StarburstMark'
-import type { Content, PackageKey } from '../content/az'
-import { links, packages } from '../content/az'
+import { type Content, type PackageKey, languageLabel, languages, links, packages } from '../content'
 import { track } from '../lib/analytics'
 import './ScanModal.css'
 
@@ -33,7 +32,7 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
   const [email, setEmail] = useState('')
   const [nameErr, setNameErr] = useState(false)
   const [emailErr, setEmailErr] = useState(false)
-  const [language, setLanguage] = useState('')
+  const [language, setLanguage] = useState(() => languageLabel(c.lang))
   const [note, setNote] = useState('')
   const [honeypot, setHoneypot] = useState('')
   const [sending, setSending] = useState(false)
@@ -309,8 +308,8 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
               <div className="scan__row">
                 <Select label={m.langLabel} value={language} onChange={(e) => setLanguage(e.target.value)}>
                   <option value="">{m.langPlaceholder}</option>
-                  {m.langOptions.map((o) => (
-                    <option key={o}>{o}</option>
+                  {languages.map((l) => (
+                    <option key={l.code}>{l.label}</option>
                   ))}
                 </Select>
                 <Select label={m.packageLabel} value={pack.label} disabled>

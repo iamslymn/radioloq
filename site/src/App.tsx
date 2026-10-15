@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CookieBar } from './components/CookieBar'
-import content, { type PackageKey, packages } from './content/az'
+import { type Lang, type PackageKey, content, initialLang, packages, saveLang } from './content'
 import { track } from './lib/analytics'
 import { Footer } from './sections/Footer'
 import { Header } from './sections/Header'
@@ -22,8 +22,25 @@ function resumeFromPayment(): ModalState {
 }
 
 export default function App() {
-  const c = content
+  const [lang, setLang] = useState<Lang>(initialLang)
+  const c = content[lang]
   const [modal, setModal] = useState<ModalState>(resumeFromPayment)
+
+  useEffect(() => {
+    document.documentElement.lang = lang
+    document.title = c.meta.title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', c.meta.description)
+  }, [lang, c])
+
+  const changeLang = (next: Lang) => {
+    setLang(next)
+    saveLang(next)
+    const url = new URL(window.location.href)
+    if (url.searchParams.has('lang')) {
+      url.searchParams.set('lang', next)
+      window.history.replaceState({}, '', url)
+    }
+  }
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -42,7 +59,7 @@ export default function App() {
       <a className="skip-link" href="#main">
         {c.nav.skip}
       </a>
-      <Header c={c} />
+      <Header c={c} onLangChange={changeLang} />
       <main id="main">
         <Hero c={c} />
         <Process c={c} />

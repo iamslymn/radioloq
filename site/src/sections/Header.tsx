@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react'
 import { Button } from '../components/Button'
 import { LangSwitch } from '../components/LangSwitch'
 import { Logo } from '../components/Logo'
-import type { Content } from '../content/az'
-import { languages } from '../content/az'
+import { type Content, type Lang, languages } from '../content'
 
-export function Header({ c }: { c: Content }) {
+export function Header({ c, onLangChange }: { c: Content; onLangChange: (lang: Lang) => void }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -27,7 +26,13 @@ export function Header({ c }: { c: Content }) {
           <a href="#about">{c.nav.about}</a>
         </nav>
         <div className="site-header__end">
-          <LangSwitch languages={languages} current={c.lang} label={c.nav.lang} unavailableHint={c.nav.langSoon} />
+          <LangSwitch
+            languages={languages}
+            current={c.lang}
+            onChange={(code) => onLangChange(code as Lang)}
+            label={c.nav.lang}
+            unavailableHint={c.nav.langSoon}
+          />
           <Button href="#pricing" size="sm" className="site-header__cta">
             {c.nav.cta}
           </Button>

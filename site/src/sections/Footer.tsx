@@ -1,6 +1,5 @@
 import { Logo } from '../components/Logo'
-import type { Content } from '../content/az'
-import { links } from '../content/az'
+import { type Content, links } from '../content'
 import { OPEN_COOKIE_SETTINGS } from '../lib/analytics'
 
 export function Footer({ c }: { c: Content }) {

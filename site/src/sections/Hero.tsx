@@ -1,8 +1,7 @@
 import { Button, TextLink } from '../components/Button'
 import { ArrowRight } from '../components/Icon'
 import { Starburst } from '../components/StarburstMark'
-import type { Content } from '../content/az'
-import { links } from '../content/az'
+import { type Content, links } from '../content'
 import { stagger } from '../lib/stagger'
 import { useReveal } from '../lib/useReveal'
 
@@ -60,7 +59,7 @@ export function Hero({ c }: { c: Content }) {
             </div>
             <div className="hero__panel-block">
               <p className="hero__panel-label t-label faint">
-                <span className="t-num">AZ</span> {h.panel.read}
+                <span className="t-num">{c.lang.toUpperCase()}</span> {h.panel.read}
               </p>
               <p className="hero__panel-read">{h.panel.readText}</p>
             </div>

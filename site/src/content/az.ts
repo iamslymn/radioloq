@@ -1,56 +1,12 @@
 /*
  * Azerbaijani landing copy, taken verbatim from the live radioloq.com bundle.
- * Other languages implement the same `Content` shape.
+ * This file defines the `Content` shape; other languages implement it.
  */
 
-export const links = {
-  calendly: 'https://calendly.com/adalat-ganjali/15min',
-  email: 'mailto:info@radioloq.com',
-  emailLabel: 'info@radioloq.com',
-  linkedin: 'https://linkedin.com/in/adalatganjali',
-  instagram: 'https://instagram.com/adalat.radiologie',
-  courses: 'https://courses.radioloq.com/',
-  upload: 'https://sync.luckycloud.de/u/d/47c6a267df094a9a8e65/',
-  formspree: 'https://formspree.io/f/xrejnvok',
-  api: 'https://radioloq-api.vercel.app',
-} as const
-
-export type PackageKey = 'basic' | 'standard' | 'premium'
-
-/** Package identifiers as the payment links, API and Formspree inbox expect them. */
-export const packages: Record<PackageKey, { label: string; price: number; stripe: string; paypal: string }> = {
-  basic: {
-    label: 'Basic — €52',
-    price: 52,
-    stripe: 'https://buy.stripe.com/00w5kv7ji6nrh258nO8ww04',
-    paypal: 'https://www.paypal.com/ncp/payment/FBBSBEV9XZQZ4',
-  },
-  standard: {
-    label: 'Standard — €72',
-    price: 72,
-    stripe: 'https://buy.stripe.com/fZu9AL6febHL1370Vm8ww05',
-    paypal: 'https://www.paypal.com/ncp/payment/MKFVEECTYTEDE',
-  },
-  premium: {
-    label: 'Premium — €83',
-    price: 83,
-    stripe: 'https://buy.stripe.com/bJe3cn7ji3bf6nrdI88ww06',
-    paypal: 'https://www.paypal.com/ncp/payment/KDWLGX32B8B28',
-  },
-}
-
-export const languages = [
-  { code: 'az', label: 'Azərbaycanca', available: true },
-  { code: 'en', label: 'English', available: false },
-  { code: 'tr', label: 'Türkçe', available: false },
-  { code: 'de', label: 'Deutsch', available: false },
-  { code: 'ru', label: 'Русский', available: false },
-]
-
-type LinkedText = { pre: string; link: string; href: string; post: string }
+import { type Lang, type LinkedText, type PackageKey, links } from './shared'
 
 const az = {
-  lang: 'az',
+  lang: 'az' as Lang,
   meta: {
     title: 'Radioloq — Almaniya standartında ikinci baxış, öz dilinizdə.',
     description:
@@ -270,7 +226,6 @@ const az = {
     emailLabel: 'E-mail ünvanınız',
     langLabel: 'Dil',
     langPlaceholder: 'Language preference...',
-    langOptions: ['Türkçe', 'Azərbaycanca', 'Русский', 'Deutsch', 'English'],
     packageLabel: 'Paket',
     noteLabel: 'Klinik kontekst (istəyə bağlı)',
     notePh: 'Simptomlar, görüntü tarixi, əvvəlki diaqnoz...',

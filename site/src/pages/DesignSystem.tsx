@@ -9,7 +9,9 @@ import { Modal } from '../components/Modal'
 import { PriceTable } from '../components/PriceTable'
 import { SectionHeader, SectionLabel } from '../components/Section'
 import { MarkSpinner, Starburst } from '../components/StarburstMark'
-import content, { languages, packages } from '../content/az'
+import { content as contents, languages, packages } from '../content'
+
+const content = contents.az
 import './DesignSystem.css'
 
 const colours = [
