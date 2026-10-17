@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { CookieBar } from './components/CookieBar'
 import { type Lang, type PackageKey, content, initialLang, packageFromCode, packageLabel, saveLang } from './content'
 import { track } from './lib/analytics'
+import { installPlainAnchors } from './lib/anchors'
 import { Footer } from './sections/Footer'
 import { Header } from './sections/Header'
 import { Hero } from './sections/Hero'
@@ -31,6 +32,8 @@ export default function App() {
     document.title = c.meta.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', c.meta.description)
   }, [lang, c])
+
+  useEffect(() => installPlainAnchors(), [])
 
   const changeLang = (next: Lang) => {
     setLang(next)

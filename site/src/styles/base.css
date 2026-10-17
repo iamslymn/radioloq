@@ -88,6 +88,12 @@ p {
   border-radius: var(--radius-xs);
 }
 
+/* Sections receive focus from in-page links; the page scrolling there is the cue, not a ring. */
+section[tabindex='-1']:focus,
+main[tabindex='-1']:focus {
+  outline: none;
+}
+
 /* Type scale */
 
 .t-h1,
