@@ -5,6 +5,7 @@ import ru from './ru'
 import { type Lang, languages } from './shared'
 import tr from './tr'
 
+export * from './pricing'
 export * from './shared'
 export type { Content }
 

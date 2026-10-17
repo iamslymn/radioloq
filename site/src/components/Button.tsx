@@ -9,6 +9,8 @@ type Common = {
   size?: Size
   block?: boolean
   icon?: ReactNode
+  /** Icon shown before the label, e.g. a back arrow. */
+  iconStart?: ReactNode
   children: ReactNode
 }
 
@@ -16,12 +18,13 @@ type AsButton = Common & ButtonHTMLAttributes<HTMLButtonElement> & { href?: unde
 type AsLink = Common & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }
 
 export function Button(props: AsButton | AsLink) {
-  const { variant = 'primary', size = 'md', block, icon, children, className, ...rest } = props
+  const { variant = 'primary', size = 'md', block, icon, iconStart, children, className, ...rest } = props
   const cls = ['btn', `btn--${variant}`, `btn--${size}`, block && 'btn--block', className]
     .filter(Boolean)
     .join(' ')
   const content = (
     <>
+      {iconStart && <span className="btn__icon btn__icon--start">{iconStart}</span>}
       <span className="btn__label">{children}</span>
       {icon && <span className="btn__icon">{icon}</span>}
     </>

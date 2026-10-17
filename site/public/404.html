@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F3F8FE">
+<meta name="robots" content="noindex">
+<title>404 | Radioloq</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" href="/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/legal.css">
+<script>
+  /* Same language rule as the main site: the visitor's last choice, then Azerbaijani. */
+  var T = {
+    az: { title: 'Səhifə tapılmadı', text: 'Axtardığınız səhifə mövcud deyil və ya köçürülüb. Görüntüləriniz hələ də etibarlı əllərdədir.', label: 'Xəta 404', home: 'Ana səhifəyə qayıt', pricing: 'Qiymətlərə bax', skip: 'Əsas məzmuna keç', services: 'Xidmətlər və ödəniş', terms: 'Terms', privacy: 'Privacy', foot: '© 2026 Radioloq · Klinik qərarlar üçün müalicə həkiminizə müraciət edin · info@radioloq.com' },
+    en: { title: 'Page not found', text: 'The page you are looking for does not exist or has moved. Your scans are still in good hands.', label: 'Error 404', home: 'Back to home', pricing: 'See pricing', skip: 'Skip to main content', services: 'Services & billing', terms: 'Terms', privacy: 'Privacy', foot: '© 2026 Radioloq · For clinical decisions, always consult your treating doctor · info@radioloq.com' },
+    tr: { title: 'Sayfa bulunamadı', text: 'Aradığınız sayfa mevcut değil veya taşınmış. Görüntüleriniz hâlâ güvenli ellerde.', label: 'Hata 404', home: 'Ana sayfaya dön', pricing: 'Fiyatlara bak', skip: 'Ana içeriğe geç', services: 'Hizmetler ve ödeme', terms: 'Koşullar', privacy: 'Gizlilik', foot: '© 2026 Radioloq · Klinik kararlar için tedavi eden hekiminize danışın · info@radioloq.com' },
+    de: { title: 'Seite nicht gefunden', text: 'Die gesuchte Seite existiert nicht oder wurde verschoben. Ihre Aufnahmen sind weiterhin in guten Händen.', label: 'Fehler 404', home: 'Zurück zur Startseite', pricing: 'Preise ansehen', skip: 'Zum Hauptinhalt springen', services: 'Leistungen & Abrechnung', terms: 'AGB', privacy: 'Datenschutz', foot: '© 2026 Radioloq · Für klinische Entscheidungen wenden Sie sich an Ihren behandelnden Arzt · info@radioloq.com' },
+    ru: { title: 'Страница не найдена', text: 'Страница, которую вы ищете, не существует или была перемещена. Ваши снимки по-прежнему в надёжных руках.', label: 'Ошибка 404', home: 'На главную', pricing: 'Посмотреть цены', skip: 'Перейти к основному содержанию', services: 'Услуги и оплата', terms: 'Условия', privacy: 'Конфиденциальность', foot: '© 2026 Radioloq · По клиническим вопросам обращайтесь к лечащему врачу · info@radioloq.com' }
+  };
+  var lang = 'az';
+  try { var s = localStorage.getItem('lang'); if (s && T[s]) lang = s; } catch (e) {}
+  document.documentElement.lang = lang;
+  document.addEventListener('DOMContentLoaded', function () {
+    var t = T[lang];
+    document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.dataset.t]; });
+    document.querySelectorAll('[data-href]').forEach(function (el) { el.href = el.dataset.href.replace('{lang}', lang); });
+    document.title = '404 | Radioloq';
+  });
+</script>
+<script>
+  try {
+    if (localStorage.getItem('cookie-consent') === 'accepted') {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('config', 'G-BVC0651H14');
+      var ga = document.createElement('script');
+      ga.async = true;
+      ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-BVC0651H14';
+      document.head.appendChild(ga);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-t="skip">Əsas məzmuna keç</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="Radioloq">
+      <img src="/brand/logo_dark.svg" alt="Radioloq" width="216" height="49">
+    </a>
+  </div>
+</header>
+
+<main id="main" class="legal">
+  <div class="container">
+    <div class="section-header grid">
+      <div class="section-header__label">
+        <p class="section-label t-label"><span class="section-label__index" data-t="label">Xəta 404</span></p>
+      </div>
+      <div class="section-header__body">
+        <p class="error-page__code" aria-hidden="true">404</p>
+        <h1 class="t-h2" data-t="title">Səhifə tapılmadı</h1>
+        <p class="legal__lead muted" data-t="text">Axtardığınız səhifə mövcud deyil və ya köçürülüb. Görüntüləriniz hələ də etibarlı əllərdədir.</p>
+        <div class="error-page__actions">
+          <a class="btn btn--primary" href="/"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg><span data-t="home">Ana səhifəyə qayıt</span></a>
+          <a class="btn btn--lg" href="/#pricing" data-t="pricing">Qiymətlərə bax</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="inverse site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <a href="/" class="site-footer__logo" aria-label="Radioloq">
+        <img src="/brand/logo_white.svg" alt="Radioloq" width="256" height="58">
+      </a>
+      <nav class="site-footer__links t-small" aria-label="Footer">
+        <a href="/services-az" data-href="/services-{lang}" data-t="services">Xidmətlər və ödəniş</a>
+        <a href="/terms-az" data-href="/terms-{lang}" data-t="terms">Terms</a>
+        <a href="/privacy-az" data-href="/privacy-{lang}" data-t="privacy">Privacy</a>
+        <a href="mailto:info@radioloq.com">info@radioloq.com</a>
+      </nav>
+    </div>
+    <p class="site-footer__text t-small faint" data-t="foot">© 2026 Radioloq · Klinik qərarlar üçün müalicə həkiminizə müraciət edin · info@radioloq.com</p>
+  </div>
+</footer>
+</body>
+</html>

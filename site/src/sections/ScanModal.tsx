@@ -4,7 +4,20 @@ import { Checkbox, Select, TextArea, TextField } from '../components/Field'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Lock, Notice } from '../components/Icon'
 import { Modal } from '../components/Modal'
 import { MarkSpinner } from '../components/StarburstMark'
-import { type Content, type PackageKey, languageLabel, languages, links, packages } from '../content'
+import {
+  type Content,
+  type LinkedText,
+  type PackageKey,
+  PRICE,
+  STRIPE,
+  TIER_NAME,
+  formatPrice,
+  isPaymentLinkMissing,
+  languageLabel,
+  languages,
+  links,
+  packageLabel,
+} from '../content'
 import { track } from '../lib/analytics'
 import './ScanModal.css'
 
@@ -18,15 +31,27 @@ type Props = {
   onClose: () => void
 }
 
+const Linked = ({ t }: { t: LinkedText }) => (
+  <>
+    {t.pre}
+    <a href={t.href} target="_blank" rel="noreferrer">
+      {t.link}
+    </a>
+    {t.post}
+  </>
+)
+
 export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
   const m = c.modal
-  const pack = packages[pkg]
+  const label = packageLabel(pkg)
+  const amount = formatPrice(PRICE[pkg])
   const tier = c.pricing.tiers.find((t) => t.key === pkg)!
 
   const [step, setStep] = useState<Step>(initialStep || 'payment')
-  const [consent, setConsent] = useState([false, false, false])
+  const [consent, setConsent] = useState([false, false, false, false])
   const [consentErr, setConsentErr] = useState(false)
-  const [opened, setOpened] = useState<'stripe' | 'paypal' | null>(null)
+  const [linkErr, setLinkErr] = useState(false)
+  const [opening, setOpening] = useState(false)
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -38,13 +63,12 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
   const [sending, setSending] = useState(false)
   const [done, setDone] = useState(false)
 
-  const poll = useRef<number | null>(null)
   const heading = useRef<HTMLHeadingElement>(null)
   const firstRender = useRef(true)
 
   useEffect(() => {
-    if (open) track('modal_open', { event_category: 'funnel', event_label: pack.label })
-  }, [open, pack.label])
+    if (open) track('modal_open', { event_category: 'funnel', event_label: label })
+  }, [open, label])
 
   useEffect(() => {
     if (firstRender.current) {
@@ -54,36 +78,31 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
     heading.current?.focus()
   }, [step, done])
 
-  useEffect(() => () => void (poll.current && window.clearInterval(poll.current)), [])
-
-  const startPolling = () => {
-    if (poll.current) window.clearInterval(poll.current)
-    poll.current = window.setInterval(async () => {
-      const session = new URLSearchParams(window.location.search).get('session')
-      if (!session) return
-      try {
-        const res = await fetch(`${links.api}/verify?session=${session}`)
-        if ((await res.json()).valid) {
-          if (poll.current) window.clearInterval(poll.current)
-          setStep('upload')
-          window.history.replaceState({}, '', window.location.pathname)
-        }
-      } catch {
-        /* keep polling */
-      }
-    }, 2000)
+  const toggleConsent = (i: number, value: boolean) => {
+    const next = consent.map((v, j) => (j === i ? value : v))
+    setConsent(next)
+    if (next.every(Boolean)) setConsentErr(false)
   }
 
-  const pay = (method: 'stripe' | 'paypal') => {
+  const pay = () => {
     if (consent.some((v) => !v)) {
       setConsentErr(true)
       return
     }
-    track('payment_click', { event_category: 'funnel', event_label: pack.label, payment_method: method })
-    window.open(pack[method], '_blank')
-    setOpened(method)
+    const url = STRIPE[pkg]
+    if (isPaymentLinkMissing(url)) {
+      setLinkErr(true)
+      return
+    }
+    track('payment_click', { event_category: 'funnel', event_label: label, payment_method: 'stripe' })
+    window.open(url, '_blank')
+    setOpening(true)
     setStep('pending')
-    startPolling()
+  }
+
+  const backToPayment = () => {
+    setOpening(false)
+    setStep('payment')
   }
 
   const submit = async () => {
@@ -98,10 +117,10 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
     const body = JSON.stringify({
       name,
       email,
-      package: pack.label,
+      package: label,
       language: language || 'Not selected',
       clinical_context: note || 'Not provided',
-      _subject: `New scan request — Radioloq | ${pack.label}`,
+      _subject: `New scan request | Radioloq | ${label}`,
       _replyto: email,
     })
 
@@ -114,7 +133,7 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
           body,
         })
         if (res.ok) {
-          track('upload_complete', { event_category: 'funnel', event_label: pack.label })
+          track('upload_complete', { event_category: 'funnel', event_label: label })
           setDone(true)
           setSending(false)
           return
@@ -137,7 +156,7 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
       <span>
         {tier.tier} · {tier.name}
       </span>
-      <span className="t-num">€{pack.price}</span>
+      <span className="t-num">{amount}</span>
     </p>
   )
 
@@ -171,33 +190,9 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
             </aside>
 
             <div className="scan__consents">
-              {[
-                <>
-                  {m.chk1.pre}
-                  <a href={m.chk1.href} target="_blank" rel="noreferrer">
-                    {m.chk1.link}
-                  </a>
-                  {m.chk1.post}
-                </>,
-                <>
-                  {m.chk2.pre}
-                  <a href={m.chk2.href} target="_blank" rel="noreferrer">
-                    {m.chk2.link}
-                  </a>
-                  {m.chk2.post}
-                </>,
-                <>{m.chk3}</>,
-              ].map((label, i) => (
-                <Checkbox
-                  key={i}
-                  checked={consent[i]}
-                  invalid={consentErr}
-                  onChange={(v) => {
-                    setConsent((prev) => prev.map((p, j) => (j === i ? v : p)))
-                    setConsentErr(false)
-                  }}
-                >
-                  {label}
+              {[m.chk1, m.chk2, m.chk3, m.chk4].map((text, i) => (
+                <Checkbox key={i} checked={consent[i]} invalid={consentErr && !consent[i]} onChange={(v) => toggleConsent(i, v)}>
+                  {typeof text === 'string' ? text : <Linked t={text} />}
                 </Checkbox>
               ))}
             </div>
@@ -208,17 +203,32 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
               </p>
             )}
 
+            <section className="scan__summary" aria-labelledby="scan-summary-title">
+              <h3 className="t-label faint" id="scan-summary-title">
+                {m.sumTitle}
+              </h3>
+              <p className="scan__summary-row">
+                <span>{TIER_NAME[pkg]}</span>
+                <span className="t-num muted">{amount}</span>
+              </p>
+              <p className="t-small muted">{m.scope[pkg]}</p>
+              <p className="scan__summary-total">
+                <span>{m.sumTotal}</span>
+                <span className="t-num">{amount}</span>
+              </p>
+              <p className="t-small faint">{m.sumNote}</p>
+            </section>
+
+            {linkErr && (
+              <p className="scan__error t-small" role="alert">
+                {m.linkErr}
+              </p>
+            )}
+
             <div className="scan__pay">
-              <p className="t-label faint">{m.payLabel}</p>
-              <div className="scan__pay-row">
-                <Button block onClick={() => pay('stripe')} disabled={opened === 'stripe'}>
-                  {opened === 'stripe' ? m.opening : m.stripe}
-                </Button>
-                <span className="t-small faint">{m.or}</span>
-                <Button block variant="secondary" onClick={() => pay('paypal')} disabled={opened === 'paypal'}>
-                  {opened === 'paypal' ? m.opening : m.paypal}
-                </Button>
-              </div>
+              <Button block onClick={pay} disabled={opening} aria-disabled={consent.some((v) => !v) || undefined}>
+                {opening ? m.opening : `${m.bookBtn} · ${m.payCard}`}
+              </Button>
               <p className="scan__secure t-small faint">
                 <Lock size={14} />
                 {m.secure}
@@ -239,8 +249,8 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
               <Button block icon={<ArrowRight />} onClick={() => setStep('upload')}>
                 {m.confirmBtn}
               </Button>
-              <Button block variant="secondary" onClick={() => setStep('payment')}>
-                <ArrowLeft size={14} /> {m.backBtn}
+              <Button block variant="secondary" iconStart={<ArrowLeft />} onClick={backToPayment}>
+                {m.backBtn}
               </Button>
             </div>
           </div>
@@ -267,6 +277,8 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
                 </li>
               ))}
             </ol>
+
+            <p className="scan__suitability t-small muted">{m.eignungNote}</p>
 
             <form
               className="scan__form"
@@ -312,8 +324,8 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
                     <option key={l.code}>{l.label}</option>
                   ))}
                 </Select>
-                <Select label={m.packageLabel} value={pack.label} disabled>
-                  <option>{pack.label}</option>
+                <Select label={m.packageLabel} value={label} disabled>
+                  <option>{label}</option>
                 </Select>
               </div>
               <TextArea label={m.noteLabel} placeholder={m.notePh} value={note} onChange={(e) => setNote(e.target.value)} />

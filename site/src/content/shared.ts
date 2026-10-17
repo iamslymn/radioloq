@@ -9,32 +9,7 @@ export const links = {
   courses: 'https://courses.radioloq.com/',
   upload: 'https://sync.luckycloud.de/u/d/47c6a267df094a9a8e65/',
   formspree: 'https://formspree.io/f/xrejnvok',
-  api: 'https://radioloq-api.vercel.app',
 } as const
-
-export type PackageKey = 'basic' | 'standard' | 'premium'
-
-/** Package identifiers as the payment links, API and Formspree inbox expect them. */
-export const packages: Record<PackageKey, { label: string; price: number; stripe: string; paypal: string }> = {
-  basic: {
-    label: 'Basic — €52',
-    price: 52,
-    stripe: 'https://buy.stripe.com/00w5kv7ji6nrh258nO8ww04',
-    paypal: 'https://www.paypal.com/ncp/payment/FBBSBEV9XZQZ4',
-  },
-  standard: {
-    label: 'Standard — €72',
-    price: 72,
-    stripe: 'https://buy.stripe.com/fZu9AL6febHL1370Vm8ww05',
-    paypal: 'https://www.paypal.com/ncp/payment/MKFVEECTYTEDE',
-  },
-  premium: {
-    label: 'Premium — €83',
-    price: 83,
-    stripe: 'https://buy.stripe.com/bJe3cn7ji3bf6nrdI88ww06',
-    paypal: 'https://www.paypal.com/ncp/payment/KDWLGX32B8B28',
-  },
-}
 
 export type Lang = 'az' | 'en' | 'tr' | 'de' | 'ru'
 

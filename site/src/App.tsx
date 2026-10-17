@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CookieBar } from './components/CookieBar'
-import { type Lang, type PackageKey, content, initialLang, packages, saveLang } from './content'
+import { type Lang, type PackageKey, content, initialLang, packageFromCode, packageLabel, saveLang } from './content'
 import { track } from './lib/analytics'
 import { Footer } from './sections/Footer'
 import { Header } from './sections/Header'
@@ -11,11 +11,11 @@ import './sections/landing.css'
 
 type ModalState = { open: boolean; pkg: PackageKey; step: Step | null; session: number }
 
-/** Payment providers redirect back with ?paid=1&pkg=basic|standard|premium. */
+/** Stripe redirects back with ?paid=1&pkg=basic|standard|premium. */
 function resumeFromPayment(): ModalState {
   const params = new URLSearchParams(window.location.search)
-  const key = params.get('pkg') as PackageKey | null
-  if (params.get('paid') === '1' && key && key in packages) {
+  const key = packageFromCode(params.get('pkg'))
+  if (params.get('paid') === '1' && key) {
     return { open: true, pkg: key, step: 'upload', session: 1 }
   }
   return { open: false, pkg: 'basic', step: null, session: 0 }
@@ -45,9 +45,9 @@ export default function App() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     if (params.get('paid') !== '1') return
-    const key = params.get('pkg') as PackageKey | null
-    if (key && key in packages) {
-      track('payment_redirect_resume', { event_category: 'funnel', event_label: packages[key].label })
+    const key = packageFromCode(params.get('pkg'))
+    if (key) {
+      track('payment_redirect_resume', { event_category: 'funnel', event_label: packageLabel(key) })
     }
     window.history.replaceState({}, '', window.location.pathname)
   }, [])

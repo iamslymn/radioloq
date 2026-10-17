@@ -5,7 +5,7 @@ import { Button, TextLink } from '../components/Button'
 import { ArrowRight, ArrowUpRight, Instagram, LinkedIn, Mail, Video } from '../components/Icon'
 import { PriceTable } from '../components/PriceTable'
 import { SectionHeader, SectionLabel } from '../components/Section'
-import { type Content, type PackageKey, links, packages } from '../content'
+import { type Content, type PackageKey, PRICE, links } from '../content'
 import { stagger } from '../lib/stagger'
 import { useReveal } from '../lib/useReveal'
 
@@ -63,7 +63,7 @@ export function FirstAssessment({ c }: P) {
 
 export function Pricing({ c, onSelect }: P & { onSelect: (key: PackageKey) => void }) {
   const ref = useReveal<HTMLDivElement>()
-  const tiers = c.pricing.tiers.map((t) => ({ ...t, price: packages[t.key].price }))
+  const tiers = c.pricing.tiers.map((t) => ({ ...t, price: PRICE[t.key] }))
   return (
     <section className="section" id="pricing" aria-labelledby="pricing-title">
       <div className="container">
@@ -71,6 +71,12 @@ export function Pricing({ c, onSelect }: P & { onSelect: (key: PackageKey) => vo
         <div className="pricing__table" ref={ref} data-reveal>
           <PriceTable tiers={tiers} onSelect={(k) => onSelect(k as PackageKey)} />
           <p className="t-small faint pricing__vat">{c.pricing.vat}</p>
+          <div className="pricing__billing">
+            <p className="t-small muted">{c.pricing.note}</p>
+            <TextLink href={`/services-${c.lang}`} icon={<ArrowRight size={14} />}>
+              {c.pricing.link}
+            </TextLink>
+          </div>
         </div>
       </div>
     </section>

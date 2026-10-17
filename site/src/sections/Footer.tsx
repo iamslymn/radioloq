@@ -12,6 +12,7 @@ export function Footer({ c }: { c: Content }) {
             <Logo />
           </a>
           <nav className="site-footer__links t-small" aria-label="Footer">
+            <a href={f.servicesHref}>{f.services}</a>
             <a href={f.termsHref}>{f.terms}</a>
             <a href={f.privacyHref}>{f.privacy}</a>
             <a href={links.email}>{links.emailLabel}</a>

@@ -9,7 +9,7 @@ import { Modal } from '../components/Modal'
 import { PriceTable } from '../components/PriceTable'
 import { SectionHeader, SectionLabel } from '../components/Section'
 import { MarkSpinner, Starburst } from '../components/StarburstMark'
-import { content as contents, languages, packages } from '../content'
+import { PRICE, content as contents, languages } from '../content'
 
 const content = contents.az
 import './DesignSystem.css'
@@ -236,7 +236,7 @@ export default function DesignSystem() {
 
         <Block index="08" title="Pricing table">
           <PriceTable
-            tiers={content.pricing.tiers.map((t) => ({ ...t, price: packages[t.key].price }))}
+            tiers={content.pricing.tiers.map((t) => ({ ...t, price: PRICE[t.key] }))}
             onSelect={() => setModal(true)}
           />
         </Block>
