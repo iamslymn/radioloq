@@ -1,0 +1,127 @@
+.courses__hero {
+  padding-bottom: var(--section-y);
+}
+
+.courses__form {
+  display: grid;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 36rem;
+}
+
+.waitlist {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.waitlist__row {
+  display: grid;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+@media (min-width: 560px) {
+  .waitlist__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+.waitlist__submit {
+  height: 3rem;
+}
+
+/* Bots fill this in; people never see it. */
+.waitlist__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.waitlist__error {
+  color: var(--danger);
+}
+
+.waitlist--done {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--navy);
+  animation: waitlist-in 260ms var(--ease-out) both;
+}
+
+.waitlist__tick {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  background: var(--surface-tint);
+}
+
+.waitlist__done-title {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+@keyframes waitlist-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.courses__band-grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: end;
+}
+
+@media (min-width: 900px) {
+  .courses__band-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+.courses__band-sub {
+  margin-top: var(--space-3);
+  max-width: 28rem;
+}
+
+.courses__band .courses__form a {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
+.courses__band .field__label {
+  color: var(--paper-2);
+}
+
+.courses__header-end .btn {
+  display: inline-flex;
+}
+
+@media (max-width: 639px) {
+  .courses__header-end .site-header__cta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waitlist--done {
+    animation: none;
+  }
+}

@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 /** Routes the React app answers itself. Everything else without a file is a 404. */
-const APP_ROUTES = new Set(['/', '/design-system'])
+const APP_ROUTES = new Set(['/', '/design-system', '/courses'])
 const INTERNAL = /^\/(@|src\/|node_modules\/|__)/
 
 /**

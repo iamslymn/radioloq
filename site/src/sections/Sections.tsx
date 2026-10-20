@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Accordion } from '../components/Accordion'
 import { Mark } from '../components/Logo'
 import { Button, TextLink } from '../components/Button'
-import { ArrowRight, ArrowUpRight, Instagram, LinkedIn, Mail, Video } from '../components/Icon'
+import { StepConfident, StepReview, StepTalk, StepUpload, ArrowRight, ArrowUpRight, Instagram, LinkedIn, Mail, Video } from '../components/Icon'
 import { PriceTable } from '../components/PriceTable'
 import { SectionHeader, SectionLabel } from '../components/Section'
 import { type Content, type PackageKey, PRICE, links } from '../content'
@@ -11,6 +11,8 @@ import { useReveal } from '../lib/useReveal'
 
 type P = { c: Content }
 
+const STEP_ICONS = [StepUpload, StepReview, StepTalk, StepConfident]
+
 export function Process({ c }: P) {
   const ref = useReveal<HTMLOListElement>()
   return (
@@ -18,13 +20,27 @@ export function Process({ c }: P) {
       <div className="container">
         <SectionHeader index="01" label={c.process.label} title={c.process.title} lead={c.process.sub} id="how-title" />
         <ol className="steps" ref={ref}>
-          {c.process.steps.map((s, i) => (
-            <li className="steps__item" key={i} data-reveal style={stagger(i)}>
-              <span className="steps__index t-label t-num">{String(i + 1).padStart(2, '0')}</span>
-              <h3 className="steps__title">{s.title}</h3>
-              <p className="steps__desc muted">{s.desc}</p>
-            </li>
-          ))}
+          {c.process.steps.map((s, i) => {
+            const Icon = STEP_ICONS[i % STEP_ICONS.length]
+            return (
+              <li className="steps__item" key={i} data-reveal style={stagger(i)}>
+                <article className="steps__card">
+                  <div className="steps__body">
+                    <div className="steps__top">
+                      <span className="steps__icon">
+                        <Icon size={24} />
+                      </span>
+                      <span className="steps__index t-label t-num">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <h3 className="steps__title">{s.title}</h3>
+                  </div>
+                  <p className="steps__desc t-small muted">{s.desc}</p>
+                </article>
+              </li>
+            )
+          })}
         </ol>
       </div>
     </section>
