@@ -9,7 +9,7 @@ import { type Lang, type LinkedText, links } from './shared'
 const az = {
   lang: 'az' as Lang,
   meta: {
-    title: 'Radioloq — Almaniya standartında ikinci baxış, öz dilinizdə.',
+    title: 'Radioloq. Almaniya standartında ikinci baxış, öz dilinizdə.',
     description:
       'Almaniyada lisenziyalı həkim tərəfindən MRT və KT görüntülərinizə ikinci baxış. 48 saat ərzində öz dilinizdə aydın izah.',
   },
@@ -266,7 +266,7 @@ const az = {
     doneText: 'İndi aşağıdakı düymə ilə görüntülərinizi yükləyin.',
     uploadBtn: 'Görüntüləri yüklə',
     uploadSecureNote: 'Şifrələnmiş yükləmə · Almaniyada serverlər · Hesab tələb olunmur',
-    submitError: 'Something went wrong — please try again or email info@radioloq.com directly.',
+    submitError: 'Nəsə alınmadı. Yenidən cəhd edin və ya birbaşa info@radioloq.com ünvanına yazın.',
   },
 }
 

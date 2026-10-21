@@ -4,7 +4,7 @@ import { links } from './shared'
 const tr: Content = {
   lang: 'tr',
   meta: {
-    title: 'Radioloq — Alman standardında ikinci görüş, kendi dilinizde.',
+    title: 'Radioloq. Alman standardında ikinci görüş, kendi dilinizde.',
     description:
       'MR ve BT görüntülerinize Almanya’da lisanslı bir hekim tarafından ikinci bakış. 48 saat içinde kendi dilinizde anlaşılır açıklama.',
   },
@@ -135,7 +135,7 @@ const tr: Content = {
     items: [
       {
         q: 'Değerlendirmemi kim yapıyor?',
-        a: 'Görüntülerinizi bizzat ben inceliyor ve raporunuzu kendim hazırlıyorum; hiçbir yapay zekâ veya otomatik sistem kullanılmaz. Tedavinize destek amacıyla sunulan bu ikinci görüş hizmeti, yerel doktorunuzun yapacağı ileri tetkiklerin yerini tutmaz. Klinik kararlar için mutlaka tedavi eden doktorunuza başvurun.',
+        a: 'Görüntülerinizi bizzat ben inceliyor ve raporunuzu kendim hazırlıyorum. Hiçbir yapay zekâ veya otomatik sistem kullanılmaz. Tedavinize destek amacıyla sunulan bu ikinci görüş hizmeti, yerel doktorunuzun yapacağı ileri tetkiklerin yerini tutmaz. Klinik kararlar için mutlaka tedavi eden doktorunuza başvurun.',
       },
       {
         q: 'EvKB veya başka bir kurumla bağlantınız var mı?',
@@ -155,7 +155,7 @@ const tr: Content = {
       },
       {
         q: 'Dosyalarım başka amaçlarla kullanılacak mı?',
-        a: 'Kesinlikle hayır. Görüntüleriniz yalnızca değerlendirmenizi hazırlamak için kullanılır; eğitim, araştırma veya yapay zekâ için asla kullanılmaz.',
+        a: 'Kesinlikle hayır. Görüntüleriniz yalnızca değerlendirmenizi hazırlamak için kullanılır. Eğitim, araştırma veya yapay zekâ için asla kullanılmaz.',
       },
       {
         q: 'Verilerim nerede saklanıyor?',
@@ -260,7 +260,7 @@ const tr: Content = {
     doneText: 'Şimdi aşağıdaki düğmeden görüntülerinizi yükleyin.',
     uploadBtn: 'Görüntüleri yükle',
     uploadSecureNote: 'Şifreli yükleme · Almanya\'da sunucular · Hesap gerekmiyor',
-    submitError: 'Bir sorun oluştu — lütfen tekrar deneyin veya doğrudan info@radioloq.com adresine yazın.',
+    submitError: 'Bir sorun oluştu. Lütfen tekrar deneyin veya doğrudan info@radioloq.com adresine yazın.',
   },
 }
 

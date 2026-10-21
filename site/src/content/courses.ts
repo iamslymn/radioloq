@@ -147,13 +147,13 @@ const tr: CoursesCopy = {
 const de: CoursesCopy = {
   meta: {
     title: 'Radioloq Kurse: bald verfügbar',
-    description: 'Strukturierte Radiologie-Weiterbildung für Ärztinnen und Ärzte, vom ersten Befund bis zum sicheren Lesen von Bildern. E-Mail hinterlassen, wir melden uns zum Start.',
+    description: 'Strukturierte Radiologie-Weiterbildung für Ärzte, vom ersten Befund bis zum sicheren Lesen von Bildern. E-Mail hinterlassen, wir melden uns zum Start.',
   },
   back: 'Zurück zu radioloq.com',
   badge: 'Radioloq Kurse · Bald verfügbar',
   titleLead: 'Radiologie lernen,',
   titleTail: 'Schritt für Schritt.',
-  sub: 'Strukturierte Kurse für Ärztinnen und Ärzte, vom ersten Befund bis zum sicheren Lesen von Bildern. Der erste Kurs ist noch in Vorbereitung. Hinterlassen Sie Ihre E-Mail, und Sie erhalten am Starttag eine einzige Nachricht.',
+  sub: 'Strukturierte Kurse für Ärzte, vom ersten Befund bis zum sicheren Lesen von Bildern. Der erste Kurs ist noch in Vorbereitung. Hinterlassen Sie Ihre E-Mail, und Sie erhalten am Starttag eine einzige Nachricht.',
   form: {
     email: 'Ihre E-Mail',
     emailPh: 'name@example.com',

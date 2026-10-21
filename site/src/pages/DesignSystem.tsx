@@ -132,7 +132,7 @@ export default function DesignSystem() {
           </div>
         </Block>
 
-        <Block index="03" title="Space, shape, depth" intro="A 4px base. Corners stay small (4 to 16px); pills are not part of the system. Depth comes from hairlines first, shadows only on overlays.">
+        <Block index="03" title="Space, shape, depth" intro="A 4px base. Corners stay small (4 to 16px). Pills are not part of the system. Depth comes from hairlines first, shadows only on overlays.">
           <div className="ds-space">
             {spacing.map(([k, px]) => (
               <div className="ds-space__row" key={k}>
@@ -157,7 +157,7 @@ export default function DesignSystem() {
           </div>
         </Block>
 
-        <Block index="04" title="Motion" intro="Fast, ease-out, and only where it explains something. UI motion stays under 300ms; exits are quicker than entries. Hover effects only on devices that can hover.">
+        <Block index="04" title="Motion" intro="Fast, ease-out, and only where it explains something. UI motion stays under 300ms. Exits are quicker than entries. Hover effects only on devices that can hover.">
           <div className="ds-motion">
             {easings.map((e) => (
               <div className="ds-motion__row" key={e.name} data-play={play}>
@@ -179,7 +179,7 @@ export default function DesignSystem() {
               <tbody>
                 <tr><td>Button press</td><td className="t-num">140ms · scale(0.97)</td></tr>
                 <tr><td>Hover colour</td><td className="t-num">160ms · ease</td></tr>
-                <tr><td>Popover, accordion</td><td className="t-num">200–260ms · ease-out</td></tr>
+                <tr><td>Popover, accordion</td><td className="t-num">200 to 260ms · ease-out</td></tr>
                 <tr><td>Modal in / out</td><td className="t-num">260ms in · 180ms out</td></tr>
                 <tr><td>Scroll reveal</td><td className="t-num">560ms · 12px · 40ms stagger · once</td></tr>
               </tbody>

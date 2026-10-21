@@ -139,7 +139,7 @@ export function About({ c }: P) {
               </span>
               {a.quote}
             </p>
-            <footer className="t-small muted">— {a.cite}</footer>
+            <footer className="t-small muted">{a.cite}</footer>
           </blockquote>
         </div>
       </div>

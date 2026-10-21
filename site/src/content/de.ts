@@ -4,7 +4,7 @@ import { links } from './shared'
 const de: Content = {
   lang: 'de',
   meta: {
-    title: 'Radioloq — Zweitmeinung nach deutschem Standard, in Ihrer Sprache.',
+    title: 'Radioloq. Zweitmeinung nach deutschem Standard, in Ihrer Sprache.',
     description:
       'Eine Zweitmeinung zu Ihren MRT- und CT-Aufnahmen von einem in Deutschland approbierten Arzt. Innerhalb von 48 Stunden verständlich erklärt, in Ihrer Sprache.',
   },
@@ -135,7 +135,7 @@ const de: Content = {
     items: [
       {
         q: 'Wer führt meine Beurteilung durch?',
-        a: 'Ich beurteile Ihre Aufnahmen persönlich und erstelle Ihren Befund selbst — es wird keine künstliche Intelligenz und kein automatisiertes System eingesetzt. Diese unterstützende Zweitmeinung ersetzt keine weiteren Untersuchungen durch Ihren behandelnden Arzt vor Ort. Für klinische Entscheidungen wenden Sie sich bitte immer an Ihren behandelnden Arzt.',
+        a: 'Ich beurteile Ihre Aufnahmen persönlich und erstelle Ihren Befund selbst. Es wird keine künstliche Intelligenz und kein automatisiertes System eingesetzt. Diese unterstützende Zweitmeinung ersetzt keine weiteren Untersuchungen durch Ihren behandelnden Arzt vor Ort. Für klinische Entscheidungen wenden Sie sich bitte immer an Ihren behandelnden Arzt.',
       },
       {
         q: 'Stehen Sie in Verbindung mit dem EvKB oder einer anderen Einrichtung?',
@@ -155,7 +155,7 @@ const de: Content = {
       },
       {
         q: 'Werden meine Dateien für andere Zwecke verwendet?',
-        a: 'Auf keinen Fall. Ihre Aufnahmen werden ausschließlich für Ihre Beurteilung verwendet — niemals für Training, Forschung oder künstliche Intelligenz.',
+        a: 'Auf keinen Fall. Ihre Aufnahmen werden ausschließlich für Ihre Beurteilung verwendet, niemals für Training, Forschung oder künstliche Intelligenz.',
       },
       {
         q: 'Wo werden meine Daten gespeichert?',
@@ -174,8 +174,8 @@ const de: Content = {
     ],
   },
   doctors: {
-    title: 'Sie sind Ärztin oder Arzt?',
-    sub: 'Strukturierte Radiologie-Weiterbildung — vom Verstehen Ihres ersten Befunds bis zum sicheren Befunden von Aufnahmen.',
+    title: 'Sie sind Arzt?',
+    sub: 'Strukturierte Radiologie-Weiterbildung, vom Verstehen Ihres ersten Befunds bis zum sicheren Befunden von Aufnahmen.',
     cta: 'Kurse ansehen',
   },
   footer: {
@@ -260,7 +260,7 @@ const de: Content = {
     doneText: 'Bitte laden Sie nun Ihre Aufnahmen über die Schaltfläche unten hoch.',
     uploadBtn: 'Aufnahmen hochladen',
     uploadSecureNote: 'Verschlüsselter Upload · Server in Deutschland · Kein Konto erforderlich',
-    submitError: 'Etwas ist schiefgelaufen — bitte versuchen Sie es erneut oder schreiben Sie direkt an info@radioloq.com.',
+    submitError: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@radioloq.com.',
   },
 }
 

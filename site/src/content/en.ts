@@ -4,7 +4,7 @@ import { links } from './shared'
 const en: Content = {
   lang: 'en',
   meta: {
-    title: 'Radioloq — A German-standard second opinion, in your language.',
+    title: 'Radioloq. A German-standard second opinion, in your language.',
     description:
       'A second look at your MRI and CT scans by a doctor licensed in Germany. A clear explanation in your own language within 48 hours.',
   },
@@ -135,7 +135,7 @@ const en: Content = {
     items: [
       {
         q: 'Who carries out my assessment?',
-        a: 'I personally review your scans and write your report myself — no artificial intelligence or automated systems are used. This second opinion is meant to support your care and does not replace further examinations by your local treating doctor. For clinical decisions, always consult your local treating doctor.',
+        a: 'I personally review your scans and write your report myself. No artificial intelligence or automated systems are used. This second opinion is meant to support your care and does not replace further examinations by your local treating doctor. For clinical decisions, always consult your local treating doctor.',
       },
       {
         q: 'Are you affiliated with EvKB or any other institution?',
@@ -155,7 +155,7 @@ const en: Content = {
       },
       {
         q: 'Will my files be used for anything else?',
-        a: 'Absolutely not. Your scans are used only to prepare your assessment — never for training, research or artificial intelligence.',
+        a: 'Absolutely not. Your scans are used only to prepare your assessment, never for training, research or artificial intelligence.',
       },
       {
         q: 'Where is my data stored?',
@@ -260,7 +260,7 @@ const en: Content = {
     doneText: 'Now please upload your scan files using the button below.',
     uploadBtn: 'Upload scan files',
     uploadSecureNote: 'Encrypted upload · Servers in Germany · No account needed',
-    submitError: 'Something went wrong — please try again or email info@radioloq.com directly.',
+    submitError: 'Something went wrong. Please try again or email info@radioloq.com directly.',
   },
 }
 

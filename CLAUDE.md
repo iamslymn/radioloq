@@ -79,68 +79,45 @@ Stripe tarafında **otomatik vergi kapalı** ve **Adaptive Pricing kapalı** kal
 ## Yapılacaklar
 
 Sayıları kendin doğrula, dosya değişmiş olabilir. Yarım kalan iş burada açıkça
-kaydedilir, "sonra dönerim" denmez.
+kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoksa
+`[—–]` gibi aramalar Kiril ve Türkçe harflerin baytlarını da sayar.
 
-### 1. Kapanış bölümü başlığı, yaklaşık 27 yer
+### Açık
 
-Raporun kapanışında iki başlık vaat ediliyor. İkincisi kaldırılacak, çünkü kullanım
-şartları "hiçbir tıbbi tedbir önerilmez" diyor ve bu başlık tam tersini vaat ediyor.
+1. **Impressum, YAPMA, SOR.** `public/services-de.html` ve `public/services-az.html`
+   Impressum'a atıf yapıyor ama öyle bir sayfa yok. Kırık vaat. Impressum adresi henüz
+   kararlaştırılmadı, bu madde o karar verilmeden tamamlanamaz. Sayfayı uydurma.
+   Proje sahibine sor: atıfı şimdilik kaldırmak mı, yoksa adres netleşene kadar
+   böyle bırakmak mı. Impressum'da ayrıca telefon numarası gerekiyor, o da henüz yok.
+2. **`services-*.html` içinde fiyatlar elle yazılı** (beş dosya, `class="price"`).
+   Tutarlar şu an `pricing.ts` ile aynı ama tek kaynak kuralı orada tutmuyor.
+   Bu dosyalar `public/` altında statik, `pricing.ts`'i okuyamıyor. Çözüm build
+   sırasında basmak olur, sahibi karar verecek.
+3. **Hukuki sayfalarda tire kalıyor**, sahibi onaylamadan dokunulmaz:
+   `terms*.html` iade süresi `5–10`, `privacy*.html` madde aralığı `b–e` ve adres `2–4`.
+4. **`terms.html` ve `terms-de.html`:** `wählen Sie sofort den Notruf .` cümlesinde
+   numara eksik görünüyor. Hukuki metin, sahibine sorulacak.
 
-**Kalacak:** `Was bedeutet das für mich?` ve beş dildeki karşılığı.
-**Gidecek:** `Was soll ich jetzt tun?` / `What should I do now?` / `Şimdi ne yapmalıyım?` /
-`İndi nə etməliyəm?` / `Что мне теперь делать?`
+### Tamamlanan, 21.10.2026
 
-Yerler: `src/content/{de,en,tr,az,ru}.ts` ve `public/services-{de,en,tr,az,ru}.html`.
-`services-*.html` içinde `Und was soll ich jetzt tun` biçiminde, küçük harfle geçiyor.
-Büyük harfe duyarlı arama kaçırır.
+- Raporun kapanışındaki ikinci başlık (`Was soll ich jetzt tun?` ve beş dildeki
+  karşılığı) her yerden kaldırıldı. Kalan başlık `Was bedeutet das für mich?`.
+  Gerekli yerlerde yerine, tedavi eden hekimle netleştirilecek noktalara atıf kondu.
+- Terms sayfalarında tedavi maddesi onaylı metinle değiştirildi, beş dil:
 
-Başlığın yerine konan cümle tedavi önerisi vaat etmemeli. "Hekiminizle netleştirmeniz
-gereken noktaları belirtiyorum" yönünde bir ifade uygundur,
-"ne yapmanız gerektiğini söylüyorum" değildir.
+  > wir verschreiben, empfehlen oder ändern keine Behandlungen oder Medikamente und
+  > erstellen keine umfassende Therapieplanung. Hinweise auf weiteren ärztlichen
+  > Abklärungsbedarf können enthalten sein
 
-### 2. Tedavi önerisi maddesi, hukuki sayfalar
-
-Mevcut hali fazla geniş ve kritik cümle eksik:
-
-> wir verschreiben, empfehlen oder ändern keine Behandlungen, Medikamente
-> **oder medizinischen Maßnahmen**
-
-Olması gereken, onaylanmış metin:
-
-> wir verschreiben, empfehlen oder ändern keine Behandlungen oder Medikamente und
-> erstellen keine umfassende Therapieplanung. Hinweise auf weiteren ärztlichen
-> Abklärungsbedarf können enthalten sein
-
-Bu metin onaylıdır, **yeniden yazılmaz.** Beş dile de aynı anlamla taşınır.
-Yerler: `terms.html`, `terms-{de,en,tr,az,ru}.html`.
-
-### 3. Tire temizliği
-
-`src/content/` altındaki `ru.ts` (Rusça istisnası geçerli), `courses.ts`, `de.ts`,
-`en.ts`, `tr.ts`, `az.ts`.
-
-### 4. Düzyazı noktalı virgülleri
-
-`courses.ts`, `shared.ts`, `tr.ts`, `az.ts`.
-
-### 5. Cinsiyet çiftlemesi
-
-- `src/content/courses.ts` → `für Ärztinnen und Ärzte` (2 yer)
-- `src/content/de.ts` → `Sie sind Ärztin oder Arzt?`
-
-### 6. Impressum, YAPMA, SOR
-
-`public/services-de.html` ve `public/services-az.html` Impressum'a atıf yapıyor
-ama öyle bir sayfa yok. Kırık vaat.
-
-Impressum adresi henüz kararlaştırılmadı, bu madde o karar verilmeden tamamlanamaz.
-Sayfayı uydurma. Proje sahibine sor: atıfı şimdilik kaldırmak mı, yoksa adres
-netleşene kadar böyle bırakmak mı. Impressum'da ayrıca telefon numarası gerekiyor,
-o da henüz yok.
+  Bu metin onaylıdır, **yeniden yazılmaz.**
+- Hukuki sayfalar dışında tire, düzyazı noktalı virgülü ve cinsiyet çiftlemesi kalmadı.
+  `ru.ts` içinde bilinçli olarak iki uzun tire duruyor, ikisi de dilbilgisi gereği:
+  `48 часов — наша цель` (iki isim arasında yüklem tiresi) ve
+  `и никогда — для обучения` (atlanan fiilin yerini tutan tire).
 
 ### Doğru olan, bozulmaması gerekenler
 
-- `pricing.ts` tek kaynak olarak tutuyor, hiçbir yerde elle yazılmış fiyat yok
+- React tarafında fiyat sadece `pricing.ts`'ten geliyor (statik HTML istisnası yukarıda)
 - Üç Stripe linki gerçek, placeholder kalmamış
 - Hiçbir yerde `Dr.` unvanı geçmiyor
 - Beş dil eksiksiz, hiçbir dilde eksik anahtar yok
