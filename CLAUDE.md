@@ -84,15 +84,18 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
 
 ### Açık
 
-1. **Impressum, YAPMA, SOR.** `public/services-de.html` ve `public/services-az.html`
-   Impressum'a atıf yapıyor ama öyle bir sayfa yok. Kırık vaat. Impressum adresi henüz
-   kararlaştırılmadı, bu madde o karar verilmeden tamamlanamaz. Sayfayı uydurma.
-   Proje sahibine sor: atıfı şimdilik kaldırmak mı, yoksa adres netleşene kadar
-   böyle bırakmak mı. Impressum'da ayrıca telefon numarası gerekiyor, o da henüz yok.
-2. **`services-*.html` içinde fiyatlar elle yazılı** (beş dosya, `class="price"`).
-   Tutarlar şu an `pricing.ts` ile aynı ama tek kaynak kuralı orada tutmuyor.
-   Bu dosyalar `public/` altında statik, `pricing.ts`'i okuyamıyor. Çözüm build
-   sırasında basmak olur, sahibi karar verecek.
+1. **Impressum, YAPMA, SOR.** Beş `public/services-*.html` dosyasının hepsi
+   Impressum'a atıf yapıyor ama öyle bir sayfa yok. Kırık vaat. Footer'da da Impressum
+   linki yok. Impressum adresi henüz kararlaştırılmadı, bu madde o karar verilmeden
+   tamamlanamaz. Sayfayı uydurma. Proje sahibine sor: atıfı şimdilik kaldırmak mı,
+   yoksa adres netleşene kadar böyle bırakmak mı. Impressum'da adres dışında telefon,
+   Ärztekammer, meslek unvanı ve veren devlet, Berufsordnung linki ve
+   Berufshaftpflicht bilgisi de gerekiyor.
+2. **Statik HTML'de fiyatlar elle yazılı:** `services-*.html` (`class="price"`) ve
+   `terms*.html` § 6.1. Tutarlar şu an `pricing.ts` ile aynı ama tek kaynak kuralı
+   orada tutmuyor. Bu dosyalar `public/` altında statik, `pricing.ts`'i okuyamıyor.
+   Çözüm build sırasında basmak ya da build'de karşılaştırıp uyuşmazlıkta durmak,
+   sahibi karar verecek. Fiyat değişirse bu 11 dosya da elle güncellenir.
 3. **Hukuki sayfalarda tire kalıyor**, sahibi onaylamadan dokunulmaz:
    `terms*.html` iade süresi `5–10`, `privacy*.html` madde aralığı `b–e` ve adres `2–4`.
 4. **`terms.html` ve `terms-de.html`:** `wählen Sie sofort den Notruf .` cümlesinde
@@ -115,8 +118,20 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
   `48 часов — наша цель` (iki isim arasında yüklem tiresi) ve
   `и никогда — для обучения` (atlanan fiilin yerini tutan tire).
 
+### Tamamlanan, 25.10.2026
+
+- Terms § 6.1 fiyatları 50/84/158 olarak düzeltildi (önce 52/72/83 yazıyordu).
+- Terms'teki `fachärztliche Einschätzung` ve TR/AZ karşılıkları kaldırıldı.
+- PayPal her yerden çıkarıldı. Ödeme sadece Stripe.
+- Privacy'de hosting Vercel olarak düzeltildi, Cloudflare ve GitHub Pages çıkarıldı.
+- Calendly (ücretsiz tanışma görüşmesi) privacy'ye eklendi.
+- Terms'teki Premium e-posta takibi maddesi tamamen kaldırıldı, § 6 numaraları kaydırıldı.
+- Terms ve privacy tarihi: 26.10.2026.
+
 ### Doğru olan, bozulmaması gerekenler
 
+- Ödeme sadece Stripe. PayPal hiçbir metinde geçmez.
+- Hosting Vercel. Yeni bir hizmet sağlayıcı eklenirse privacy'deki tabloya da girer.
 - React tarafında fiyat sadece `pricing.ts`'ten geliyor (statik HTML istisnası yukarıda)
 - Üç Stripe linki gerçek, placeholder kalmamış
 - Hiçbir yerde `Dr.` unvanı geçmiyor

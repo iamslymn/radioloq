@@ -159,7 +159,7 @@ const de: Content = {
       },
       {
         q: 'Wo werden meine Daten gespeichert?',
-        a: 'Ihre medizinischen Bilder werden in Deutschland auf verschlüsselten, nach ISO 27001 (BSI) zertifizierten Servern gespeichert. Ihre Zahlung wird sicher über Stripe oder PayPal abgewickelt. Ihre Kartendaten sehen oder speichern wir nie.',
+        a: 'Ihre medizinischen Bilder werden in Deutschland auf verschlüsselten, nach ISO 27001 (BSI) zertifizierten Servern gespeichert. Ihre Zahlung wird sicher über Stripe abgewickelt. Ihre Kartendaten sehen oder speichern wir nie.',
       },
     ],
   },

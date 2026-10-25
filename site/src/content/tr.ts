@@ -159,7 +159,7 @@ const tr: Content = {
       },
       {
         q: 'Verilerim nerede saklanıyor?',
-        a: 'Tıbbi görüntüleriniz Almanya’da, ISO 27001 (BSI) sertifikalı şifreli sunucularda saklanır. Ödemeniz Stripe veya PayPal üzerinden güvenle işlenir. Kart bilgilerinizi asla görmeyiz ve saklamayız.',
+        a: 'Tıbbi görüntüleriniz Almanya’da, ISO 27001 (BSI) sertifikalı şifreli sunucularda saklanır. Ödemeniz Stripe üzerinden güvenle işlenir. Kart bilgilerinizi asla görmeyiz ve saklamayız.',
       },
     ],
   },

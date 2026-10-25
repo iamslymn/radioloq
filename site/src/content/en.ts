@@ -159,7 +159,7 @@ const en: Content = {
       },
       {
         q: 'Where is my data stored?',
-        a: 'Your medical images are stored in Germany on encrypted, ISO 27001 (BSI) certified servers. Your payment is processed securely via Stripe or PayPal. We never see or store your card details.',
+        a: 'Your medical images are stored in Germany on encrypted, ISO 27001 (BSI) certified servers. Your payment is processed securely via Stripe. We never see or store your card details.',
       },
     ],
   },

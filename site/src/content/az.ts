@@ -165,7 +165,7 @@ const az = {
       },
       {
         q: 'Məlumatlarım harada saxlanılır?',
-        a: 'Tibbi görüntüləriniz Almaniyada, ISO 27001 (BSI) sertifikatlı şifrələnmiş serverlərdə saxlanılır. Ödənişiniz Stripe və ya PayPal vasitəsilə təhlükəsiz şəkildə işlənir. Kart məlumatlarınızı heç vaxt görmürük və ya saxlamırıq.',
+        a: 'Tibbi görüntüləriniz Almaniyada, ISO 27001 (BSI) sertifikatlı şifrələnmiş serverlərdə saxlanılır. Ödənişiniz Stripe vasitəsilə təhlükəsiz şəkildə işlənir. Kart məlumatlarınızı heç vaxt görmürük və ya saxlamırıq.',
       },
     ],
   },
