@@ -130,6 +130,8 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
 
 ### Doğru olan, bozulmaması gerekenler
 
+- Cayma hakkı konusu kapandı. Modaldaki `chk4` işaret kutusu ve mevcut yapı sahibi
+  tarafından onaylı, yeniden eksik olarak açılmaz. `chk4` metni değiştirilmez.
 - Ödeme sadece Stripe. PayPal hiçbir metinde geçmez.
 - Hosting Vercel. Yeni bir hizmet sağlayıcı eklenirse privacy'deki tabloya da girer.
 - React tarafında fiyat sadece `pricing.ts`'ten geliyor (statik HTML istisnası yukarıda)
