@@ -52,7 +52,7 @@
       </div>
       <div class="section-header__body">
         <h1 class="t-h2">Datenschutzerklärung</h1>
-        <p class="legal__lead t-small muted">Stand: 1. Juli 2026 · Gilt für: radioloq.com und courses.radioloq.com<br>
+        <p class="legal__lead t-small muted">Stand: 26.10.2026 · Gilt für: radioloq.com und courses.radioloq.com<br>
           Verantwortlicher im Sinne der DSGVO: Adalat Ganjali, Bielefeld, Deutschland</p>
       </div>
     </div>
@@ -105,12 +105,13 @@
       <li><strong>Medizinische Bilddateien:</strong> MRT-, CT-, Röntgen- oder andere diagnostische Aufnahmen, die Sie einreichen (dies sind besondere Kategorien personenbezogener Daten gemäß Art. 9 DSGVO)</li>
       <li><strong>Klinischer Kontext:</strong> Symptombeschreibungen, frühere Diagnosen oder Aufnahmedaten, die Sie freiwillig angeben</li>
       <li><strong>Sprachpräferenz:</strong> die Sprache, in der Sie Ihre Auswertung erhalten möchten</li>
-      <li><strong>Zahlungsdaten:</strong> Zahlungen werden vollständig über Stripe oder PayPal abgewickelt. Wir empfangen oder speichern keine Kartennummern, Bankdaten oder vollständigen Zahlungsinformationen</li>
+      <li><strong>Zahlungsdaten:</strong> Zahlungen werden vollständig über Stripe abgewickelt. Wir empfangen oder speichern keine Kartennummern, Bankdaten oder vollständigen Zahlungsinformationen</li>
+      <li><strong>Termindaten:</strong> Name, E-Mail-Adresse und gewählter Termin, wenn Sie über Calendly ein kostenloses Kennenlerngespräch buchen. Bitte tragen Sie dort keine Gesundheitsdaten ein</li>
       </ul>
 
       <h3>2.2 Automatisch erhobene Daten</h3>
       <ul>
-      <li><strong>Technische Daten:</strong> IP-Adresse, Browsertyp und grundlegende Zugriffsprotokolle, die aus Sicherheitsgründen von der Webhosting-Infrastruktur (GitHub Pages / Cloudflare) vorgehalten werden</li>
+      <li><strong>Technische Daten:</strong> IP-Adresse, Browsertyp und grundlegende Zugriffsprotokolle, die aus Sicherheitsgründen von der Webhosting-Infrastruktur (Vercel) vorgehalten werden</li>
       <li>Wir verwenden technisch notwendige Cookies sowie, ausschließlich mit Ihrer Einwilligung, Google Analytics zur Reichweitenmessung</li>
       <li>Wir verwenden keine Tracking-Pixel, verhaltensbezogene Analysen oder Werbe-Cookies</li>
       <li>Google Analytics wird erst nach Ihrer ausdrücklichen Zustimmung über unseren Cookie-Banner geladen</li>
@@ -122,6 +123,7 @@
       <thead><tr><th>Datenkategorie</th><th>Rechtsgrundlage</th><th>DSGVO-Artikel</th></tr></thead>
       <tbody>
       <tr><td>Name, E-Mail</td><td>Vertragserfüllung (Erbringung des von Ihnen angeforderten Dienstes)</td><td>Art. 6 Abs. 1 lit. b</td></tr>
+      <tr><td>Termindaten (Calendly)</td><td>Vorvertragliche Maßnahmen auf Ihre Anfrage</td><td>Art. 6 Abs. 1 lit. b</td></tr>
       <tr><td>Medizinische Bilddateien</td><td>Ihre ausdrückliche Einwilligung zur Verarbeitung besonderer Kategorien von Gesundheitsdaten</td><td>Art. 9 Abs. 2 lit. a</td></tr>
       <tr><td>Klinischer Kontext</td><td>Ihre ausdrückliche Einwilligung</td><td>Art. 9 Abs. 2 lit. a</td></tr>
       <tr><td>Zahlungsbelege</td><td>Rechtliche Verpflichtung (Steuer- / Buchführungspflichten, §§ 238, 257 HGB)</td><td>Art. 6 Abs. 1 lit. c</td></tr>
@@ -137,6 +139,7 @@
       <li>Kommunikation mit Ihnen zu Ihrer Einreichung, einschließlich der Übermittlung Ihres Berichts</li>
       <li>Beantwortung von Fragen oder Folgeanfragen im Zusammenhang mit Ihrer Einreichung</li>
       <li>Erfüllung rechtlicher Verpflichtungen (Rechnungsstellung, Steuerpflichten)</li>
+      <li>Vereinbarung des kostenlosen Kennenlerngesprächs über Calendly</li>
       </ul>
       <p>Wir verwenden Ihre Daten nicht für Marketing, Werbung, Profiling oder andere Zwecke, die nicht mit dem von Ihnen angeforderten Dienst zusammenhängen. Ihre Daten werden niemals verkauft, lizenziert oder zu kommerziellen Zwecken an Dritte weitergegeben.</p>
 
@@ -148,18 +151,17 @@
       <thead><tr><th>Empfänger</th><th>Zweck</th><th>Standort</th><th>Schutzmaßnahme</th></tr></thead>
       <tbody>
       <tr><td>Stripe, Inc.</td><td>Zahlungsabwicklung</td><td>USA / EU</td><td>Standardvertragsklauseln, PCI-DSS-zertifiziert</td></tr>
-      <tr><td>PayPal (Europe) S.à r.l.</td><td>Zahlungsabwicklung</td><td>Luxemburg / EU</td><td>EU-Unternehmen, DSGVO-konform</td></tr>
       <tr><td>Formspree, Inc.</td><td>Formularverarbeitung, Kontaktdaten (Hauptwebsite)</td><td>USA</td><td>Standardvertragsklauseln</td></tr>
       <tr><td>luckycloud GmbH</td><td>Sichere Übertragung medizinischer Bilddateien</td><td>Deutschland</td><td>Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO, deutsche Serverinfrastruktur, Ende-zu-Ende-Verschlüsselung</td></tr>
       <tr><td>Google Ireland Limited</td><td>Reichweitenmessung (nur mit Einwilligung)</td><td>EU/USA</td><td>Standardvertragsklauseln, nur nach Cookie-Zustimmung aktiv</td></tr>
-      <tr><td>Cloudflare, Inc.</td><td>Spracherkennung anhand des Herkunftslandes (CF-IPCountry-Header), keine Speicherung der IP-Adresse durch Radioloq, Verarbeitung erfolgt am Netzwerk-Edge</td><td>USA / EU</td><td>Standardvertragsklauseln, Daten werden nicht an Radioloq-Server übermittelt, Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, sprachliche Barrierefreiheit)</td></tr>
       <tr><td>Formspree, Inc.</td><td>E-Mail-Benachrichtigung (courses.radioloq.com Warteliste)</td><td>USA</td><td>Standardvertragsklauseln</td></tr>
-      <tr><td>GitHub, Inc. (GitHub Pages)</td><td>Website-Hosting</td><td>USA</td><td>Standardvertragsklauseln, keine Nutzerdaten gespeichert</td></tr>
+      <tr><td>Vercel Inc.</td><td>Website-Hosting und Spracherkennung anhand des Herkunftslandes (Länder-Header am Netzwerk-Edge), keine Speicherung der IP-Adresse durch Radioloq</td><td>USA / EU</td><td>Standardvertragsklauseln, Rechtsgrundlage für die Spracherkennung: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, sprachliche Barrierefreiheit)</td></tr>
+      <tr><td>Calendly LLC</td><td>Terminbuchung für das kostenlose Kennenlerngespräch</td><td>USA</td><td>Standardvertragsklauseln</td></tr>
       </tbody>
       </table>
       </div>
 
-      <p>Ihre medizinischen Bilddateien und Auswertungsberichte werden <strong>niemals an Dritte weitergegeben</strong>, es sei denn, dies ist zur Erbringung des Dienstes unbedingt erforderlich. Sie werden nicht an Stripe, PayPal oder Analyseanbieter weitergegeben.</p>
+      <p>Ihre medizinischen Bilddateien und Auswertungsberichte werden <strong>niemals an Dritte weitergegeben</strong>, es sei denn, dies ist zur Erbringung des Dienstes unbedingt erforderlich. Sie werden nicht an Stripe oder Analyseanbieter weitergegeben.</p>
       <p>Wir können Ihre Daten offenlegen, wenn dies gesetzlich, durch Gerichtsbeschluss oder durch eine zuständige deutsche Behörde vorgeschrieben ist. Wir werden Sie im gesetzlich zulässigen Umfang über eine solche Offenlegung informieren.</p>
 
       <h2 id="section-6">6. Medizinische Bilddaten: Besondere Schutzmaßnahmen</h2>
@@ -216,7 +218,7 @@
       <p>Wir verwenden keine automatisierte Entscheidungsfindung oder Profiling, das rechtliche oder ähnlich bedeutsame Auswirkungen auf Sie hätte (Art. 22 DSGVO). Alle Auswertungen werden von einem menschlichen Bearbeiter durchgeführt.</p>
 
       <h2 id="section-11">11. Internationale Datenübermittlungen</h2>
-      <p>Einige unserer Dienstleister (Stripe, Formspree, GitHub) haben ihren Sitz in den USA. Bei der Übermittlung von Daten in Länder außerhalb des Europäischen Wirtschaftsraums stützen wir uns auf die von der Europäischen Kommission genehmigten Standardvertragsklauseln (SCC) als rechtlichen Mechanismus für die Übermittlung (Art. 46 Abs. 2 lit. c DSGVO). Ihre medizinischen Bilddateien werden nicht international übermittelt.</p>
+      <p>Einige unserer Dienstleister (Stripe, Formspree, Vercel, Calendly) haben ihren Sitz in den USA. Bei der Übermittlung von Daten in Länder außerhalb des Europäischen Wirtschaftsraums stützen wir uns auf die von der Europäischen Kommission genehmigten Standardvertragsklauseln (SCC) als rechtlichen Mechanismus für die Übermittlung (Art. 46 Abs. 2 lit. c DSGVO). Ihre medizinischen Bilddateien werden nicht international übermittelt.</p>
 
       <h2 id="section-12">12. Datensicherheit (Art. 32 DSGVO)</h2>
       <p>Wir treffen geeignete technische und organisatorische Maßnahmen zum Schutz Ihrer personenbezogenen Daten, darunter:</p>
@@ -231,10 +233,10 @@
       <h2 id="section-13">13. Cookies und Tracking</h2>
       <p>Radioloq verwendet technisch notwendige Cookies für grundlegende Sitzungsfunktionen. Diese erfordern keine Einwilligung gemäß § 25 Abs. 2 TTDSG.</p>
       <p>Zusätzlich nutzen wir mit Ihrer ausdrücklichen Einwilligung Google Analytics (Google Ireland Limited) zur anonymisierten Reichweitenmessung. Beim ersten Besuch der Website wird Ihnen ein Cookie-Banner angezeigt, über das Sie der Nutzung von Google Analytics zustimmen oder diese ablehnen können. Ihre Wahl wird lokal in Ihrem Browser gespeichert. Google Analytics wird ausschließlich nach erteilter Zustimmung geladen. Bei Ablehnung erfolgt keine Datenübermittlung an Google. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die lokal gespeicherten Browserdaten löschen und die Seite neu laden.</p>
-      <p>Zahlungsdienstleister (Stripe, PayPal) können auf ihren jeweiligen Zahlungsseiten gemäß ihren eigenen Datenschutzrichtlinien eigene Cookies setzen.</p>
+      <p>Stripe auf der Zahlungsseite und Calendly auf der Buchungsseite können gemäß ihren eigenen Datenschutzrichtlinien eigene Cookies setzen.</p>
 
       <h2 id="section-14">14. Automatische Spracherkennung</h2>
-      <p>Radioloq erkennt beim ersten Seitenbesuch automatisch Ihr Herkunftsland anhand des von Cloudflare bereitgestellten Länder-Headers (CF-IPCountry). Diese Information wird verwendet, um die Website in Ihrer Landessprache anzuzeigen (z. B. Türkisch für Besucher aus der Türkei). Die IP-Adresse selbst wird von Radioloq weder gespeichert noch verarbeitet. Die Ländererkennung erfolgt ausschließlich am Netzwerk-Edge von Cloudflare. Ihre Sprachauswahl können Sie jederzeit manuell über die Sprachauswahl-Schaltflächen ändern. Die getroffene Auswahl wird in Ihrem Browser (localStorage) gespeichert und bei zukünftigen Besuchen beibehalten. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sprachlicher Barrierefreiheit).</p>
+      <p>Radioloq erkennt beim ersten Seitenbesuch automatisch Ihr Herkunftsland anhand des Länder-Headers, den unser Hosting-Anbieter Vercel bereitstellt. Diese Information wird verwendet, um die Website in Ihrer Landessprache anzuzeigen (z. B. Türkisch für Besucher aus der Türkei). Die IP-Adresse selbst wird von Radioloq weder gespeichert noch verarbeitet. Die Ländererkennung erfolgt ausschließlich am Netzwerk-Edge von Vercel. Ihre Sprachauswahl können Sie jederzeit manuell über die Sprachauswahl-Schaltflächen ändern. Die getroffene Auswahl wird in Ihrem Browser (localStorage) gespeichert und bei zukünftigen Besuchen beibehalten. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sprachlicher Barrierefreiheit).</p>
 
       <h2 id="section-15">15. Daten Minderjähriger</h2>
       <p>Dieser Dienst richtet sich an Erwachsene ab 18 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 16 Jahren ohne nachweisbare elterliche Einwilligung gemäß Art. 8 DSGVO. Wenn Sie der Meinung sind, dass Daten eines Kindes ohne entsprechende Befugnis eingereicht wurden, kontaktieren Sie uns bitte umgehend unter info@radioloq.com, und wir werden die Daten unverzüglich löschen.</p>

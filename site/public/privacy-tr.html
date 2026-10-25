@@ -52,7 +52,7 @@
       </div>
       <div class="section-header__body">
         <h1 class="t-h2">Gizlilik Politikası</h1>
-        <p class="legal__lead t-small muted">Güncelleme: 1 Temmuz 2026 · Geçerli olduğu alan: radioloq.com ve courses.radioloq.com<br>
+        <p class="legal__lead t-small muted">Güncelleme: 26.10.2026 · Geçerli olduğu alan: radioloq.com ve courses.radioloq.com<br>
           DSGVO anlamında Veri Sorumlusu: Adalat Ganjali, Bielefeld, Almanya</p>
       </div>
     </div>
@@ -110,12 +110,13 @@
       <li><strong>Tıbbi görüntü dosyaları:</strong> Gönderdiğiniz MR, BT, röntgen veya diğer tanısal görüntüler (bunlar DSGVO Madde 9 anlamında özel kategori kişisel verilerdir)</li>
       <li><strong>Klinik bağlam:</strong> Gönüllü olarak belirttiğiniz semptom açıklamaları, önceki tanılar veya çekim tarihleri</li>
       <li><strong>Dil tercihi:</strong> Değerlendirmenizi almak istediğiniz dil</li>
-      <li><strong>Ödeme verileri:</strong> Ödemeler tamamen Stripe veya PayPal üzerinden işlenir. Kart numaralarını, banka bilgilerini veya tam ödeme bilgilerini almıyor veya saklamıyoruz</li>
+      <li><strong>Ödeme verileri:</strong> Ödemeler tamamen Stripe üzerinden işlenir. Kart numaralarını, banka bilgilerini veya tam ödeme bilgilerini almıyor veya saklamıyoruz</li>
+      <li><strong>Randevu verileri:</strong> Calendly üzerinden ücretsiz tanışma görüşmesi ayarlarsanız adınız, e-posta adresiniz ve seçtiğiniz saat. Lütfen orada sağlık bilgisi paylaşmayın</li>
       </ul>
 
       <h3>2.2 Otomatik olarak toplanan veriler</h3>
       <ul>
-      <li><strong>Teknik veriler:</strong> IP adresi, tarayıcı türü ve güvenlik amacıyla web barındırma altyapısı (GitHub Pages / Cloudflare) tarafından tutulan temel erişim kayıtları</li>
+      <li><strong>Teknik veriler:</strong> IP adresi, tarayıcı türü ve güvenlik amacıyla web barındırma altyapısı (Vercel) tarafından tutulan temel erişim kayıtları</li>
       <li>Teknik olarak gerekli çerezleri ve yalnızca onayınızla Google Analytics'i erişim ölçümü için kullanıyoruz</li>
       <li>İzleme pikselleri, davranışsal analiz veya reklam çerezleri kullanmıyoruz</li>
       <li>Google Analytics yalnızca çerez bildirimimiz üzerinden açık onayınızdan sonra yüklenir</li>
@@ -127,6 +128,7 @@
       <thead><tr><th>Veri Kategorisi</th><th>Hukuki Dayanak</th><th>DSGVO Maddesi</th></tr></thead>
       <tbody>
       <tr><td>Ad, e-posta</td><td>Sözleşmenin ifası (talep ettiğiniz hizmetin sunulması)</td><td>Md. 6/1(b)</td></tr>
+      <tr><td>Randevu verileri (Calendly)</td><td>Talebiniz üzerine sözleşme öncesi adımlar</td><td>Md. 6/1(b)</td></tr>
       <tr><td>Tıbbi görüntü dosyaları</td><td>Özel kategori sağlık verilerinin işlenmesine açık rızanız</td><td>Md. 9/2(a)</td></tr>
       <tr><td>Klinik bağlam</td><td>Açık rızanız</td><td>Md. 9/2(a)</td></tr>
       <tr><td>Ödeme kayıtları</td><td>Yasal yükümlülük (vergi/muhasebe yükümlülükleri, §§ 238, 257 HGB)</td><td>Md. 6/1(c)</td></tr>
@@ -142,6 +144,7 @@
       <li>Gönderiminizle ilgili sizinle iletişim, raporunuzun teslimi dahil</li>
       <li>Gönderiminizle ilgili soruların veya takip taleplerinin yanıtlanması</li>
       <li>Yasal yükümlülüklerin yerine getirilmesi (faturalandırma, vergi yükümlülükleri)</li>
+      <li>Calendly üzerinden ücretsiz tanışma görüşmesinin ayarlanması</li>
       </ul>
       <p>Verilerinizi pazarlama, reklam, profilleme veya talep ettiğiniz hizmetle ilgili olmayan başka amaçlarla kullanmıyoruz. Verileriniz asla üçüncü taraflara satılmaz, lisanslanmaz veya ticari amaçlarla aktarılmaz.</p>
 
@@ -153,18 +156,17 @@
       <thead><tr><th>Alıcı</th><th>Amaç</th><th>Konum</th><th>Koruma Önlemi</th></tr></thead>
       <tbody>
       <tr><td>Stripe, Inc.</td><td>Ödeme işleme</td><td>ABD / AB</td><td>Standart sözleşme hükümleri, PCI-DSS sertifikalı</td></tr>
-      <tr><td>PayPal (Europe) S.à r.l.</td><td>Ödeme işleme</td><td>Lüksemburg / AB</td><td>AB şirketi, DSGVO uyumlu</td></tr>
       <tr><td>Formspree, Inc.</td><td>Form işleme, iletişim verileri (ana web sitesi)</td><td>ABD</td><td>Standart sözleşme hükümleri</td></tr>
       <tr><td>luckycloud GmbH</td><td>Tıbbi görüntü dosyalarının güvenli aktarımı</td><td>Almanya</td><td>Art. 28 DSGVO uyarınca Veri İşleme Sözleşmesi (AVV), Alman sunucu altyapısı, uçtan uca şifreleme</td></tr>
       <tr><td>Google Ireland Limited</td><td>Erişim ölçümü (yalnızca onayla)</td><td>AB/ABD</td><td>Standart sözleşme hükümleri, yalnızca çerez onayından sonra aktif</td></tr>
-      <tr><td>Cloudflare, Inc.</td><td>Menşe ülkeye göre dil tespiti (CF-IPCountry başlığı), Radioloq tarafından IP adresi saklanmaz, işleme ağ kenarında (edge) gerçekleşir</td><td>ABD / AB</td><td>Standart sözleşme hükümleri, veriler Radioloq sunucularına aktarılmaz, hukuki dayanak: Md. 6/1(f) DSGVO (meşru menfaat, dilsel erişilebilirlik)</td></tr>
       <tr><td>Formspree, Inc.</td><td>E-posta bildirimi (courses.radioloq.com bekleme listesi)</td><td>ABD</td><td>Standart sözleşme hükümleri</td></tr>
-      <tr><td>GitHub, Inc. (GitHub Pages)</td><td>Web sitesi barındırma</td><td>ABD</td><td>Standart sözleşme hükümleri, kullanıcı verisi saklanmaz</td></tr>
+      <tr><td>Vercel Inc.</td><td>Web sitesi barındırma ve menşe ülkeye göre dil tespiti (ağ kenarında ülke başlığı), Radioloq tarafından IP adresi saklanmaz</td><td>ABD / AB</td><td>Standart sözleşme hükümleri, dil tespiti için hukuki dayanak: Md. 6/1(f) DSGVO (meşru menfaat, dilsel erişilebilirlik)</td></tr>
+      <tr><td>Calendly LLC</td><td>Ücretsiz tanışma görüşmesi için randevu</td><td>ABD</td><td>Standart sözleşme hükümleri</td></tr>
       </tbody>
       </table>
       </div>
 
-      <p>Tıbbi görüntü dosyalarınız ve değerlendirme raporlarınız, hizmetin sunulması için kesinlikle gerekli olmadıkça <strong>hiçbir zaman üçüncü taraflarla paylaşılmaz</strong>. Bunlar Stripe, PayPal veya analiz sağlayıcılarıyla paylaşılmaz.</p>
+      <p>Tıbbi görüntü dosyalarınız ve değerlendirme raporlarınız, hizmetin sunulması için kesinlikle gerekli olmadıkça <strong>hiçbir zaman üçüncü taraflarla paylaşılmaz</strong>. Bunlar Stripe veya analiz sağlayıcılarıyla paylaşılmaz.</p>
       <p>Yasal olarak, mahkeme kararıyla veya yetkili bir Alman makamı tarafından zorunlu kılınması halinde verilerinizi ifşa edebiliriz. Yasal olarak izin verilen ölçüde sizi böyle bir ifşadan haberdar ederiz.</p>
 
       <h2 id="section-6">6. Tıbbi Görüntü Verileri: Özel Koruma Önlemleri</h2>
@@ -221,7 +223,7 @@
       <p>Sizin üzerinizde yasal veya benzer şekilde önemli etkileri olacak otomatik karar verme veya profilleme kullanmıyoruz (DSGVO Madde 22). Tüm değerlendirmeler bir insan tarafından gerçekleştirilir.</p>
 
       <h2 id="section-11">11. Uluslararası Veri Aktarımları</h2>
-      <p>Bazı hizmet sağlayıcılarımız (Stripe, Formspree, GitHub) ABD'de bulunmaktadır. Avrupa Ekonomik Alanı dışındaki ülkelere veri aktarımında, Avrupa Komisyonu tarafından onaylanmış Standart Sözleşme Hükümlerini (SCC) hukuki aktarım mekanizması olarak kullanıyoruz (DSGVO Madde 46/2(c)). Tıbbi görüntü dosyalarınız uluslararası olarak aktarılmaz.</p>
+      <p>Bazı hizmet sağlayıcılarımız (Stripe, Formspree, Vercel, Calendly) ABD'de bulunmaktadır. Avrupa Ekonomik Alanı dışındaki ülkelere veri aktarımında, Avrupa Komisyonu tarafından onaylanmış Standart Sözleşme Hükümlerini (SCC) hukuki aktarım mekanizması olarak kullanıyoruz (DSGVO Madde 46/2(c)). Tıbbi görüntü dosyalarınız uluslararası olarak aktarılmaz.</p>
 
       <h2 id="section-12">12. Veri Güvenliği (DSGVO Madde 32)</h2>
       <p>Kişisel verilerinizi korumak için uygun teknik ve organizasyonel önlemler alıyoruz, bunlar arasında:</p>
@@ -236,10 +238,10 @@
       <h2 id="section-13">13. Çerezler ve İzleme</h2>
       <p>Radioloq, temel oturum işlevleri için teknik olarak gerekli çerezler kullanır. Bunlar § 25 Abs. 2 TTDSG uyarınca onay gerektirmez.</p>
       <p>Ayrıca, açık onayınızla anonimleştirilmiş erişim ölçümü için Google Analytics (Google Ireland Limited) kullanıyoruz. Web sitesini ilk ziyaretinizde, Google Analytics kullanımını onaylayabileceğiniz veya reddedebileceğiniz bir çerez bildirimi görüntülenir. Seçiminiz tarayıcınızda yerel olarak saklanır. Google Analytics yalnızca onay verildikten sonra yüklenir. Reddedilmesi halinde Google'a veri aktarımı yapılmaz. Yerel olarak saklanan tarayıcı verilerini silip sayfayı yeniden yükleyerek rızanızı istediğiniz zaman geri çekebilirsiniz.</p>
-      <p>Ödeme hizmet sağlayıcıları (Stripe, PayPal) kendi ödeme sayfalarında kendi gizlilik politikalarına göre kendi çerezlerini ayarlayabilir.</p>
+      <p>Stripe ödeme sayfasında, Calendly de randevu sayfasında kendi gizlilik politikalarına göre kendi çerezlerini ayarlayabilir.</p>
 
       <h2 id="section-14">14. Otomatik Dil Tespiti</h2>
-      <p>Radioloq, ilk sayfa ziyaretinizde Cloudflare tarafından sağlanan ülke başlığına (CF-IPCountry) dayanarak menşe ülkenizi otomatik olarak tespit eder. Bu bilgi, web sitesini kendi ülkenizin dilinde görüntülemek için kullanılır (örneğin Türkiye'den gelen ziyaretçiler için Türkçe). IP adresinin kendisi Radioloq tarafından saklanmaz veya işlenmez. Ülke tespiti yalnızca Cloudflare'in ağ kenarında (network edge) gerçekleşir. Dil seçiminizi istediğiniz zaman dil seçim düğmeleri üzerinden manuel olarak değiştirebilirsiniz. Yaptığınız seçim tarayıcınızda (localStorage) saklanır ve gelecekteki ziyaretlerde korunur. Hukuki dayanak: DSGVO Madde 6/1(f) (dilsel erişilebilirliğe yönelik meşru menfaat).</p>
+      <p>Radioloq, ilk sayfa ziyaretinizde barındırma sağlayıcımız Vercel'in sağladığı ülke başlığına dayanarak menşe ülkenizi otomatik olarak tespit eder. Bu bilgi, web sitesini kendi ülkenizin dilinde görüntülemek için kullanılır (örneğin Türkiye'den gelen ziyaretçiler için Türkçe). IP adresinin kendisi Radioloq tarafından saklanmaz veya işlenmez. Ülke tespiti yalnızca Vercel'in ağ kenarında (network edge) gerçekleşir. Dil seçiminizi istediğiniz zaman dil seçim düğmeleri üzerinden manuel olarak değiştirebilirsiniz. Yaptığınız seçim tarayıcınızda (localStorage) saklanır ve gelecekteki ziyaretlerde korunur. Hukuki dayanak: DSGVO Madde 6/1(f) (dilsel erişilebilirliğe yönelik meşru menfaat).</p>
 
       <h2 id="section-15">15. Reşit Olmayanların Verileri</h2>
       <p>Bu hizmet 18 yaş ve üzeri yetişkinlere yöneliktir. DSGVO Madde 8 uyarınca kanıtlanabilir ebeveyn onayı olmaksızın 16 yaşın altındaki çocuklardan bilerek kişisel veri toplamıyoruz. Bir çocuğun verilerinin uygun yetki olmadan gönderildiğini düşünüyorsanız, lütfen derhal info@radioloq.com adresinden bizimle iletişime geçin. Verileri gecikmeksizin sileriz.</p>

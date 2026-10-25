@@ -52,7 +52,7 @@
       </div>
       <div class="section-header__body">
         <h1 class="t-h2">Privacy Policy</h1>
-        <p class="legal__lead t-small muted">Last updated: July 1, 2026 · Applies to: radioloq.com and courses.radioloq.com<br>
+        <p class="legal__lead t-small muted">Last updated: 26.10.2026 · Applies to: radioloq.com and courses.radioloq.com<br>
           Data Controller within the meaning of GDPR: Adalat Ganjali, Bielefeld, Germany</p>
       </div>
     </div>
@@ -105,12 +105,13 @@
       <li><strong>Medical image files:</strong> MRI, CT, X-ray, or other diagnostic imaging you submit (these are special categories of personal data under Art. 9 GDPR)</li>
       <li><strong>Clinical context:</strong> Symptom descriptions, prior diagnoses, or imaging dates you voluntarily provide</li>
       <li><strong>Language preference:</strong> The language in which you wish to receive your evaluation</li>
-      <li><strong>Payment data:</strong> Payments are processed entirely via Stripe or PayPal. We do not receive or store card numbers, bank details, or full payment information</li>
+      <li><strong>Payment data:</strong> Payments are processed entirely via Stripe. We do not receive or store card numbers, bank details, or full payment information</li>
+      <li><strong>Appointment data:</strong> Your name, email address and chosen time if you book a free intro call via Calendly. Please do not enter any health data there</li>
       </ul>
 
       <h3>2.2 Automatically collected data</h3>
       <ul>
-      <li><strong>Technical data:</strong> IP address, browser type, and basic access logs retained by the web hosting infrastructure (GitHub Pages / Cloudflare) for security purposes</li>
+      <li><strong>Technical data:</strong> IP address, browser type, and basic access logs retained by the web hosting infrastructure (Vercel) for security purposes</li>
       <li>We use technically necessary cookies and, only with your consent, Google Analytics for traffic measurement</li>
       <li>We do not use tracking pixels, behavioral analytics, or advertising cookies</li>
       <li>Google Analytics is only loaded after your explicit consent via our cookie banner</li>
@@ -122,6 +123,7 @@
       <thead><tr><th>Data Category</th><th>Legal Basis</th><th>GDPR Article</th></tr></thead>
       <tbody>
       <tr><td>Name, email</td><td>Contract performance (providing the service you requested)</td><td>Art. 6(1)(b)</td></tr>
+      <tr><td>Appointment data (Calendly)</td><td>Pre-contractual steps at your request</td><td>Art. 6(1)(b)</td></tr>
       <tr><td>Medical image files</td><td>Your explicit consent to processing special categories of health data</td><td>Art. 9(2)(a)</td></tr>
       <tr><td>Clinical context</td><td>Your explicit consent</td><td>Art. 9(2)(a)</td></tr>
       <tr><td>Payment records</td><td>Legal obligation (tax/accounting obligations, §§ 238, 257 HGB)</td><td>Art. 6(1)(c)</td></tr>
@@ -137,6 +139,7 @@
       <li>Communicating with you regarding your submission, including delivery of your report</li>
       <li>Answering questions or follow-up inquiries related to your submission</li>
       <li>Fulfilling legal obligations (invoicing, tax obligations)</li>
+      <li>Arranging the free intro call via Calendly</li>
       </ul>
       <p>We do not use your data for marketing, advertising, profiling, or any other purpose unrelated to the service you requested. Your data is never sold, licensed, or transferred to third parties for commercial purposes.</p>
 
@@ -148,18 +151,17 @@
       <thead><tr><th>Recipient</th><th>Purpose</th><th>Location</th><th>Safeguard</th></tr></thead>
       <tbody>
       <tr><td>Stripe, Inc.</td><td>Payment processing</td><td>USA / EU</td><td>Standard Contractual Clauses, PCI-DSS certified</td></tr>
-      <tr><td>PayPal (Europe) S.à r.l.</td><td>Payment processing</td><td>Luxembourg / EU</td><td>EU company, GDPR compliant</td></tr>
       <tr><td>Formspree, Inc.</td><td>Form processing, contact data (main website)</td><td>USA</td><td>Standard Contractual Clauses</td></tr>
       <tr><td>luckycloud GmbH</td><td>Secure transfer of medical image files</td><td>Germany</td><td>Data Processing Agreement (DPA) under Art. 28 GDPR, German server infrastructure, end-to-end encryption</td></tr>
       <tr><td>Google Ireland Limited</td><td>Traffic measurement (only with consent)</td><td>EU/USA</td><td>Standard Contractual Clauses, active only after cookie consent</td></tr>
-      <tr><td>Cloudflare, Inc.</td><td>Language detection based on country of origin (CF-IPCountry header), no IP address stored by Radioloq, processing occurs at the network edge</td><td>USA / EU</td><td>Standard Contractual Clauses, data is not transmitted to Radioloq servers, legal basis: Art. 6(1)(f) GDPR (legitimate interest, language accessibility)</td></tr>
       <tr><td>Formspree, Inc.</td><td>Email notification (courses.radioloq.com waitlist)</td><td>USA</td><td>Standard Contractual Clauses</td></tr>
-      <tr><td>GitHub, Inc. (GitHub Pages)</td><td>Website hosting</td><td>USA</td><td>Standard Contractual Clauses, no user data stored</td></tr>
+      <tr><td>Vercel Inc.</td><td>Website hosting and language detection based on country of origin (country header at the network edge), no IP address stored by Radioloq</td><td>USA / EU</td><td>Standard Contractual Clauses, legal basis for language detection: Art. 6(1)(f) GDPR (legitimate interest, language accessibility)</td></tr>
+      <tr><td>Calendly LLC</td><td>Booking the free intro call</td><td>USA</td><td>Standard Contractual Clauses</td></tr>
       </tbody>
       </table>
       </div>
 
-      <p>Your medical image files and evaluation reports are <strong>never shared with third parties</strong> unless strictly necessary to provide the service. They are not shared with Stripe, PayPal, or analytics providers.</p>
+      <p>Your medical image files and evaluation reports are <strong>never shared with third parties</strong> unless strictly necessary to provide the service. They are not shared with Stripe or analytics providers.</p>
       <p>We may disclose your data where required by law, court order, or a competent German authority. We will inform you of any such disclosure to the extent legally permitted.</p>
 
       <h2 id="section-6">6. Medical Image Data: Special Safeguards</h2>
@@ -216,7 +218,7 @@
       <p>We do not use automated decision-making or profiling that would have legal or similarly significant effects on you (Art. 22 GDPR). All evaluations are performed by a human.</p>
 
       <h2 id="section-11">11. International Data Transfers</h2>
-      <p>Some of our service providers (Stripe, Formspree, GitHub) are based in the USA. When transferring data to countries outside the European Economic Area, we rely on the Standard Contractual Clauses (SCC) approved by the European Commission as the legal transfer mechanism (Art. 46(2)(c) GDPR). Your medical image files are not transferred internationally.</p>
+      <p>Some of our service providers (Stripe, Formspree, Vercel, Calendly) are based in the USA. When transferring data to countries outside the European Economic Area, we rely on the Standard Contractual Clauses (SCC) approved by the European Commission as the legal transfer mechanism (Art. 46(2)(c) GDPR). Your medical image files are not transferred internationally.</p>
 
       <h2 id="section-12">12. Data Security (Art. 32 GDPR)</h2>
       <p>We implement appropriate technical and organizational measures to protect your personal data, including:</p>
@@ -231,10 +233,10 @@
       <h2 id="section-13">13. Cookies and Tracking</h2>
       <p>Radioloq uses technically necessary cookies for basic session functions. These do not require consent under § 25(2) TTDSG.</p>
       <p>Additionally, with your explicit consent, we use Google Analytics (Google Ireland Limited) for anonymized traffic measurement. On your first visit to the website, you will see a cookie banner through which you can accept or decline the use of Google Analytics. Your choice is stored locally in your browser. Google Analytics is only loaded after consent is given. If declined, no data is transmitted to Google. You may withdraw your consent at any time by deleting locally stored browser data and reloading the page.</p>
-      <p>Payment service providers (Stripe, PayPal) may set their own cookies on their respective payment pages in accordance with their own privacy policies.</p>
+      <p>Stripe on its payment page and Calendly on its booking page may set their own cookies in accordance with their own privacy policies.</p>
 
       <h2 id="section-14">14. Automatic Language Detection</h2>
-      <p>On your first visit, Radioloq automatically detects your country of origin based on the country header provided by Cloudflare (CF-IPCountry). This information is used to display the website in your country's language (e.g., Turkish for visitors from Turkey). The IP address itself is neither stored nor processed by Radioloq. Country detection occurs exclusively at Cloudflare's network edge. You may manually change your language selection at any time using the language selector buttons. Your selection is stored in your browser (localStorage) and preserved for future visits. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in language accessibility).</p>
+      <p>On your first visit, Radioloq automatically detects your country of origin based on the country header provided by our hosting provider Vercel. This information is used to display the website in your country's language (e.g., Turkish for visitors from Turkey). The IP address itself is neither stored nor processed by Radioloq. Country detection occurs exclusively at Vercel's network edge. You may manually change your language selection at any time using the language selector buttons. Your selection is stored in your browser (localStorage) and preserved for future visits. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in language accessibility).</p>
 
       <h2 id="section-15">15. Children's Data</h2>
       <p>This service is intended for adults aged 18 and over. We do not knowingly collect personal data from children under 16 without verifiable parental consent under Art. 8 GDPR. If you believe a child's data has been submitted without appropriate authorization, please contact us immediately at info@radioloq.com and we will delete the data without delay.</p>
