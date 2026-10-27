@@ -103,21 +103,19 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
 4. **`terms.html` ve `terms-de.html`:** `wählen Sie sofort den Notruf .` cümlesinde
    numara eksik görünüyor. Hukuki metin, sahibine sorulacak.
 5. **Çeviri düzeltmeleri, sahibinde.** Bütün metinler beş dil yan yana bir tabloya
-   çıkarıldı (`site/scripts/i18n.py export`, kaynak commit `2066029`). Sahibi tabloyu
-   Google Drive'a koyup elle düzeltiyor, adı "Radioloq çeviriler". "Bitti" dediğinde:
-   tabloyu Drive'dan oku (xlsx olarak indir), A sütunundaki anahtarlarla koda geri yaz,
-   metin kurallarını kontrol et, değişenleri dil dil listele, build, push.
+   çıkarıldı (`site/scripts/i18n.py export`). Sahibi tabloyu Google Drive'a koyup elle
+   düzeltiyor, adı "Radioloq çeviriler". Geçerli sürümün kaynağı `a61fbf3`, tablonun
+   "Nasıl" sekmesinin son satırında yazar. "Bitti" dediğinde: tabloyu Drive'dan oku
+   (xlsx olarak indir), A sütunundaki anahtarlarla koda geri yaz, metin kurallarını
+   kontrol et, değişenleri dil dil listele, build, push.
    `import` komutu henüz yazılmadı. Anahtar şeması ve hücre gösterimi
    (`[link]`, `[metin](adres)`, `**kalın**`) `i18n.py` dosyasının başında.
+   **Import kuralı:** sahibinin değişikliği = tablodaki değer ≠ tablonun kaynak
+   commit'indeki değer. Mevcut kodla karşılaştırma, yoksa tablodan sonra kodda yapılan
+   düzeltmeler geri alınır. Kaynaktan sonra kodda değişmiş bir hücreye sahibi de
+   yazdıysa ikisini yan yana göster, sahibi seçsin.
    Hukuki sayfalardaki düzeltmeler sahibinin onayı sayılır. `terms.html` ve
    `privacy.html`, `-de` sürümlerinin kopyası, ikisi birlikte güncellenir.
-   **Import kuralı:** sahibinin değişikliği = tablodaki değer ≠ `2066029`'daki değer.
-   Mevcut kodla karşılaştırma, yoksa tablodan sonra yapılan düzeltmeler geri alınır.
-   Tablodan sonra kodda değişen anahtarlar (28.10.2026): `site:footer.terms` ve
-   `site:footer.privacy` (az, İngilizce kalmıştı), `site:hero.panel.scan` ve
-   `site:hero.panel.read` (az, İngilizce kalmıştı), `site:modal.scope.standard`
-   (tr ve az, "ayrıca" ve "həmçinin" çıktı). Bu hücrelerde sahibi de bir şey yazdıysa
-   ikisini yan yana göster, sahibi seçsin.
 
 ### Tamamlanan, 21.10.2026
 
