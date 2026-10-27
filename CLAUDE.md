@@ -102,6 +102,15 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
    `terms*.html` iade süresi `5–10`, `privacy*.html` madde aralığı `b–e` ve adres `2–4`.
 4. **`terms.html` ve `terms-de.html`:** `wählen Sie sofort den Notruf .` cümlesinde
    numara eksik görünüyor. Hukuki metin, sahibine sorulacak.
+5. **Çeviri düzeltmeleri, sahibinde.** Bütün metinler beş dil yan yana bir tabloya
+   çıkarıldı (`site/scripts/i18n.py export`, kaynak commit `2066029`). Sahibi tabloyu
+   Google Drive'a koyup elle düzeltiyor, adı "Radioloq çeviriler". "Bitti" dediğinde:
+   tabloyu Drive'dan oku (xlsx olarak indir), A sütunundaki anahtarlarla koda geri yaz,
+   metin kurallarını kontrol et, değişenleri dil dil listele, build, push.
+   `import` komutu henüz yazılmadı. Anahtar şeması ve hücre gösterimi
+   (`[link]`, `[metin](adres)`, `**kalın**`) `i18n.py` dosyasının başında.
+   Hukuki sayfalardaki düzeltmeler sahibinin onayı sayılır. `terms.html` ve
+   `privacy.html`, `-de` sürümlerinin kopyası, ikisi birlikte güncellenir.
 
 ### Tamamlanan, 21.10.2026
 
