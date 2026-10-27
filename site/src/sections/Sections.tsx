@@ -18,7 +18,7 @@ export function Process({ c }: P) {
   return (
     <section className="section" id="how" aria-labelledby="how-title">
       <div className="container">
-        <SectionHeader index="01" label={c.process.label} title={c.process.title} lead={c.process.sub} id="how-title" />
+        <SectionHeader label={c.process.label} title={c.process.title} lead={c.process.sub} id="how-title" />
         <ol className="steps" ref={ref}>
           {c.process.steps.map((s, i) => {
             const Icon = STEP_ICONS[i % STEP_ICONS.length]
@@ -51,9 +51,9 @@ export function FirstAssessment({ c }: P) {
   const ref = useReveal<HTMLDivElement>()
   const f = c.firstAssessment
   return (
-    <section className="section inverse first" id="first-assessment" aria-labelledby="fa-title">
+    <section className="section first" id="first-assessment" aria-labelledby="fa-title">
       <div className="container">
-        <div className="grid first__grid" ref={ref}>
+        <div className="inverse first__panel grid first__grid" ref={ref}>
           <div className="first__copy">
             <div data-reveal>
               <SectionLabel>{f.label}</SectionLabel>
@@ -83,7 +83,7 @@ export function Pricing({ c, onSelect }: P & { onSelect: (key: PackageKey) => vo
   return (
     <section className="section" id="pricing" aria-labelledby="pricing-title">
       <div className="container">
-        <SectionHeader index="02" label={c.pricing.label} title={c.pricing.title} lead={c.pricing.sub} id="pricing-title" />
+        <SectionHeader label={c.pricing.label} title={c.pricing.title} lead={c.pricing.sub} id="pricing-title" />
         <div className="pricing__table" ref={ref} data-reveal>
           <PriceTable tiers={tiers} onSelect={(k) => onSelect(k as PackageKey)} />
           <p className="t-small faint pricing__vat">{c.pricing.vat}</p>
@@ -106,7 +106,7 @@ export function About({ c }: P) {
   return (
     <section className="section" id="about" aria-labelledby="about-title">
       <div className="container">
-        <SectionHeader index="03" label={a.label} title={a.name} lead={a.role} id="about-title" />
+        <SectionHeader label={a.label} title={a.name} lead={a.role} id="about-title" />
         <div className="grid about__body" ref={ref}>
           <figure className="about__portrait" data-reveal>
             {photoOk ? (
@@ -152,8 +152,10 @@ export function Faq({ c }: P) {
   return (
     <section className="section" id="faq" aria-labelledby="faq-title">
       <div className="container">
-        <SectionHeader index="04" label={c.faq.label} title={c.faq.title} id="faq-title" />
-        <div className="grid">
+        <div className="split">
+          <div className="split__head">
+            <SectionHeader label={c.faq.label} title={c.faq.title} id="faq-title" />
+          </div>
           <div className="faq__list" ref={ref} data-reveal>
             <Accordion items={c.faq.items} />
           </div>
@@ -175,8 +177,10 @@ export function Contact({ c }: P) {
   return (
     <section className="section" id="contact" aria-labelledby="contact-title">
       <div className="container">
-        <SectionHeader index="05" label={c.contact.label} title={c.contact.title} id="contact-title" />
-        <div className="grid">
+        <div className="split">
+          <div className="split__head">
+            <SectionHeader label={c.contact.label} title={c.contact.title} id="contact-title" />
+          </div>
           <ul className="contact" ref={ref}>
             {c.contact.rows.map((r, i) => {
               const RowIcon = contactIcons[r.icon]
@@ -211,7 +215,7 @@ export function Doctors({ c }: P) {
   return (
     <section className="doctors" aria-labelledby="doctors-title">
       <div className="container">
-        <div className="grid doctors__grid" ref={ref} data-reveal>
+        <div className="doctors__panel grid doctors__grid" ref={ref} data-reveal>
           <h2 className="t-h3 doctors__title" id="doctors-title">
             {d.title}
           </h2>

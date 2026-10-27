@@ -78,7 +78,7 @@ export default function DesignSystem() {
           <h1 className="t-h1">The report.</h1>
           <p className="t-sub muted ds-intro__sub">
             A patient-facing radiology report should be precise, quiet and readable. Every part of this system follows
-            from that: a mist canvas, navy text, hairline rules, field labels, and one blue for the thing you should do next.
+            from that: a mist canvas, navy text, soft white sheets lit from above, and one blue for the thing you should do next.
           </p>
         </div>
 
@@ -132,7 +132,7 @@ export default function DesignSystem() {
           </div>
         </Block>
 
-        <Block index="03" title="Space, shape, depth" intro="A 4px base. Corners stay small (4 to 16px). Pills are not part of the system. Depth comes from hairlines first, shadows only on overlays.">
+        <Block index="03" title="Space, shape, depth" intro="A 4px base. Corners follow the role: controls 12px, cards 20px, panels 28px. Only small status chips are fully round. Depth comes from light: faint edges, tinted fills and soft shadows that carry a little Diagnostic Blue.">
           <div className="ds-space">
             {spacing.map(([k, px]) => (
               <div className="ds-space__row" key={k}>
@@ -143,13 +143,16 @@ export default function DesignSystem() {
             ))}
           </div>
           <div className="ds-shapes">
-            {['xs · 4', 'sm · 8', 'md · 12', 'lg · 16'].map((r, i) => (
-              <div key={r} className="ds-shape" style={{ borderRadius: [4, 8, 12, 16][i] }}>
+            {['xs · 6', 'sm · 12', 'md · 20', 'lg · 28'].map((r, i) => (
+              <div key={r} className="ds-shape" style={{ borderRadius: [6, 12, 20, 28][i] }}>
                 <span className="t-label">{r}</span>
               </div>
             ))}
             <div className="ds-shape ds-shape--raised">
               <span className="t-label">shadow-raised</span>
+            </div>
+            <div className="ds-shape ds-shape--lit">
+              <span className="t-label">shadow-lit</span>
             </div>
             <div className="ds-shape ds-shape--overlay">
               <span className="t-label">shadow-overlay</span>
@@ -187,7 +190,7 @@ export default function DesignSystem() {
           </div>
         </Block>
 
-        <Block index="05" title="Brand mark" intro="Logo artwork is used as supplied. The radial mark appears once at scale per page, and as a small waiting indicator.">
+        <Block index="05" title="Brand mark" intro="Logo artwork is used as supplied. At scale the radial mark is drawn as light, bright at the core and fading towards the tips. It appears once per page, and small as a waiting indicator.">
           <div className="ds-logos">
             <div className="ds-logo-tile">
               <Logo />

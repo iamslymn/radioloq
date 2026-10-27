@@ -158,6 +158,12 @@
   box-shadow: var(--shadow-raised);
 }
 
+.ds-shape--lit {
+  border-color: transparent;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lit);
+}
+
 .ds-shape--overlay {
   border-color: var(--line);
   border-radius: var(--radius-md);

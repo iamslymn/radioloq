@@ -23,10 +23,12 @@
   --paper-2: rgb(255 255 255 / 0.74);
   --paper-3: rgb(255 255 255 / 0.6);
 
-  /* Lines */
-  --line: rgb(14 25 41 / 0.12);
-  --line-strong: rgb(14 25 41 / 0.24);
-  --line-on-navy: rgb(255 255 255 / 0.14);
+  /* Lines. Kept faint: depth comes from light and tint, not outlines.
+     Form controls keep their own stronger border so they stay findable (3:1). */
+  --line: rgb(14 25 41 / 0.08);
+  --line-strong: rgb(14 25 41 / 0.14);
+  --line-field: rgb(14 25 41 / 0.3);
+  --line-on-navy: rgb(255 255 255 / 0.12);
 
   /* Surfaces */
   --surface-page: var(--mist);
@@ -74,21 +76,32 @@
   --space-8: 4rem;
   --space-9: 6rem;
   --space-10: 8rem;
-  --section-y: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --section-y: clamp(4rem, 2.5rem + 4.5vw, 6.5rem);
 
   /* Layout */
   --container: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
   --header-h: 4.75rem;
 
-  /* Shape */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  /* Shape: three steps by role, not one radius for everything.
+     Controls 12, cards 20, panels 28. */
+  --radius-xs: 6px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
 
-  --shadow-raised: 0 1px 2px rgb(14 25 41 / 0.04), 0 8px 24px -12px rgb(14 25 41 / 0.12);
-  --shadow-overlay: 0 1px 2px rgb(14 25 41 / 0.06), 0 24px 64px -16px rgb(14 25 41 / 0.28);
+  /* Depth: surfaces are lit from above. Shadows carry a little Diagnostic Blue
+     so they read as soft light falling off, not grey dirt. */
+  --shadow-soft: 0 1px 1px rgb(14 25 41 / 0.03), 0 10px 24px -14px rgb(14 25 41 / 0.1);
+  --shadow-raised:
+    0 1px 2px rgb(14 25 41 / 0.04),
+    0 14px 32px -16px rgb(14 25 41 / 0.12),
+    0 32px 64px -40px rgb(81 128 255 / 0.28);
+  --shadow-lit:
+    0 0 0 1px rgb(81 128 255 / 0.55),
+    0 18px 40px -18px rgb(81 128 255 / 0.45),
+    0 40px 80px -48px rgb(81 128 255 / 0.5);
+  --shadow-overlay: 0 1px 2px rgb(14 25 41 / 0.06), 0 24px 64px -16px rgb(14 25 41 / 0.24);
 
   /* Motion */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

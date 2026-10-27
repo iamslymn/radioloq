@@ -73,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--line);
+  background: var(--mist);
   border-radius: var(--radius-sm);
   font-weight: 500;
 }
@@ -83,13 +83,13 @@
   grid-template-columns: 16px 1fr;
   gap: var(--space-3);
   padding: var(--space-4);
-  border-left: 2px solid var(--navy);
-  background: var(--mist);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgb(211 226 255 / 0.55);
+  border-radius: var(--radius-sm);
 }
 
 .scan__notice > svg {
   margin-top: 2px;
+  color: var(--blue);
 }
 
 .scan__notice .t-label {

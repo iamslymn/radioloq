@@ -5,27 +5,34 @@
 }
 
 .prices__col {
+  position: relative;
   display: grid;
   grid-template-rows: auto auto auto 1fr auto;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--white);
-  overflow: hidden;
+  box-shadow: var(--shadow-soft);
   transition:
     transform var(--dur-ui) var(--ease-out),
     box-shadow var(--dur-ui) var(--ease-out),
     border-color var(--dur-hover) ease;
 }
 
+/* The recommended offer is the lit one: a thin blue edge and the glow it casts. */
 .prices__col[data-recommended] {
-  border-color: var(--navy);
+  border-color: transparent;
+  box-shadow: var(--shadow-lit);
+  background: linear-gradient(180deg, rgb(211 226 255 / 0.55) 0%, var(--white) 9rem);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .prices__col:hover {
     transform: translateY(-4px);
-    border-color: var(--blue);
     box-shadow: var(--shadow-raised);
+  }
+
+  .prices__col[data-recommended]:hover {
+    box-shadow: var(--shadow-lit), var(--shadow-raised);
   }
 
   .prices__col:hover .prices__check {
@@ -44,21 +51,16 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
-  min-height: 3rem;
-  padding: 0 var(--space-5);
-  border-bottom: 1px solid var(--line);
+  min-height: 2rem;
+  padding: var(--space-5) var(--space-5) 0;
   color: var(--ink-2);
-  background: var(--mist);
-}
-
-.prices__col[data-recommended] .prices__head {
-  background: var(--navy);
-  color: var(--white);
-  border-bottom-color: var(--navy);
 }
 
 .prices__flag {
-  color: var(--spectrum);
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
 }
 
 .prices__cell {
@@ -155,7 +157,7 @@
   }
 
   .prices__head {
-    padding-inline: var(--space-6);
+    padding: var(--space-6) var(--space-6) 0;
   }
 
   .prices__action {

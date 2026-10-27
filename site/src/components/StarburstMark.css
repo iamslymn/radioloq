@@ -1,22 +1,52 @@
 .starburst {
   pointer-events: none;
-  color: var(--ice);
 }
 
 .starburst svg {
   width: 100%;
   height: auto;
+  overflow: visible;
 }
 
-/* Entering once on load: the rays settle in from a small rotation. */
-.starburst {
-  animation: starburst-in 1400ms var(--ease-out) both;
+/* The one orchestrated moment on the page: the light comes up once on load,
+   halo first, then the rays settle in from a small turn. */
+.starburst__halo,
+.starburst__rays,
+.starburst__core {
+  transform-box: view-box;
+  transform-origin: 69.98px 68.92px;
 }
 
-@keyframes starburst-in {
+.starburst__halo {
+  animation: starburst-halo 1600ms var(--ease-out) both;
+}
+
+.starburst__rays {
+  animation: starburst-rays 1500ms var(--ease-out) 120ms both;
+}
+
+.starburst__core {
+  animation: starburst-core 900ms var(--ease-out) both;
+}
+
+@keyframes starburst-halo {
   from {
     opacity: 0;
-    transform: rotate(-14deg) scale(0.96);
+    transform: scale(0.55);
+  }
+}
+
+@keyframes starburst-rays {
+  from {
+    opacity: 0;
+    transform: rotate(-12deg) scale(0.9);
+  }
+}
+
+@keyframes starburst-core {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
   }
 }
 
@@ -38,7 +68,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .starburst {
+  .starburst__halo,
+  .starburst__rays,
+  .starburst__core {
     animation: none;
   }
 

@@ -24,7 +24,6 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 aria-controls={panelId}
                 onClick={() => setOpen(isOpen ? null : i)}
               >
-                <span className="accordion__index t-label t-num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="accordion__q">{item.q}</span>
                 <span className="accordion__icon">
                   <Plus size={18} />

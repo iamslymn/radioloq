@@ -28,25 +28,23 @@ type HeaderProps = {
   id?: string
 }
 
-/** Label on the left (columns 1-4), heading and lead on the right (columns 5-12). */
+/** Label, heading and lead stacked as one block. Long sections put this block beside their content (see .split). */
 export function SectionHeader({ index, label, title, lead, aside, id }: HeaderProps) {
   const ref = useReveal<HTMLDivElement>()
   return (
-    <div className="section-header grid" ref={ref}>
-      <div className="section-header__label" data-reveal>
+    <div className="section-header" ref={ref}>
+      <div data-reveal>
         <SectionLabel index={index}>{label}</SectionLabel>
       </div>
-      <div className="section-header__body">
-        <h2 className="t-h2" id={id} data-reveal style={stagger(1)}>
-          {title}
-        </h2>
-        {lead && (
-          <p className="section-header__lead muted" data-reveal style={stagger(2)}>
-            {lead}
-          </p>
-        )}
-        {aside}
-      </div>
+      <h2 className="t-h2" id={id} data-reveal style={stagger(1)}>
+        {title}
+      </h2>
+      {lead && (
+        <p className="section-header__lead muted" data-reveal style={stagger(2)}>
+          {lead}
+        </p>
+      )}
+      {aside}
     </div>
   )
 }

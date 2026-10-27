@@ -34,7 +34,7 @@ export function PriceTable({ tiers, currency = '€', onSelect }: Props) {
         >
           <header className="prices__head">
             <span className="t-label">{t.tier}</span>
-            {t.flag && <span className="prices__flag t-label">{t.flag}</span>}
+            {t.flag && t.flag !== t.tier && <span className="prices__flag t-label">{t.flag}</span>}
           </header>
 
           <div className="prices__cell">
