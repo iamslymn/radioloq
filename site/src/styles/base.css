@@ -197,6 +197,13 @@ main[tabindex='-1']:focus {
   --line: var(--line-on-navy);
   --line-strong: rgb(255 255 255 / 0.28);
   --focus-ring: 0 0 0 2px var(--navy), 0 0 0 4px var(--blue);
+  /* Fields and options on a navy band: see-through sheets with light text, in both themes. */
+  --ink-4: rgb(255 255 255 / 0.45);
+  --surface-raised: rgb(255 255 255 / 0.08);
+  --surface-sunken: rgb(255 255 255 / 0.05);
+  --tint-soft: rgb(81 128 255 / 0.2);
+  --line-field: rgb(255 255 255 / 0.32);
+  --line-control: rgb(255 255 255 / 0.55);
 }
 
 .inverse ::selection {
