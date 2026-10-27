@@ -25,6 +25,8 @@ site/
 
 TypeScript, Vite, oxlint. Vercel'de yayınlanıyor.
 
+Ana site şifre ekranının (`PasswordGate`) arkasında. `courses.radioloq.com` şifresiz açık.
+
 ## Kurallar
 
 ### Metin kuralları, istisnasız

@@ -20,11 +20,9 @@ const isDesignSystem = window.location.pathname.replace(/\/$/, '') === '/design-
 // First-time visitors: work out their country's language before the first paint,
 // so the page never flashes in one language and then switches to another.
 void (isDesignSystem ? Promise.resolve() : detectLang()).then(() => {
+  const page = <Suspense fallback={null}>{isDesignSystem ? <DesignSystem /> : isCourses ? <Courses /> : <App />}</Suspense>
   createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <PasswordGate>
-        <Suspense fallback={null}>{isDesignSystem ? <DesignSystem /> : isCourses ? <Courses /> : <App />}</Suspense>
-      </PasswordGate>
-    </StrictMode>,
+    // The courses page is open to everyone; the main site stays behind the gate until launch.
+    <StrictMode>{isCourses ? page : <PasswordGate>{page}</PasswordGate>}</StrictMode>,
   )
 })
