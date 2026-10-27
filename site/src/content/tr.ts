@@ -19,7 +19,6 @@ const tr: Content = {
     skip: 'Ana içeriğe geç',
   },
   hero: {
-    badge: 'Almanya · Radyoloji · İkinci görüş',
     titleLead: 'Alman standardında ikinci görüş,',
     titleTail: 'kendi dilinizde.',
     sub: 'Almanya’da lisanslı bir hekimim ve şu anda radyoloji alanında uzmanlık eğitimi alıyorum. Görüntülerinizi her gün klinikte uyguladığım standartlarla inceliyor ve her bulguyu 48 saat içinde kendi dilinizde anlaşılır şekilde açıklıyorum.',

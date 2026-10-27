@@ -24,7 +24,6 @@ const az = {
     skip: 'Əsas məzmuna keç',
   },
   hero: {
-    badge: 'Almaniya · Radiologiya · İkinci baxış',
     titleLead: 'Almaniya standartında ikinci baxış,',
     titleTail: 'öz dilinizdə.',
     sub: 'Almaniyada lisenziyalı həkiməm və hal-hazırda Radiologiya üzrə rezidenturadayam. Müayinə görüntülərinizi hər gün klinikada tətbiq etdiyim standartlarla nəzərdən keçirir və hər nəticəni 48 saat ərzində öz dilimizdə aydın izah edirəm.',

@@ -19,7 +19,6 @@ const en: Content = {
     skip: 'Skip to main content',
   },
   hero: {
-    badge: 'Germany · Radiology · Second opinion',
     titleLead: 'A German-standard second opinion,',
     titleTail: 'in your language.',
     sub: 'I am a doctor licensed in Germany and currently a resident in radiology. I review your scans to the same standards I apply in the clinic every day, and explain every finding clearly in your own language within 48 hours.',

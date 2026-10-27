@@ -15,16 +15,13 @@ export function Hero({ c }: { c: Content }) {
       <div className="container">
         <div className="grid hero__grid">
           <div className="hero__copy">
-            <p className="hero__badge t-label" data-reveal>
-              {h.badge}
-            </p>
-            <h1 className="t-h1 hero__title" id="hero-title" data-reveal style={stagger(1)}>
+            <h1 className="t-h1 hero__title" id="hero-title" data-reveal>
               {h.titleLead} <span className="hero__title-tail">{h.titleTail}</span>
             </h1>
-            <p className="hero__sub muted" data-reveal style={stagger(2)}>
+            <p className="hero__sub muted" data-reveal style={stagger(1)}>
               {h.sub}
             </p>
-            <div className="hero__actions" data-reveal style={stagger(3)}>
+            <div className="hero__actions" data-reveal style={stagger(2)}>
               <Button href="#pricing" icon={<ArrowRight />}>
                 {h.cta1}
               </Button>
@@ -32,7 +29,7 @@ export function Hero({ c }: { c: Content }) {
                 {h.cta2}
               </Button>
             </div>
-            <p data-reveal style={stagger(4)}>
+            <p data-reveal style={stagger(3)}>
               <TextLink href={links.calendly} target="_blank" rel="noreferrer" icon={<ArrowRight size={14} />}>
                 {h.cta3}
               </TextLink>

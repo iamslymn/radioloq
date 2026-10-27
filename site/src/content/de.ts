@@ -19,7 +19,6 @@ const de: Content = {
     skip: 'Zum Hauptinhalt springen',
   },
   hero: {
-    badge: 'Deutschland · Radiologie · Zweitmeinung',
     titleLead: 'Zweitmeinung nach deutschem Standard,',
     titleTail: 'in Ihrer Sprache.',
     sub: 'Ich bin in Deutschland approbierter Arzt und derzeit in der Facharztweiterbildung Radiologie. Ich beurteile Ihre Aufnahmen nach denselben Standards, die ich täglich in der Klinik anwende, und erkläre Ihnen jeden Befund innerhalb von 48 Stunden verständlich in Ihrer Sprache.',
