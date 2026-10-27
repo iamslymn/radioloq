@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { type Theme, applyTheme, currentTheme, saveTheme, storedTheme } from '../lib/theme'
+import { useState } from 'react'
+import { type Theme, applyTheme, currentTheme, saveTheme } from '../lib/theme'
 import { Moon, Sun } from './Icon'
 import './ThemeToggle.css'
 
@@ -8,20 +8,6 @@ type ViewTransitionDocument = Document & { startViewTransition?: (cb: () => void
 /** Sun and moon button beside the language picker. Pressed means the dark theme is on. */
 export function ThemeToggle({ label }: { label: string }) {
   const [theme, setTheme] = useState<Theme>(currentTheme)
-
-  // Without a saved choice, follow the system setting live.
-  useEffect(() => {
-    const mq = window.matchMedia?.('(prefers-color-scheme: dark)')
-    if (!mq) return
-    const onChange = (e: MediaQueryListEvent) => {
-      if (storedTheme()) return
-      const next: Theme = e.matches ? 'dark' : 'light'
-      applyTheme(next)
-      setTheme(next)
-    }
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [])
 
   const toggle = () => {
     const next: Theme = theme === 'dark' ? 'light' : 'dark'

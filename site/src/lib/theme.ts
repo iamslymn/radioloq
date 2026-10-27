@@ -1,7 +1,7 @@
 /**
  * Light and dark theme. The choice lives on <html data-theme>, set before first paint by the
- * inline script in index.html. A visitor's own choice is remembered; without one the site
- * follows the system setting, also when it changes while the page is open.
+ * inline script in index.html. Everyone starts in light; a visitor who switches to dark keeps
+ * that choice on later visits. The system setting is deliberately not followed.
  */
 export type Theme = 'light' | 'dark'
 
@@ -19,13 +19,9 @@ export function storedTheme(): Theme | null {
   }
 }
 
-export function systemTheme(): Theme {
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-}
-
 export function currentTheme(): Theme {
   const v = document.documentElement.dataset.theme
-  return isTheme(v) ? v : storedTheme() ?? systemTheme()
+  return isTheme(v) ? v : storedTheme() ?? 'light'
 }
 
 export function applyTheme(theme: Theme) {

@@ -152,7 +152,7 @@
 /*
  * Dark theme. Midnight Navy becomes the canvas and still leads, sheets lift a little off it,
  * and the blue light stays the same. Set on <html data-theme="dark"> before first paint
- * (see the inline script in index.html), from the visitor's choice or their system setting.
+ * (see the inline script in index.html), only when the visitor chose it. Light is the default.
  */
 :root[data-theme="dark"] {
   --surface-page: var(--navy);

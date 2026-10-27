@@ -134,7 +134,8 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
   tarafından onaylı, yeniden eksik olarak açılmaz. `chk4` metni değiştirilmez.
 - Ödeme sadece Stripe. PayPal hiçbir metinde geçmez.
 - Hosting Vercel. Yeni bir hizmet sağlayıcı eklenirse privacy'deki tabloya da girer.
-- Açık ve koyu tema var. Bileşenler renkleri `src/styles/tokens.css` içindeki rol
+- Açık ve koyu tema var. Varsayılan herkes için açık tema, cihazın koyu mod ayarına
+  bakılmaz. Koyu tema sadece ziyaretçi düğmeyle seçerse açılır ve hatırlanır. Bileşenler renkleri `src/styles/tokens.css` içindeki rol
   token'larından alır (`--surface-raised`, `--tint`, `--ink`, `--strong` gibi). Palet
   değişkenleri (`--navy`, `--white`, `--mist`, `--ice`) bileşende doğrudan kullanılmaz,
   yoksa koyu tema bozulur. `public/legal.css` aynı rolleri kendi içinde tekrarlar.

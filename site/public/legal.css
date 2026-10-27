@@ -838,7 +838,7 @@ p {
   }
 }
 
-/* Dark theme, following the visitor's choice on the main site (or their system setting).
+/* Dark theme, only when the visitor chose it on the main site. Light is the default.
    Mirrors :root[data-theme="dark"] in src/styles/tokens.css. */
 :root[data-theme="dark"] {
   --ink: var(--mist);
