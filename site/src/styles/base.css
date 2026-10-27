@@ -78,8 +78,8 @@ p {
 }
 
 ::selection {
-  background: var(--ice);
-  color: var(--navy);
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 :focus-visible {
@@ -222,8 +222,8 @@ main[tabindex='-1']:focus {
   top: var(--space-4);
   z-index: 100;
   padding: var(--space-2) var(--space-4);
-  background: var(--navy);
-  color: var(--white);
+  background: var(--strong);
+  color: var(--on-strong);
   border-radius: var(--radius-sm);
   transform: translateY(-200%);
   transition: transform var(--dur-ui) var(--ease-out);

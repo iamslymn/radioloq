@@ -9,7 +9,7 @@
   padding: var(--space-4);
   border: 0;
   background: transparent;
-  color: var(--navy);
+  color: var(--ink);
   display: grid;
   place-items: center;
   overscroll-behavior: contain;
@@ -20,7 +20,7 @@
 }
 
 .modal::backdrop {
-  background: rgb(14 25 41 / 0.56);
+  background: var(--scrim);
   opacity: 0;
   transition: opacity var(--dur-overlay) ease;
 }
@@ -42,7 +42,7 @@
   max-height: calc(100dvh - 2rem);
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: var(--white);
+  background: var(--surface-raised);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-overlay);
   opacity: 0;
@@ -74,7 +74,7 @@
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius-sm);
-  color: rgb(14 25 41 / 0.7);
+  color: var(--ink-2);
   transition: background-color var(--dur-hover) ease, transform var(--dur-press) var(--ease-out);
 }
 
@@ -84,8 +84,8 @@
 
 @media (hover: hover) and (pointer: fine) {
   .modal__close:hover {
-    background: var(--mist);
-    color: var(--navy);
+    background: var(--surface-sunken);
+    color: var(--ink);
   }
 }
 

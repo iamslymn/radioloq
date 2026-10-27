@@ -10,7 +10,7 @@
   grid-template-rows: auto auto auto 1fr auto;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--white);
+  background: var(--surface-raised);
   box-shadow: var(--shadow-soft);
   transition:
     transform var(--dur-ui) var(--ease-out),
@@ -22,7 +22,7 @@
 .prices__col[data-recommended] {
   border-color: transparent;
   box-shadow: var(--shadow-lit);
-  background: linear-gradient(180deg, rgb(211 226 255 / 0.55) 0%, var(--white) 9rem);
+  background: linear-gradient(180deg, var(--tint-soft) 0%, var(--surface-raised) 9rem);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -59,8 +59,8 @@
 .prices__flag {
   padding: 0.25rem 0.625rem;
   border-radius: 999px;
-  background: var(--navy);
-  color: var(--white);
+  background: var(--strong);
+  color: var(--on-strong);
 }
 
 .prices__cell {

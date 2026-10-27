@@ -7,6 +7,9 @@ import './StarburstMark.css'
 const CX = 69.98
 const CY = 68.92
 
+/* Gradient stops read their colour from the theme (tokens.css, --halo-* and --ray-*). */
+const stop = (name: string) => ({ stopColor: `var(--${name})`, stopOpacity: `var(--${name}-a)` })
+
 /**
  * The logo's radial mark drawn as light, like a film on a lightbox: the same rays as the
  * logo, bright at the core and fading out towards the tips, over a soft halo. Decorative only.
@@ -24,16 +27,16 @@ export function Starburst({ className }: { className?: string }) {
       <svg viewBox="-30 -30 200 198">
         <defs>
           <radialGradient id={halo} cx={CX} cy={CY} r="96" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#ffffff" stopOpacity="1" />
-            <stop offset="0.14" stopColor="#d3e2ff" stopOpacity="0.95" />
-            <stop offset="0.42" stopColor="#d3e2ff" stopOpacity="0.42" />
-            <stop offset="1" stopColor="#d3e2ff" stopOpacity="0" />
+            <stop offset="0" style={stop('halo-1')} />
+            <stop offset="0.14" style={stop('halo-2')} />
+            <stop offset="0.42" style={stop('halo-3')} />
+            <stop offset="1" style={{ stopColor: 'var(--halo-3)', stopOpacity: 0 }} />
           </radialGradient>
           <radialGradient id={ray} cx={CX} cy={CY} r="70" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#5180ff" stopOpacity="0.78" />
-            <stop offset="0.32" stopColor="#5180ff" stopOpacity="0.42" />
-            <stop offset="0.72" stopColor="#a3c3fe" stopOpacity="0.26" />
-            <stop offset="1" stopColor="#a3c3fe" stopOpacity="0" />
+            <stop offset="0" style={stop('ray-1')} />
+            <stop offset="0.32" style={stop('ray-2')} />
+            <stop offset="0.72" style={stop('ray-3')} />
+            <stop offset="1" style={{ stopColor: 'var(--ray-3)', stopOpacity: 0 }} />
           </radialGradient>
           <radialGradient id={core} cx={CX} cy={CY} r="8.5" gradientUnits="userSpaceOnUse">
             <stop offset="0" stopColor="#ffffff" />

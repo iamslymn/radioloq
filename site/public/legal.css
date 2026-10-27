@@ -64,6 +64,24 @@
   --line-strong: rgb(14 25 41 / 0.24);
   --line-on-navy: rgb(255 255 255 / 0.14);
 
+  /* Theme roles, as in src/styles/tokens.css. The dark theme below re-assigns them. */
+  --surface-page: var(--mist);
+  --surface-raised: var(--white);
+  --surface-sunken: var(--mist);
+  --surface-inverse: var(--navy);
+  --tint-soft: rgb(211 226 255 / 0.5);
+  --header-bg: rgb(243 248 254 / 0.88);
+  --strong: var(--navy);
+  --on-strong: var(--white);
+  --primary-bg: var(--navy);
+  --primary-fg: var(--mist-text);
+  --primary-hover: #1b2a40;
+  --hover-wash: rgb(14 25 41 / 0.04);
+  --selection-bg: var(--ice);
+  --selection-fg: var(--navy);
+  --code-ink: var(--ice);
+  color-scheme: light;
+
   --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --h2-size: clamp(2rem, 1.6rem + 1.4vw, 2.5rem);
@@ -128,7 +146,7 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: var(--mist);
+  background: var(--surface-page);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--body-size);
@@ -172,8 +190,8 @@ p {
 }
 
 ::selection {
-  background: var(--ice);
-  color: var(--navy);
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 :focus-visible {
@@ -229,7 +247,7 @@ p {
 }
 
 .inverse {
-  background: var(--navy);
+  background: var(--surface-inverse);
   color: var(--paper);
   --ink: var(--paper);
   --ink-2: var(--paper-2);
@@ -243,8 +261,8 @@ p {
   top: var(--space-4);
   z-index: 100;
   padding: var(--space-2) var(--space-4);
-  background: var(--navy);
-  color: var(--white);
+  background: var(--strong);
+  color: var(--on-strong);
   border-radius: var(--radius-sm);
   transform: translateY(-200%);
   transition: transform var(--dur-ui) var(--ease-out);
@@ -293,8 +311,8 @@ p {
 
 .btn--primary {
   border-color: transparent;
-  background: var(--navy);
-  color: var(--mist-text);
+  background: var(--primary-bg);
+  color: var(--primary-fg);
 }
 
 .error-page__actions {
@@ -309,18 +327,18 @@ p {
   line-height: 1;
   letter-spacing: -0.06em;
   font-weight: 400;
-  color: var(--ice);
+  color: var(--code-ink);
   font-variant-numeric: tabular-nums;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .btn--primary:hover {
-    background: #1b2a40;
+    background: var(--primary-hover);
     border-color: transparent;
   }
 
   .btn:not(.btn--primary):hover {
-    background: rgb(14 25 41 / 0.04);
+    background: var(--hover-wash);
     border-color: var(--ink);
   }
 
@@ -335,7 +353,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgb(243 248 254 / 0.88);
+  background: var(--header-bg);
   backdrop-filter: saturate(1.4) blur(12px);
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid var(--line);
@@ -384,7 +402,7 @@ p {
 
 .lang-links a[aria-current="page"] {
   color: var(--ink);
-  background: var(--white);
+  background: var(--surface-raised);
   box-shadow: inset 0 0 0 1px var(--line);
 }
 
@@ -605,9 +623,9 @@ p {
 .legal__body .note {
   margin: var(--space-6) 0;
   padding: var(--space-4) var(--space-5);
-  border-left: 2px solid var(--navy);
+  border-left: 2px solid var(--ink);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  background: var(--white);
+  background: var(--surface-raised);
 }
 
 .legal__body .mt-banner {
@@ -615,12 +633,12 @@ p {
   grid-template-columns: 16px 1fr;
   gap: var(--space-3);
   border-left-color: var(--blue);
-  background: rgb(211 226 255 / 0.5);
+  background: var(--tint-soft);
 }
 
 .legal__body .mt-banner-icon {
   margin-top: 4px;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .legal__body .alert p,
@@ -643,7 +661,7 @@ p {
   overflow-x: auto;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
-  background: var(--white);
+  background: var(--surface-raised);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -664,7 +682,7 @@ p {
 }
 
 .legal__body th {
-  background: var(--mist);
+  background: var(--surface-sunken);
   border-bottom: 1px solid var(--line);
   color: var(--ink-2);
   font-size: var(--label-size);
@@ -692,7 +710,7 @@ p {
   margin: 0 0 var(--space-4);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
-  background: var(--white);
+  background: var(--surface-raised);
   overflow: hidden;
   transition:
     transform var(--dur-ui) var(--ease-out),
@@ -717,7 +735,7 @@ p {
   margin: 0;
   padding: var(--space-3) var(--space-5);
   border-bottom: 1px solid var(--line);
-  background: var(--mist);
+  background: var(--surface-sunken);
   font-size: var(--label-size);
   line-height: var(--label-line);
   letter-spacing: var(--track-label);
@@ -818,4 +836,37 @@ p {
   .legal__body .pkg:hover {
     transform: none;
   }
+}
+
+/* Dark theme, following the visitor's choice on the main site (or their system setting).
+   Mirrors :root[data-theme="dark"] in src/styles/tokens.css. */
+:root[data-theme="dark"] {
+  --ink: var(--mist);
+  --ink-2: rgb(243 248 254 / 0.74);
+  --ink-3: rgb(243 248 254 / 0.6);
+  --line: rgb(255 255 255 / 0.1);
+  --line-strong: rgb(255 255 255 / 0.18);
+
+  --surface-page: var(--navy);
+  --surface-raised: #15233a;
+  --surface-sunken: rgb(255 255 255 / 0.05);
+  --surface-inverse: #08111d;
+  --tint-soft: rgb(81 128 255 / 0.12);
+  --header-bg: rgb(14 25 41 / 0.82);
+  --strong: var(--mist);
+  --on-strong: var(--navy);
+  --primary-bg: var(--mist-text);
+  --primary-fg: var(--navy);
+  --primary-hover: var(--white);
+  --hover-wash: rgb(255 255 255 / 0.06);
+  --selection-bg: rgb(81 128 255 / 0.45);
+  --selection-fg: var(--white);
+  --code-ink: rgb(81 128 255 / 0.4);
+  --shadow-raised: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.55);
+  color-scheme: dark;
+}
+
+/* The header logo file is navy; on the dark canvas it is shown light. */
+:root[data-theme="dark"] .site-header__logo img {
+  filter: brightness(0) invert(0.96);
 }

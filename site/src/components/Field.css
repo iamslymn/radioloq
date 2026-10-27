@@ -4,7 +4,7 @@
 }
 
 .field__label {
-  color: rgb(14 25 41 / 0.74);
+  color: var(--ink-2);
 }
 
 .field__control {
@@ -13,8 +13,8 @@
   padding: 0 0.875rem;
   /* 16px minimum stops iOS from zooming into the field */
   font-size: 1rem;
-  color: var(--navy);
-  background: var(--white);
+  color: var(--ink);
+  background: var(--surface-raised);
   border: 1px solid var(--line-field);
   border-radius: var(--radius-sm);
   outline: none;
@@ -22,7 +22,7 @@
 }
 
 .field__control::placeholder {
-  color: rgb(14 25 41 / 0.45);
+  color: var(--ink-4);
 }
 
 .field__control:focus-visible {
@@ -31,8 +31,8 @@
 }
 
 .field__control:disabled {
-  background: var(--mist);
-  color: rgb(14 25 41 / 0.62);
+  background: var(--surface-sunken);
+  color: var(--ink-3);
 }
 
 .field__control--area {
@@ -67,14 +67,14 @@
   padding: var(--space-4);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--mist);
+  background: var(--surface-sunken);
   cursor: pointer;
   transition: border-color var(--dur-hover) ease, background-color var(--dur-hover) ease;
 }
 
 .checkbox[data-checked] {
   border-color: rgb(81 128 255 / 0.5);
-  background: rgb(211 226 255 / 0.45);
+  background: var(--tint-soft);
 }
 
 .checkbox[data-invalid]:not([data-checked]) {
@@ -95,9 +95,9 @@
   width: 1.125rem;
   height: 1.125rem;
   margin-top: 2px;
-  border: 1.5px solid rgb(14 25 41 / 0.4);
+  border: 1.5px solid var(--line-control);
   border-radius: 4px;
-  background: var(--white);
+  background: var(--surface-raised);
   color: var(--navy);
   transition: background-color var(--dur-hover) ease, border-color var(--dur-hover) ease;
 }
@@ -124,11 +124,11 @@
 }
 
 .checkbox__text {
-  color: rgb(14 25 41 / 0.8);
+  color: var(--ink-2);
 }
 
 .checkbox__text a {
-  color: var(--navy);
+  color: var(--ink);
   font-weight: 500;
   text-decoration: underline;
   text-decoration-color: var(--blue);

@@ -18,8 +18,9 @@ const az = {
     price: 'Qiymətlər',
     about: 'Haqqımda',
     cta: 'Görüntünüzü paylaşın',
-    lang: 'Select language',
+    lang: 'Dil seçin',
     langSoon: 'Tezliklə',
+    theme: 'Tünd rejim',
     skip: 'Əsas məzmuna keç',
   },
   hero: {

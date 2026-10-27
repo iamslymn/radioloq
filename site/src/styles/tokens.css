@@ -36,6 +36,38 @@
   --surface-tint: var(--ice);
   --surface-inverse: var(--navy);
 
+  /* Theme roles. Components use these, never the palette directly, so the dark
+     theme below only has to re-assign roles. */
+  --surface-sunken: var(--mist);              /* a step down inside a raised sheet */
+  --tint: var(--ice);                         /* icon wells, quote, portrait frame */
+  --tint-soft: rgb(211 226 255 / 0.5);        /* notes, notices, checked options */
+  --glass: rgb(255 255 255 / 0.7);
+  --glass-edge: rgb(255 255 255 / 0.9);
+  --header-bg: rgb(243 248 254 / 0.88);
+  --ink-4: rgb(14 25 41 / 0.45);              /* placeholders and disabled text only */
+  --line-control: rgb(14 25 41 / 0.4);        /* checkbox edge */
+  --strong: var(--navy);                      /* filled chips and icons */
+  --on-strong: var(--white);
+  --primary-bg: var(--navy);
+  --primary-fg: var(--mist-text);
+  --primary-hover: #1b2a40;
+  --scrim: rgb(14 25 41 / 0.56);
+  --hover-wash: rgb(14 25 41 / 0.05);
+  --quote-glow: rgb(255 255 255 / 0.85);
+  --panel-shadow: 0 40px 80px -48px rgb(14 25 41 / 0.6);
+  --selection-bg: var(--ice);
+  --selection-fg: var(--navy);
+
+  /* The hero light: halo and ray colours, see components/StarburstMark.css */
+  --halo-1: #ffffff;  --halo-1-a: 1;
+  --halo-2: #d3e2ff;  --halo-2-a: 0.95;
+  --halo-3: #d3e2ff;  --halo-3-a: 0.42;
+  --ray-1: #5180ff;   --ray-1-a: 0.78;
+  --ray-2: #5180ff;   --ray-2-a: 0.42;
+  --ray-3: #a3c3fe;   --ray-3-a: 0.26;
+
+  color-scheme: light;
+
   /* Feedback (kept inside the blue family; error is the only off-palette hue) */
   --danger: #b4232f;
   --danger-tint: #fbeef0;
@@ -114,5 +146,66 @@
   --dur-reveal: 560ms;
   --stagger: 40ms;
 
-  --focus-ring: 0 0 0 2px var(--mist), 0 0 0 4px var(--blue);
+  --focus-ring: 0 0 0 2px var(--surface-page), 0 0 0 4px var(--blue);
+}
+
+/*
+ * Dark theme. Midnight Navy becomes the canvas and still leads, sheets lift a little off it,
+ * and the blue light stays the same. Set on <html data-theme="dark"> before first paint
+ * (see the inline script in index.html), from the visitor's choice or their system setting.
+ */
+:root[data-theme="dark"] {
+  --surface-page: var(--navy);
+  --surface-raised: #15233a;
+  --surface-tint: rgb(81 128 255 / 0.16);
+  --surface-inverse: #08111d;
+
+  --surface-sunken: rgb(255 255 255 / 0.05);
+  --tint: rgb(81 128 255 / 0.16);
+  --tint-soft: rgb(81 128 255 / 0.1);
+  --glass: rgb(21 35 58 / 0.72);
+  --glass-edge: rgb(255 255 255 / 0.06);
+  --header-bg: rgb(14 25 41 / 0.82);
+
+  --ink: var(--mist);
+  --ink-2: rgb(243 248 254 / 0.74);
+  --ink-3: rgb(243 248 254 / 0.6);
+  --ink-4: rgb(243 248 254 / 0.42);
+
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.14);
+  --line-field: rgb(255 255 255 / 0.3);
+  --line-control: rgb(255 255 255 / 0.45);
+
+  --strong: var(--mist);
+  --on-strong: var(--navy);
+  --primary-bg: var(--mist-text);
+  --primary-fg: var(--navy);
+  --primary-hover: var(--white);
+  --scrim: rgb(3 7 14 / 0.72);
+  --hover-wash: rgb(255 255 255 / 0.06);
+  --quote-glow: rgb(81 128 255 / 0.22);
+  --panel-shadow: 0 40px 80px -48px rgb(0 0 0 / 0.8);
+  --selection-bg: rgb(81 128 255 / 0.45);
+  --selection-fg: var(--white);
+
+  --shadow-soft: 0 1px 1px rgb(0 0 0 / 0.25), 0 10px 24px -14px rgb(0 0 0 / 0.55);
+  --shadow-raised:
+    0 1px 2px rgb(0 0 0 / 0.3),
+    0 14px 32px -16px rgb(0 0 0 / 0.6),
+    0 32px 64px -40px rgb(81 128 255 / 0.35);
+  --shadow-overlay: 0 1px 2px rgb(0 0 0 / 0.3), 0 24px 64px -16px rgb(0 0 0 / 0.7);
+
+  /* On navy the light glows from within instead of washing the page white. */
+  --halo-1: #a3c3fe;  --halo-1-a: 0.5;
+  --halo-2: #5180ff;  --halo-2-a: 0.3;
+  --halo-3: #5180ff;  --halo-3-a: 0.1;
+  --ray-1: #a3c3fe;   --ray-1-a: 0.95;
+  --ray-2: #5180ff;   --ray-2-a: 0.6;
+  --ray-3: #5180ff;   --ray-3-a: 0.26;
+
+  --danger: #ff8f98;
+  --danger-tint: rgb(255 143 152 / 0.12);
+
+  color-scheme: dark;
 }

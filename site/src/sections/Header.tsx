@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Button } from '../components/Button'
 import { LangSwitch } from '../components/LangSwitch'
 import { Logo } from '../components/Logo'
+import { ThemeToggle } from '../components/ThemeToggle'
 import { type Content, type Lang, languages } from '../content'
 
 export function Header({ c, onLangChange }: { c: Content; onLangChange: (lang: Lang) => void }) {
@@ -33,6 +34,7 @@ export function Header({ c, onLangChange }: { c: Content; onLangChange: (lang: L
             label={c.nav.lang}
             unavailableHint={c.nav.langSoon}
           />
+          <ThemeToggle label={c.nav.theme} />
           <Button href="#pricing" size="sm" className="site-header__cta">
             {c.nav.cta}
           </Button>

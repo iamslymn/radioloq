@@ -15,6 +15,7 @@ const en: Content = {
     cta: 'Share your scan',
     lang: 'Select language',
     langSoon: 'Coming soon',
+    theme: 'Dark mode',
     skip: 'Skip to main content',
   },
   hero: {

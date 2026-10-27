@@ -7,6 +7,7 @@ import { LangSwitch } from '../components/LangSwitch'
 import { Logo } from '../components/Logo'
 import { SectionHeader } from '../components/Section'
 import { Starburst } from '../components/StarburstMark'
+import { ThemeToggle } from '../components/ThemeToggle'
 import { type Lang, content, initialLang, languages, links, saveLang } from '../content'
 import { coursesContent } from '../content/courses'
 import { track } from '../lib/analytics'
@@ -171,6 +172,7 @@ export default function Courses() {
               label={c.nav.lang}
               unavailableHint={c.nav.langSoon}
             />
+            <ThemeToggle label={c.nav.theme} />
             <Button href="https://radioloq.com/" size="sm" variant="secondary" className="site-header__cta">
               {t.back}
             </Button>

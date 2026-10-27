@@ -15,6 +15,7 @@ const tr: Content = {
     cta: 'Görüntünüzü paylaşın',
     lang: 'Dil seçin',
     langSoon: 'Yakında',
+    theme: 'Koyu tema',
     skip: 'Ana içeriğe geç',
   },
   hero: {

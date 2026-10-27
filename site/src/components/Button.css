@@ -1,9 +1,9 @@
 .btn {
   /* Primary: Midnight Navy with Clinical Mist text. */
-  --btn-bg: var(--navy);
-  --btn-fg: var(--mist-text);
+  --btn-bg: var(--primary-bg);
+  --btn-fg: var(--primary-fg);
   --btn-border: transparent;
-  --btn-bg-hover: #1b2a40;
+  --btn-bg-hover: var(--primary-hover);
 
   position: relative;
   display: inline-flex;
@@ -59,10 +59,10 @@
 
 /* Secondary: a white sheet on the mist page, findable by its faint edge and soft shadow. */
 .btn--secondary {
-  --btn-bg: var(--white);
+  --btn-bg: var(--surface-raised);
   --btn-fg: var(--ink);
   --btn-border: var(--line-strong);
-  --btn-bg-hover: var(--white);
+  --btn-bg-hover: var(--surface-raised);
   --btn-shadow: 0 1px 2px rgb(14 25 41 / 0.05);
 }
 
@@ -92,7 +92,7 @@
   }
 
   .btn--secondary:hover {
-    border-color: rgb(14 25 41 / 0.32);
+    border-color: var(--line-field);
     --btn-shadow: 0 1px 2px rgb(14 25 41 / 0.06), 0 8px 18px -12px rgb(14 25 41 / 0.3);
   }
 

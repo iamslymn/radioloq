@@ -1,0 +1,50 @@
+.theme-toggle {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 10px;
+  color: var(--ink);
+  transition: background-color var(--dur-hover) ease, transform var(--dur-press) var(--ease-out);
+}
+
+.theme-toggle:active {
+  transform: scale(0.94);
+}
+
+/* Both icons share one spot; the one that is not shown turns away and fades. */
+.theme-toggle__icon {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  transition:
+    opacity var(--dur-ui) ease,
+    transform var(--dur-overlay) var(--ease-out);
+}
+
+.theme-toggle__icon[data-show="false"] {
+  opacity: 0;
+  transform: rotate(-60deg) scale(0.6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover {
+    background: var(--hover-wash);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__icon {
+    transition: opacity 120ms ease;
+  }
+
+  .theme-toggle__icon[data-show="false"] {
+    transform: none;
+  }
+}
+
+/* The cross-fade between themes when the browser supports view transitions. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+}

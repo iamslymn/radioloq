@@ -15,6 +15,7 @@ const de: Content = {
     cta: 'Aufnahme teilen',
     lang: 'Sprache wählen',
     langSoon: 'Demnächst',
+    theme: 'Dunkles Design',
     skip: 'Zum Hauptinhalt springen',
   },
   hero: {

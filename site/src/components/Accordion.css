@@ -1,7 +1,7 @@
 /* Questions sit on one white sheet, separated by faint lines. Not numbered: they are not a sequence. */
 .accordion {
   padding-inline: var(--space-5);
-  background: var(--white);
+  background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
@@ -37,8 +37,8 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  color: var(--navy);
-  background: var(--ice);
+  color: var(--ink);
+  background: var(--tint);
   transition:
     transform var(--dur-ui) var(--ease-out),
     color var(--dur-hover) ease,
@@ -47,17 +47,17 @@
 
 .accordion__item[data-open="true"] .accordion__icon {
   transform: rotate(45deg);
-  color: var(--white);
-  background: var(--navy);
+  color: var(--on-strong);
+  background: var(--strong);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .accordion__trigger:hover .accordion__icon {
-    background: var(--spectrum);
+    background: rgb(81 128 255 / 0.32);
   }
 
   .accordion__item[data-open="true"] .accordion__trigger:hover .accordion__icon {
-    background: var(--navy);
+    background: var(--strong);
   }
 }
 

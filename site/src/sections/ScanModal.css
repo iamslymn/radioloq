@@ -26,7 +26,7 @@
 }
 
 .scan__progress [data-state="done"] span {
-  background: var(--navy);
+  background: var(--ink);
 }
 
 .scan__progress [data-state="current"] span {
@@ -73,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   padding: var(--space-3) var(--space-4);
-  background: var(--mist);
+  background: var(--surface-sunken);
   border-radius: var(--radius-sm);
   font-weight: 500;
 }
@@ -83,7 +83,7 @@
   grid-template-columns: 16px 1fr;
   gap: var(--space-3);
   padding: var(--space-4);
-  background: rgb(211 226 255 / 0.55);
+  background: var(--tint-soft);
   border-radius: var(--radius-sm);
 }
 
@@ -114,7 +114,7 @@
   padding: var(--space-4) var(--space-5);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
-  background: var(--white);
+  background: var(--surface-raised);
 }
 
 .scan__summary h3 {
@@ -183,7 +183,7 @@
   gap: var(--space-2);
   padding: var(--space-4);
   list-style: none;
-  background: var(--mist);
+  background: var(--surface-sunken);
   border-radius: var(--radius-sm);
 }
 
@@ -195,7 +195,7 @@
 
 .scan__howto .t-label {
   padding-top: 2px;
-  color: rgb(14 25 41 / 0.62);
+  color: var(--ink-3);
 }
 
 .scan__form {

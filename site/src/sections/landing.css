@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgb(243 248 254 / 0.88);
+  background: var(--header-bg);
   backdrop-filter: saturate(1.4) blur(12px);
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid transparent;
@@ -24,7 +24,7 @@
 
 .site-header__logo {
   flex-shrink: 0;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .site-header__logo svg {
@@ -164,7 +164,7 @@
 }
 
 .hero__title-tail {
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .hero__sub {
@@ -182,7 +182,7 @@
   grid-column: 1 / -1;
   display: grid;
   max-width: 30rem;
-  background: var(--white);
+  background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-raised);
@@ -262,8 +262,8 @@
   grid-template-columns: repeat(2, 1fr);
   margin-top: clamp(3.5rem, 2rem + 5vw, 6rem);
   padding: var(--space-2);
-  background: rgb(255 255 255 / 0.7);
-  border: 1px solid rgb(255 255 255 / 0.9);
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px) saturate(1.2);
@@ -343,7 +343,7 @@
   flex-direction: column;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--white);
+  background: var(--surface-raised);
   overflow: hidden;
   transition:
     transform var(--dur-ui) var(--ease-out),
@@ -376,8 +376,8 @@
   place-items: center;
   width: 3rem;
   height: 3rem;
-  color: var(--navy);
-  background: var(--ice);
+  color: var(--ink);
+  background: var(--tint);
   border: 1px solid transparent;
   border-radius: 14px;
   transition:
@@ -498,8 +498,8 @@
   background:
     radial-gradient(60% 90% at 100% 0%, rgb(81 128 255 / 0.38), transparent 70%),
     radial-gradient(45% 70% at 0% 100%, rgb(163 195 254 / 0.12), transparent 70%),
-    var(--navy);
-  box-shadow: 0 40px 80px -48px rgb(14 25 41 / 0.6);
+    var(--surface-inverse);
+  box-shadow: var(--panel-shadow);
 }
 
 .first__grid {
@@ -564,7 +564,7 @@
   max-width: 47.5rem;
   margin-top: var(--space-6);
   padding: var(--space-5) var(--space-6);
-  background: rgb(211 226 255 / 0.5);
+  background: var(--tint-soft);
   border-radius: var(--radius-md);
 }
 
@@ -589,7 +589,7 @@
   max-width: 22rem;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: var(--ice);
+  background: var(--tint);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-raised);
 }
@@ -646,8 +646,8 @@
   margin-top: var(--space-7);
   padding: clamp(2rem, 1rem + 4vw, 4rem);
   background:
-    radial-gradient(70% 90% at 0% 0%, rgb(255 255 255 / 0.85), transparent 70%),
-    var(--ice);
+    radial-gradient(70% 90% at 0% 0%, var(--quote-glow), transparent 70%),
+    var(--tint);
   border-radius: var(--radius-lg);
 }
 
@@ -703,7 +703,7 @@
   list-style: none;
   padding: 0 var(--space-5);
   margin: 0;
-  background: var(--white);
+  background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
@@ -729,7 +729,7 @@
   position: absolute;
   inset: var(--space-2) calc(var(--space-3) * -1);
   z-index: -1;
-  background: var(--mist);
+  background: var(--surface-sunken);
   border-radius: var(--radius-sm);
   opacity: 0;
   transform: scaleY(0.92);
@@ -751,8 +751,8 @@
   height: 2.5rem;
   border: 1px solid transparent;
   border-radius: 50%;
-  background: var(--ice);
-  color: var(--navy);
+  background: var(--tint);
+  color: var(--ink);
   transition:
     background-color var(--dur-ui) ease,
     border-color var(--dur-ui) ease,
@@ -798,9 +798,9 @@
   }
 
   .contact__row:hover .contact__icon {
-    background: var(--navy);
-    border-color: var(--navy);
-    color: var(--white);
+    background: var(--strong);
+    border-color: var(--strong);
+    color: var(--on-strong);
     transform: scale(1.05);
   }
 
@@ -837,7 +837,7 @@
 .doctors__panel {
   padding: clamp(2rem, 1rem + 3vw, 3.5rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(110deg, var(--white) 45%, rgb(211 226 255 / 0.7) 100%);
+  background: linear-gradient(110deg, var(--surface-raised) 45%, var(--tint) 100%);
   border: 1px solid var(--line);
 }
 
