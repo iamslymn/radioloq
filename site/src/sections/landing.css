@@ -105,13 +105,15 @@
   padding-top: clamp(3rem, 1.5rem + 5vw, 6.5rem);
 }
 
-/* The light sits in the empty right half of the hero, fully in view, so it reads as a source and not a cut-off shape. */
+/* A large light whose centre sits on the right edge of the screen, so half of it shows,
+   as if the page were the edge of a lightbox. */
 .hero__burst {
+  --burst: clamp(60rem, 44rem + 28vw, 84rem);
   position: absolute;
   z-index: 0;
-  width: clamp(40rem, 28rem + 20vw, 52rem);
-  top: clamp(-9rem, -2rem - 5vw, -4rem);
-  right: clamp(-14rem, 4rem - 14vw, -2rem);
+  width: var(--burst);
+  top: calc(22rem - var(--burst) / 2);
+  right: calc(var(--burst) / -2);
 }
 
 /* On narrow screens it rises behind the top right corner, away from the buttons. */
