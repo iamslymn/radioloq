@@ -227,7 +227,7 @@ const tr: Content = {
     sumNote: 'Şu anda ödediğiniz tutar budur. Hizmetten sonra bir GOÄ faturası alırsınız. Bu ödeme mahsup edilir, faturalandırılamayan tutarlar iade edilir.',
     scope: {
       basic: 'Bir vücut bölgesine ait bir güncel tetkikin yazılı ikinci değerlendirmesi, PDF olarak iki sayfa. Video görüşme yok.',
-      standard: '15 dakikalık video görüşme, ardından iki sayfalık yazılı ikinci değerlendirme. Görüşmede anlattıklarınız değerlendirmeye girer. Sonunda: bu benim için ne anlama geliyor? Orada ayrıca kendi hekiminizle netleştirmeniz gereken noktaları yazıyorum.',
+      standard: '15 dakikalık video görüşme, ardından iki sayfalık yazılı ikinci değerlendirme. Görüşmede anlattıklarınız değerlendirmeye girer. Sonunda: bu benim için ne anlama geliyor? Orada kendi hekiminizle netleştirmeniz gereken noktaları da yazıyorum.',
       premium: '30 dakikalık video görüşme, ardından genişletilmiş yazılı ikinci değerlendirme. İki tetkik değerlendirilir, bunlardan biri aynı vücut bölgesine ait bir eski tetkiktir. İki değerlendirme dört sayfalık tek bir belgede yer alır ve o belge de "bu benim için ne anlama geliyor?" bölümüyle biter. Bunun için aynı bölgeye ait mevcut bir eski tetkik gerekir.',
     },
     bookBtn: 'Ücretli sipariş ver',

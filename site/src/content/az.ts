@@ -31,8 +31,8 @@ const az = {
     cta2: 'Necə işləyir',
     cta3: 'Pulsuz 15 dəq tanışlıq',
     panel: {
-      scan: 'Your scan',
-      read: 'Plain-language read',
+      scan: 'Rəyiniz',
+      read: 'Sadə dillə izah',
       example: 'Nümunə',
       scanText: 'Bandscheibenprotrusion LWK 4/5 mit Kontakt zur Nervenwurzel L5 links, ohne Kompression.',
       readText: 'Belinizin aşağı hissəsində bir disk bir qədər çıxıb və sol tərəfdəki sinirə toxunur, amma onu sıxmır.',
@@ -187,9 +187,9 @@ const az = {
   footer: {
     services: 'Xidmətlər və ödəniş',
     servicesHref: '/services-az',
-    terms: 'Terms',
+    terms: 'Şərtlər',
     termsHref: '/terms-az',
-    privacy: 'Privacy',
+    privacy: 'Məxfilik',
     privacyHref: '/privacy-az',
     cookies: 'Kuki tənzimləmələri',
     text: '© 2026 Radioloq · Klinik qərarlar üçün müalicə həkiminizə müraciət edin · info@radioloq.com',
@@ -233,7 +233,7 @@ const az = {
     sumNote: 'Bu, indi ödədiyiniz məbləğdir. Xidmətdən sonra GOÄ hesabı alırsınız. Bu ödəniş çıxılır, hesablana bilməyən məbləğlər geri qaytarılır.',
     scope: {
       basic: 'Bir bədən nahiyəsinə aid bir cari müayinənin yazılı ikinci qiymətləndirməsi, PDF formatında iki səhifə. Video görüş yoxdur.',
-      standard: '15 dəqiqəlik video görüş, ardından iki səhifəlik yazılı ikinci qiymətləndirmə. Görüşdə danışdıqlarınız qiymətləndirməyə daxil edilir. Sonda: bu mənim üçün nə demək olur? Orada həmçinin öz həkiminizlə dəqiqləşdirməli olduğunuz məsələləri yazıram.',
+      standard: '15 dəqiqəlik video görüş, ardından iki səhifəlik yazılı ikinci qiymətləndirmə. Görüşdə danışdıqlarınız qiymətləndirməyə daxil edilir. Sonda: bu mənim üçün nə demək olur? Orada öz həkiminizlə dəqiqləşdirməli olduğunuz məsələləri də yazıram.',
       premium: '30 dəqiqəlik video görüş, ardından genişləndirilmiş yazılı ikinci qiymətləndirmə. İki müayinə qiymətləndirilir, onlardan biri eyni bədən nahiyəsinə aid əvvəlki müayinədir. İki qiymətləndirmə dörd səhifəlik vahid sənəddə yer alır və o sənəd də "bu mənim üçün nə demək olur?" bölməsi ilə bitir. Bunun üçün həmin bölgəyə aid mövcud əvvəlki müayinə tələb olunur.',
     },
     bookBtn: 'Ödə və sifariş et',

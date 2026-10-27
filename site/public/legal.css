@@ -60,8 +60,8 @@
   --paper-2: rgb(255 255 255 / 0.74);
   --paper-3: rgb(255 255 255 / 0.6);
 
-  --line: rgb(14 25 41 / 0.12);
-  --line-strong: rgb(14 25 41 / 0.24);
+  --line: rgb(14 25 41 / 0.08);
+  --line-strong: rgb(14 25 41 / 0.14);
   --line-on-navy: rgb(255 255 255 / 0.14);
 
   /* Theme roles, as in src/styles/tokens.css. The dark theme below re-assigns them. */
@@ -106,17 +106,23 @@
   --space-7: 3rem;
   --space-8: 4rem;
   --space-9: 6rem;
-  --section-y: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --section-y: clamp(4rem, 2.5rem + 4.5vw, 6.5rem);
 
   --container: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
   --header-h: 4.75rem;
 
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  --radius-xs: 6px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
 
-  --shadow-raised: 0 1px 2px rgb(14 25 41 / 0.04), 0 8px 24px -12px rgb(14 25 41 / 0.12);
+  --shadow-soft: 0 1px 1px rgb(14 25 41 / 0.03), 0 10px 24px -14px rgb(14 25 41 / 0.1);
+  --shadow-raised:
+    0 1px 2px rgb(14 25 41 / 0.04),
+    0 14px 32px -16px rgb(14 25 41 / 0.12),
+    0 32px 64px -40px rgb(81 128 255 / 0.28);
+  --shadow-primary: 0 1px 2px rgb(14 25 41 / 0.18), 0 10px 22px -12px rgb(14 25 41 / 0.6);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --dur-press: 140ms;
   --dur-hover: 160ms;
@@ -282,7 +288,9 @@ p {
   height: 2.375rem;
   padding-inline: 1rem;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
+  background: var(--surface-raised);
+  box-shadow: 0 1px 2px rgb(14 25 41 / 0.05);
   color: var(--ink);
   font-size: 0.875rem;
   font-weight: 600;
@@ -306,6 +314,7 @@ p {
 .btn--primary {
   height: 3rem;
   padding-inline: 1.375rem;
+  border-radius: var(--radius-sm);
   font-size: 0.9375rem;
 }
 
@@ -313,6 +322,7 @@ p {
   border-color: transparent;
   background: var(--primary-bg);
   color: var(--primary-fg);
+  box-shadow: var(--shadow-primary);
 }
 
 .error-page__actions {
@@ -338,8 +348,8 @@ p {
   }
 
   .btn:not(.btn--primary):hover {
-    background: var(--hover-wash);
-    border-color: var(--ink);
+    border-color: rgb(14 25 41 / 0.32);
+    box-shadow: 0 1px 2px rgb(14 25 41 / 0.06), 0 8px 18px -12px rgb(14 25 41 / 0.3);
   }
 
   .btn:hover svg {
@@ -393,7 +403,7 @@ p {
   min-width: 2.25rem;
   height: 2.25rem;
   padding-inline: var(--space-2);
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
   color: var(--ink-3);
   transition:
     color var(--dur-hover) ease,
@@ -403,7 +413,7 @@ p {
 .lang-links a[aria-current="page"] {
   color: var(--ink);
   background: var(--surface-raised);
-  box-shadow: inset 0 0 0 1px var(--line);
+  box-shadow: inset 0 0 0 1px var(--line), 0 1px 2px rgb(14 25 41 / 0.05);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -438,8 +448,6 @@ p {
 
 .section-header {
   row-gap: var(--space-4);
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--line-strong);
 }
 
 .section-header__label {
@@ -472,8 +480,9 @@ p {
   top: 50%;
   width: 6px;
   height: 6px;
-  border-radius: 1px;
+  border-radius: 50%;
   background: var(--blue);
+  box-shadow: 0 0 0 4px rgb(81 128 255 / 0.14);
   transform: translateY(-50%);
 }
 
@@ -612,7 +621,7 @@ p {
   top: 0.7em;
   width: 6px;
   height: 6px;
-  border-radius: 1px;
+  border-radius: 50%;
   background: var(--blue);
 }
 
@@ -623,22 +632,28 @@ p {
 .legal__body .note {
   margin: var(--space-6) 0;
   padding: var(--space-4) var(--space-5);
-  border-left: 2px solid var(--ink);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
+}
+
+.legal__body .alert,
+.legal__body .mt-banner {
+  border-color: transparent;
+  background: var(--tint-soft);
+  box-shadow: none;
 }
 
 .legal__body .mt-banner {
   display: grid;
   grid-template-columns: 16px 1fr;
   gap: var(--space-3);
-  border-left-color: var(--blue);
-  background: var(--tint-soft);
 }
 
 .legal__body .mt-banner-icon {
   margin-top: 4px;
-  color: var(--ink);
+  color: var(--blue);
 }
 
 .legal__body .alert p,
@@ -659,9 +674,10 @@ p {
 .legal__body .table-wrap {
   margin: var(--space-5) 0 var(--space-6);
   overflow-x: auto;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -704,13 +720,66 @@ p {
   font-weight: 500;
 }
 
+/* On a phone the columns don't fit: each row becomes a small card, the first cell
+   as its title, so nothing is cut off and nothing needs sideways scrolling. */
+@media (max-width: 639px) {
+  .legal__body .table-wrap {
+    overflow: visible;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .legal__body table,
+  .legal__body tbody,
+  .legal__body tr,
+  .legal__body td {
+    display: block;
+    min-width: 0;
+  }
+
+  .legal__body thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .legal__body tbody {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .legal__body tr {
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .legal__body td {
+    padding: 0;
+  }
+
+  .legal__body td + td {
+    margin-top: var(--space-2);
+  }
+
+  .legal__body tbody tr + tr td {
+    border-top: 0;
+  }
+}
+
 /* Package cards on the Services page, styled like the price table */
 
 .legal__body .pkg {
   margin: 0 0 var(--space-4);
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--surface-raised);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   transition:
     transform var(--dur-ui) var(--ease-out),
@@ -721,7 +790,6 @@ p {
 @media (hover: hover) and (pointer: fine) {
   .legal__body .pkg:hover {
     transform: translateY(-2px);
-    border-color: var(--blue);
     box-shadow: var(--shadow-raised);
   }
 }
@@ -733,9 +801,7 @@ p {
   gap: var(--space-4);
   min-height: 3rem;
   margin: 0;
-  padding: var(--space-3) var(--space-5);
-  border-bottom: 1px solid var(--line);
-  background: var(--surface-sunken);
+  padding: var(--space-5) var(--space-5) 0;
   font-size: var(--label-size);
   line-height: var(--label-line);
   letter-spacing: var(--track-label);
@@ -745,7 +811,7 @@ p {
 
 .legal__body .pkg .price {
   color: var(--ink);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   letter-spacing: -0.02em;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
@@ -775,7 +841,7 @@ p {
   gap: var(--space-1);
   margin-top: var(--space-8);
   padding-top: var(--space-5);
-  border-top: 1px solid var(--line-strong);
+  border-top: 1px solid var(--line);
 }
 
 .legal__footnote p {
@@ -786,6 +852,7 @@ p {
 
 .site-footer {
   padding-block: var(--space-8) var(--space-6);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .site-footer__top {
@@ -844,8 +911,9 @@ p {
   --ink: var(--mist);
   --ink-2: rgb(243 248 254 / 0.74);
   --ink-3: rgb(243 248 254 / 0.6);
-  --line: rgb(255 255 255 / 0.1);
-  --line-strong: rgb(255 255 255 / 0.18);
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.14);
+  --shadow-soft: 0 1px 1px rgb(0 0 0 / 0.25), 0 10px 24px -14px rgb(0 0 0 / 0.55);
 
   --surface-page: var(--navy);
   --surface-raised: #15233a;

@@ -111,6 +111,13 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
    (`[link]`, `[metin](adres)`, `**kalın**`) `i18n.py` dosyasının başında.
    Hukuki sayfalardaki düzeltmeler sahibinin onayı sayılır. `terms.html` ve
    `privacy.html`, `-de` sürümlerinin kopyası, ikisi birlikte güncellenir.
+   **Import kuralı:** sahibinin değişikliği = tablodaki değer ≠ `2066029`'daki değer.
+   Mevcut kodla karşılaştırma, yoksa tablodan sonra yapılan düzeltmeler geri alınır.
+   Tablodan sonra kodda değişen anahtarlar (28.10.2026): `site:footer.terms` ve
+   `site:footer.privacy` (az, İngilizce kalmıştı), `site:hero.panel.scan` ve
+   `site:hero.panel.read` (az, İngilizce kalmıştı), `site:modal.scope.standard`
+   (tr ve az, "ayrıca" ve "həmçinin" çıktı). Bu hücrelerde sahibi de bir şey yazdıysa
+   ikisini yan yana göster, sahibi seçsin.
 
 ### Tamamlanan, 21.10.2026
 

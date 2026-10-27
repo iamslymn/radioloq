@@ -44,7 +44,7 @@
   --glass: rgb(255 255 255 / 0.7);
   --glass-edge: rgb(255 255 255 / 0.9);
   --header-bg: rgb(243 248 254 / 0.88);
-  --ink-4: rgb(14 25 41 / 0.45);              /* placeholders and disabled text only */
+  --ink-4: rgb(14 25 41 / 0.56);              /* placeholders and disabled text only, 3:1 on white */
   --line-control: rgb(14 25 41 / 0.4);        /* checkbox edge */
   --strong: var(--navy);                      /* filled chips and icons */
   --on-strong: var(--white);

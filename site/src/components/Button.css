@@ -39,10 +39,15 @@
   transform: scale(0.97);
 }
 
-.btn:disabled,
-.btn[aria-disabled="true"] {
+.btn:disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* Looks unavailable but still answers a click, so the form can say what is missing
+   (the booking button before all consents are ticked). */
+.btn[aria-disabled="true"] {
+  opacity: 0.62;
 }
 
 .btn--sm {
