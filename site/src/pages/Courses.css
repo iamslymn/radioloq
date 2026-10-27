@@ -125,3 +125,9 @@
     animation: none;
   }
 }
+
+/* Here the footer follows a navy band, so it continues it: square top, a faint line between. */
+.site-footer.courses__footer {
+  border-radius: 0;
+  border-top: 1px solid var(--line-on-navy);
+}
