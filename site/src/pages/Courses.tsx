@@ -252,7 +252,7 @@ export default function Courses() {
             <a href="#top" className="site-footer__logo" aria-label="Radioloq">
               <Logo />
             </a>
-            <nav className="site-footer__links t-small" aria-label="Footer">
+            <nav className="site-footer__links t-small" aria-label={f.menu}>
               <a href={f.termsHref}>{f.terms}</a>
               <a href={f.privacyHref}>{f.privacy}</a>
               <a href={links.email}>{links.emailLabel}</a>
@@ -262,6 +262,7 @@ export default function Courses() {
         </div>
       </footer>
       <CookieBar
+        label={c.cookie.label}
         text={c.cookie.text}
         termsLabel={c.cookie.terms}
         termsHref={f.termsHref}

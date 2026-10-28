@@ -75,6 +75,7 @@ export default function App() {
       </main>
       <Footer c={c} />
       <CookieBar
+        label={c.cookie.label}
         text={c.cookie.text}
         termsLabel={c.cookie.terms}
         termsHref={c.footer.termsHref}

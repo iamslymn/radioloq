@@ -22,6 +22,7 @@ const az = {
     langSoon: 'Tezliklə',
     theme: 'Tünd rejim',
     skip: 'Əsas məzmuna keç',
+    menu: 'Əsas menyu',
   },
   hero: {
     titleLead: 'Almaniya standartında ikinci baxış,',
@@ -185,6 +186,7 @@ const az = {
     cta: 'Kurslara bax',
   },
   footer: {
+    menu: 'Səhifənin alt keçidləri',
     services: 'Xidmətlər və ödəniş',
     servicesHref: '/services-az',
     terms: 'Şərtlər',
@@ -195,6 +197,7 @@ const az = {
     text: '© 2026 Radioloq · Klinik qərarlar üçün müalicə həkiminizə müraciət edin · info@radioloq.com',
   },
   cookie: {
+    label: 'Kuki bildirişi',
     text: 'Saytın işləməsi üçün zəruri kukiləri, razılığınız olduqda analitika kukilərini də istifadə edirik. Ətraflı:',
     terms: 'İstifadə şərtləri',
     and: 'və',

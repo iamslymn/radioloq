@@ -17,6 +17,7 @@ const en: Content = {
     langSoon: 'Coming soon',
     theme: 'Dark mode',
     skip: 'Skip to main content',
+    menu: 'Main menu',
   },
   hero: {
     titleLead: 'A German-standard second opinion,',
@@ -179,6 +180,7 @@ const en: Content = {
     cta: 'View courses',
   },
   footer: {
+    menu: 'Footer links',
     services: 'Services & billing',
     servicesHref: '/services-en',
     terms: 'Terms',
@@ -189,6 +191,7 @@ const en: Content = {
     text: '© 2026 Radioloq · For clinical decisions, always consult your treating doctor · info@radioloq.com',
   },
   cookie: {
+    label: 'Cookie notice',
     text: 'We use the cookies the site needs to work and, if you agree, cookies for analytics. More in our',
     terms: 'Terms',
     and: 'and',

@@ -61,6 +61,7 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
   const [note, setNote] = useState('')
   const [honeypot, setHoneypot] = useState('')
   const [sending, setSending] = useState(false)
+  const [sendErr, setSendErr] = useState(false)
   const [done, setDone] = useState(false)
 
   const heading = useRef<HTMLHeadingElement>(null)
@@ -114,6 +115,7 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
     if (missingName || missingEmail) return
 
     setSending(true)
+    setSendErr(false)
     const body = JSON.stringify({
       name,
       email,
@@ -145,7 +147,7 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
       if (attempt < 3) await new Promise((r) => setTimeout(r, 1200))
     }
     console.error('Formspree submission failed after retries:', lastError)
-    alert(m.submitError)
+    setSendErr(true)
     setSending(false)
   }
 
@@ -339,6 +341,11 @@ export function ScanModal({ c, open, pkg, initialStep, onClose }: Props) {
                 onChange={(e) => setHoneypot(e.target.value)}
               />
               <p className="t-small faint">{m.fnote}</p>
+              {sendErr && (
+                <p className="scan__error t-small" role="alert">
+                  {m.submitError}
+                </p>
+              )}
               <Button block type="submit" disabled={sending} icon={sending ? undefined : <ArrowRight />}>
                 {sending ? m.sending : m.submitBtn}
               </Button>

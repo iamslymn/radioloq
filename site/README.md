@@ -1,32 +1,16 @@
-# React + TypeScript + Vite
+# Radioloq site
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+radioloq.com and courses.radioloq.com. React, TypeScript, Vite, hosted on Vercel.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+npm ci
+npm run dev       # local server
+npm run lint      # oxlint
+npm run build     # type check and production build into dist/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+All visible text lives in `src/content/`, one file per language (`de`, `en`, `tr`, `az`, `ru`).
+Prices and Stripe links come only from `src/content/pricing.ts`.
+The legal and service pages are static HTML in `public/`.
+
+Rules for text, prices and legal pages: see `CLAUDE.md` in the repository root.

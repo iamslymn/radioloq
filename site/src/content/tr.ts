@@ -17,6 +17,7 @@ const tr: Content = {
     langSoon: 'Yakında',
     theme: 'Koyu tema',
     skip: 'Ana içeriğe geç',
+    menu: 'Ana menü',
   },
   hero: {
     titleLead: 'Alman standardında ikinci görüş,',
@@ -179,6 +180,7 @@ const tr: Content = {
     cta: 'Kurslara göz at',
   },
   footer: {
+    menu: 'Sayfa altı bağlantıları',
     services: 'Hizmetler ve ödeme',
     servicesHref: '/services-tr',
     terms: 'Koşullar',
@@ -189,6 +191,7 @@ const tr: Content = {
     text: '© 2026 Radioloq · Klinik kararlar için tedavi eden hekiminize danışın · info@radioloq.com',
   },
   cookie: {
+    label: 'Çerez bildirimi',
     text: 'Sitenin çalışması için gerekli çerezleri, onayınız varsa analiz çerezlerini de kullanıyoruz. Ayrıntılar:',
     terms: 'Kullanım koşulları',
     and: 've',

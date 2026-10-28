@@ -17,6 +17,7 @@ const de: Content = {
     langSoon: 'Demnächst',
     theme: 'Dunkles Design',
     skip: 'Zum Hauptinhalt springen',
+    menu: 'Hauptmenü',
   },
   hero: {
     titleLead: 'Zweitmeinung nach deutschem Standard,',
@@ -179,6 +180,7 @@ const de: Content = {
     cta: 'Kurse ansehen',
   },
   footer: {
+    menu: 'Links in der Fußzeile',
     services: 'Leistungen & Abrechnung',
     servicesHref: '/services-de',
     terms: 'AGB',
@@ -189,6 +191,7 @@ const de: Content = {
     text: '© 2026 Radioloq · Für klinische Entscheidungen wenden Sie sich an Ihren behandelnden Arzt · info@radioloq.com',
   },
   cookie: {
+    label: 'Cookie-Hinweis',
     text: 'Wir verwenden die für die Website notwendigen Cookies und, wenn Sie zustimmen, auch Cookies für Analysen. Mehr dazu in den',
     terms: 'Nutzungsbedingungen',
     and: 'und',

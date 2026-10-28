@@ -4,6 +4,7 @@ import { CONSENT_KEY, OPEN_COOKIE_SETTINGS, disableAnalytics, loadAnalytics } fr
 import './CookieBar.css'
 
 type Props = {
+  label: string
   text: string
   termsLabel: string
   termsHref: string
@@ -14,25 +15,42 @@ type Props = {
   reject: string
 }
 
+/** Storage can throw when cookies are blocked. The bar then simply asks again on the next visit. */
+function readConsent() {
+  try {
+    return localStorage.getItem(CONSENT_KEY)
+  } catch {
+    return null
+  }
+}
+
+function saveConsent(value: string) {
+  try {
+    localStorage.setItem(CONSENT_KEY, value)
+  } catch {
+    // Choice holds for this page load only.
+  }
+}
+
 export function CookieBar(p: Props) {
-  const [visible, setVisible] = useState(() => !localStorage.getItem(CONSENT_KEY))
+  const [visible, setVisible] = useState(() => !readConsent())
 
   useEffect(() => {
-    if (localStorage.getItem(CONSENT_KEY) === 'accepted') loadAnalytics()
+    if (readConsent() === 'accepted') loadAnalytics()
     const reopen = () => setVisible(true)
     window.addEventListener(OPEN_COOKIE_SETTINGS, reopen)
     return () => window.removeEventListener(OPEN_COOKIE_SETTINGS, reopen)
   }, [])
 
   const decide = (value: 'accepted' | 'rejected') => {
-    localStorage.setItem(CONSENT_KEY, value)
+    saveConsent(value)
     if (value === 'accepted') loadAnalytics()
     else disableAnalytics()
     setVisible(false)
   }
 
   return (
-    <div className="cookie" data-visible={visible} role="region" aria-label="Cookies" inert={!visible}>
+    <div className="cookie" data-visible={visible} role="region" aria-label={p.label} inert={!visible}>
       <p className="t-small muted">
         {p.text}{' '}
         <a className="cookie__link" href={p.termsHref}>

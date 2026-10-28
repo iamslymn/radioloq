@@ -21,7 +21,7 @@ export function Header({ c, onLangChange }: { c: Content; onLangChange: (lang: L
         <a href="#top" className="site-header__logo" aria-label="Radioloq">
           <Logo />
         </a>
-        <nav className="site-header__nav" aria-label="Primary">
+        <nav className="site-header__nav" aria-label={c.nav.menu}>
           <a href="#how">{c.nav.how}</a>
           <a href="#pricing">{c.nav.price}</a>
           <a href="#about">{c.nav.about}</a>

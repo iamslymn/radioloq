@@ -116,6 +116,13 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
    yazdıysa ikisini yan yana göster, sahibi seçsin.
    Hukuki sayfalardaki düzeltmeler sahibinin onayı sayılır. `terms.html` ve
    `privacy.html`, `-de` sürümlerinin kopyası, ikisi birlikte güncellenir.
+   28.10'da eklenen `nav.menu`, `footer.menu`, `cookie.label` anahtarları tabloda yok,
+   import onlara dokunmaz.
+6. **Yayın günü yapılacaklar**, yayın kararı verilmeden yapılmaz: `index.html` ve
+   `public/` altındaki 18 HTML sayfasındaki `noindex, nofollow` kaldırılır, `robots.txt`,
+   `sitemap.xml`, Open Graph etiketleri ve görseli, `apple-touch-icon` (PNG, zemin rengi
+   seçilecek) eklenir. `courses.radioloq.com` aynı `index.html`'i kullandığı için o da
+   şu an `noindex`.
 
 ### Tamamlanan, 21.10.2026
 
@@ -144,7 +151,21 @@ kaydedilir, "sonra dönerim" denmez. Grep yaparken `LC_ALL=C.UTF-8` kullan, yoks
 - Terms'teki Premium e-posta takibi maddesi tamamen kaldırıldı, § 6 numaraları kaydırıldı.
 - Terms ve privacy tarihi: 26.10.2026.
 
+### Tamamlanan, 28.10.2026
+
+- Çerezler engelliyken çerez çubuğu sayfayı beyaz bırakıyordu. Depolama erişimi artık
+  hata yakalayarak yapılıyor.
+- Formspree gönderimi başarısız olursa hata tarayıcı `alert()` kutusu yerine formun içinde görünüyor.
+- Statik sayfalara `index.html` ile aynı `noindex, nofollow` eklendi.
+- Erişilebilirlik etiketleri (`Primary`, `Footer`, `Cookies`) beş dile çevrildi.
+- `vercel.json`: güvenlik başlıkları (`nosniff`, `Referrer-Policy`, `X-Frame-Options: DENY`,
+  `Permissions-Policy`) ve `/design-system` yolu. Stripe ödeme formu ileride sayfanın
+  içine gömülürse `Permissions-Policy` içindeki `payment=()` kaldırılmalı.
+- Vite 8.3.5'e yükseltildi, `npm audit` temiz. README yazıldı.
+
 ### Doğru olan, bozulmaması gerekenler
+
+- `localStorage` ve `sessionStorage` her yerde `try/catch` içinde okunur ve yazılır.
 
 - Cayma hakkı konusu kapandı. Modaldaki `chk4` işaret kutusu ve mevcut yapı sahibi
   tarafından onaylı, yeniden eksik olarak açılmaz. `chk4` metni değiştirilmez.

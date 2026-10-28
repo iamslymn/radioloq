@@ -11,7 +11,7 @@ export function Footer({ c }: { c: Content }) {
           <a href="#top" className="site-footer__logo" aria-label="Radioloq">
             <Logo />
           </a>
-          <nav className="site-footer__links t-small" aria-label="Footer">
+          <nav className="site-footer__links t-small" aria-label={c.footer.menu}>
             <a href={f.servicesHref}>{f.services}</a>
             <a href={f.termsHref}>{f.terms}</a>
             <a href={f.privacyHref}>{f.privacy}</a>
